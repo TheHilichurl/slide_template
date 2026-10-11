@@ -3,429 +3,1121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BỘ SƯU TẬP 20 PHONG CÁCH NGHỆ THUẬT ĐỘT PHÁ (DIVERSE DESIGN STYLES) | ĐH ĐẠI NAM</title>
+  <title>BỘ SƯU TẬP 65 MẪU SLIDE TOÀN DIỆN & ĐA DẠNG BỐ CỤC | ĐH ĐẠI NAM</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    :root {
+      --brand-orange: #EA580C;
+      --brand-orange-light: #FF7A00;
+      --brand-cobalt: #003882;
+      --brand-cobalt-dark: #00224F;
+      --bg-deep: #070B14;
+      --bg-panel: #0E1626;
+      --border-panel: rgba(255, 255, 255, 0.09);
+    }
     body {
       width: 100vw; height: 100vh; overflow: hidden;
-      background: #090D16; font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg-deep); font-family: 'Plus Jakarta Sans', sans-serif;
       color: #F8FAFC; display: flex; flex-direction: column;
     }
 
     /* Top Control Hub */
     header.hub-header {
-      height: 72px; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      height: 72px; background: rgba(10, 16, 29, 0.95); backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-panel);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 28px; z-index: 100;
+      padding: 0 24px; z-index: 100; flex-shrink: 0;
     }
     .hub-brand { display: flex; align-items: center; gap: 16px; }
     .hub-brand img { height: 38px; }
-    .hub-title { font-size: 19px; font-weight: 800; letter-spacing: -0.5px; color: #FFF; }
+    .hub-title-group { display: flex; flex-direction: column; }
+    .hub-title { font-size: 18px; font-weight: 800; letter-spacing: -0.3px; color: #FFF; display: flex; align-items: center; gap: 10px; }
     .hub-badge {
-      background: linear-gradient(135deg, #EA580C, #FF7A00); color: #FFF;
-      font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 20px;
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-light) 100%);
+      color: #FFF; font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 9999px;
+      letter-spacing: 0.5px;
     }
+    .hub-subtitle { font-size: 13px; color: #94A3B8; font-weight: 500; }
 
+    /* Quick Filter & Search Hub */
     .hub-controls { display: flex; align-items: center; gap: 12px; }
-    select.style-select {
-      background: #1E293B; color: #F1F5F9; border: 1px solid #334155;
-      padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;
-      outline: none; cursor: pointer; max-width: 380px;
+    .search-input-box {
+      position: relative; width: 260px;
     }
-    button.hub-btn {
-      background: #1E293B; color: #F1F5F9; border: 1px solid #334155;
-      padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 600;
-      cursor: pointer; display: inline-flex; align-items: center; gap: 8px;
-      transition: all 0.2s ease;
+    .search-input-box i {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: #64748B; font-size: 14px;
     }
-    button.hub-btn:hover { background: #EA580C; border-color: #EA580C; color: #FFF; }
-
-    /* Tabs Bar */
-    nav.tabs-nav {
-      background: #0B1120; border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 8px 24px; display: flex; gap: 8px; overflow-x: auto;
-      white-space: nowrap; scrollbar-width: none;
+    .search-input-box input {
+      width: 100%; height: 38px; background: rgba(255,255,255,0.06);
+      border: 1px solid var(--border-panel); border-radius: 8px;
+      padding: 0 12px 0 36px; color: #FFF; font-family: inherit; font-size: 13px;
+      outline: none; transition: 0.2s;
     }
-    nav.tabs-nav::-webkit-scrollbar { display: none; }
-    button.style-tab {
-      background: transparent; border: 1px solid transparent; color: #94A3B8;
-      padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600;
-      cursor: pointer; transition: all 0.2s ease;
-    }
-    button.style-tab:hover { color: #FFF; background: rgba(255, 255, 255, 0.05); }
-    button.style-tab.active {
-      background: #EA580C; color: #FFF; font-weight: 700;
-      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.4);
+    .search-input-box input:focus {
+      border-color: var(--brand-orange); background: rgba(255,255,255,0.1);
     }
 
-    /* Viewport & Iframe */
-    #viewport {
-      flex: 1; position: relative; width: 100%;
-      display: flex; align-items: center; justify-content: center;
-      background: radial-gradient(circle at 50% 50%, #151D30 0%, #060911 100%);
-      overflow: hidden;
+    .hub-select {
+      height: 38px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-panel);
+      border-radius: 8px; color: #FFF; padding: 0 12px; font-family: inherit; font-size: 13px;
+      outline: none; max-width: 280px; cursor: pointer;
     }
-    #slide-frame {
-      width: 100%; height: 100%; border: none; display: block;
+    .hub-select option { background: #0E1626; color: #FFF; }
+
+    .btn-action {
+      height: 38px; padding: 0 16px; border-radius: 8px; font-size: 13px; font-weight: 700;
+      display: inline-flex; align-items: center; gap: 8px; cursor: pointer; text-decoration: none;
+      transition: all 0.2s ease; border: none; font-family: inherit;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08); color: #E2E8F0; border: 1px solid var(--border-panel);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.15); color: #FFF; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-light) 100%);
+      color: #FFF; box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px); box-shadow: 0 6px 18px rgba(234, 88, 12, 0.45);
     }
 
-    /* Bottom Info Card */
-    footer.hub-footer {
-      height: 64px; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 28px; font-size: 14px; color: #94A3B8; z-index: 100;
+    /* Category Nav Bar */
+    .cat-nav {
+      height: 48px; background: rgba(8, 13, 24, 0.85); border-bottom: 1px solid var(--border-panel);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 24px;
+      flex-shrink: 0; z-index: 90;
     }
-    .footer-left { display: flex; align-items: center; gap: 20px; }
-    .style-title-current { font-weight: 800; color: #FFF; font-size: 15px; }
-    .style-genre-badge {
-      background: rgba(255, 255, 255, 0.1); color: #38BDF8;
-      padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px;
+    .cat-pills { display: flex; gap: 8px; align-items: center; overflow-x: auto; }
+    .cat-pill {
+      padding: 6px 14px; border-radius: 9999px; font-size: 12px; font-weight: 700;
+      color: #94A3B8; background: transparent; border: 1px solid transparent;
+      cursor: pointer; transition: 0.2s; white-space: nowrap; display: flex; align-items: center; gap: 6px;
     }
-    .swatches-box { display: flex; align-items: center; gap: 6px; margin-left: 8px; }
-    .swatch {
-      width: 18px; height: 18px; border-radius: 50%; display: inline-block;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+    .cat-pill:hover { color: #FFF; background: rgba(255,255,255,0.05); }
+    .cat-pill.active {
+      color: #FFF; background: rgba(0, 56, 130, 0.45); border-color: rgba(0, 85, 204, 0.5);
     }
-    .style-desc-current {
-      color: #94A3B8; font-size: 13px; max-width: 600px;
+    .cat-pill .count {
+      font-size: 11px; background: rgba(255,255,255,0.1); padding: 1px 6px; border-radius: 9999px;
+    }
+    .cat-pill.active .count {
+      background: var(--brand-orange); color: #FFF;
+    }
+
+    .nav-arrow-group { display: flex; align-items: center; gap: 6px; }
+    .btn-nav-arrow {
+      width: 32px; height: 32px; border-radius: 6px; background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-panel); color: #CBD5E1; display: flex;
+      align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;
+    }
+    .btn-nav-arrow:hover { background: rgba(255,255,255,0.12); color: #FFF; }
+
+    /* Main Showcase Body */
+    main.hub-main {
+      flex: 1; display: flex; overflow: hidden; position: relative;
+    }
+
+    /* Left Sidebar: Template Directory */
+    aside.hub-sidebar {
+      width: 380px; background: var(--bg-panel); border-right: 1px solid var(--border-panel);
+      display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden;
+    }
+    .sidebar-header {
+      padding: 14px 18px; border-bottom: 1px solid var(--border-panel);
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 12px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .template-list {
+      flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 6px;
+    }
+    .template-list::-webkit-scrollbar { width: 6px; }
+    .template-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px; }
+
+    .card-item {
+      padding: 12px 14px; border-radius: 8px; background: rgba(255,255,255,0.02);
+      border: 1px solid transparent; cursor: pointer; transition: all 0.18s ease;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .card-item:hover {
+      background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1);
+    }
+    .card-item.active {
+      background: rgba(0, 56, 130, 0.25); border-color: var(--brand-orange);
+      box-shadow: inset 3px 0 0 var(--brand-orange);
+    }
+    .card-item-top { display: flex; align-items: center; justify-content: space-between; }
+    .card-item-num {
+      font-size: 11px; font-weight: 800; color: var(--brand-orange); letter-spacing: 0.5px;
+    }
+    .card-item-badge {
+      font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 4px;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .badge-diverse { background: rgba(0, 56, 130, 0.4); color: #93C5FD; border: 1px solid rgba(0, 56, 130, 0.6); }
+    .badge-creative { background: rgba(234, 88, 12, 0.25); color: #FDBA74; border: 1px solid rgba(234, 88, 12, 0.4); }
+    .badge-modern { background: rgba(56, 189, 248, 0.15); color: #BAE6FD; border: 1px solid rgba(56, 189, 248, 0.3); }
+    .badge-archetype { background: rgba(168, 85, 247, 0.2); color: #E9D5FF; border: 1px solid rgba(168, 85, 247, 0.4); }
+
+    .card-item-title {
+      font-size: 13.5px; font-weight: 700; color: #FFF; line-height: 1.35;
+    }
+    .card-item-genre {
+      font-size: 11.5px; color: #94A3B8; font-weight: 500;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
 
-    .footer-nav { display: flex; align-items: center; gap: 10px; }
-    .counter-pill {
-      background: #1E293B; padding: 4px 12px; border-radius: 6px;
-      font-weight: 700; color: #FFF; font-size: 13px;
+    /* Right Preview Stage */
+    section.hub-stage-container {
+      flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #040711;
+    }
+    .stage-info-bar {
+      height: 54px; background: rgba(14, 22, 38, 0.95); border-bottom: 1px solid var(--border-panel);
+      display: flex; align-items: center; justify-content: space-between; padding: 0 24px;
+      flex-shrink: 0;
+    }
+    .stage-meta-title { display: flex; align-items: center; gap: 12px; }
+    .meta-name { font-size: 15px; font-weight: 800; color: #FFF; }
+    .meta-genre { font-size: 13px; color: #94A3B8; }
+    .meta-swatches { display: flex; align-items: center; gap: 6px; }
+    .swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); display: inline-block; }
+
+    .stage-canvas {
+      flex: 1; position: relative; display: flex; align-items: center; justify-content: center;
+      padding: 16px; overflow: hidden;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 56, 130, 0.12) 0%, rgba(4, 7, 17, 0.95) 100%);
+    }
+    .iframe-wrapper {
+      width: 100%; height: 100%; max-width: 1920px; max-height: 1080px;
+      position: relative; box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1);
+      border-radius: 8px; overflow: hidden; background: #000;
+    }
+    iframe#slide-preview {
+      width: 100%; height: 100%; border: none; display: block;
+    }
+
+    /* Stage Bottom Description Footer */
+    .stage-footer {
+      padding: 12px 24px; background: rgba(10, 16, 29, 0.95); border-top: 1px solid var(--border-panel);
+      display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;
+      font-size: 13px; color: #94A3B8;
+    }
+    .stage-desc { display: flex; align-items: center; gap: 10px; max-width: 85%; }
+    .stage-desc i { color: var(--brand-orange); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      aside.hub-sidebar { width: 300px; }
+      .search-input-box { width: 180px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Hub -->
+  <!-- Top Master Hub Header -->
   <header class="hub-header">
     <div class="hub-brand">
-      <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam">
-      <div class="hub-title">20 PHONG CÁCH NGHỆ THUẬT ĐA DẠNG</div>
-      <div class="hub-badge">DIVERSE STYLES SHOWCASE</div>
+      <img src="assets/dai-nam-logo-ngang.svg" alt="Đại Nam University Logo">
+      <div class="hub-title-group">
+        <div class="hub-title">
+          <span>HỆ THỐNG MẪU SLIDE TOÀN DIỆN</span>
+          <span class="hub-badge">65 MẪU MASTER SUITE</span>
+        </div>
+        <div class="hub-subtitle">
+          Giáo Dục Quốc Phòng & An Ninh • Chuẩn Tỉ Lệ 16:9 • Cam Đại Nam & Xanh Cobalt
+        </div>
+      </div>
     </div>
-    <div class="hub-controls">
-      <select class="style-select" id="styleSelect" onchange="switchSlide(this.value)">
-        <option value="style_01_japanese_wabi_sabi.html">01. Thiền & Wabi-Sabi Á Đông — Asian Zen & Sumi Ink (Orange/Cobalt)</option>
-<option value="style_02_art_deco_luxury_gold.html">02. Art Deco Hoàng Gia 1920s — Roaring 20s Luxury (Cobalt & Orange Gold)</option>
-<option value="style_03_nasa_apollo_flight_manual.html">03. Sổ Tay Kỹ Thuật NASA 1969 — Apollo Flight Manual Spec (Cam/Cobalt)</option>
-<option value="style_04_retro_synthwave_80s.html">04. Thập Niên 80 Synthwave Cyber — Retro Cyber Outrun (Cobalt & Orange Glow)</option>
-<option value="style_05_blueprint_cad_drafting.html">05. Bản Vẽ Kỹ Thuật CAD Xanh & Cam — Architectural Blueprint CAD (Cobalt & Orange)</option>
-<option value="style_06_constructivism_avant_garde.html">06. Chủ Nghĩa Kiến Tạo 1920s — Avant-Garde Constructivism (Orange & Cobalt)</option>
-<option value="style_07_monochrome_gallery_vogue.html">07. Tạp Chí Nghệ Thuật High-Fashion — Gallery Magazine (Cobalt & Orange Accent)</option>
-<option value="style_08_memphis_milano_pop_art.html">08. Trường Phái Memphis Pop Art — Memphis Postmodernism (Orange & Cobalt)</option>
-<option value="style_09_vintage_maritime_cartography.html">09. Hải Đồ Thám Hiểm Hàng Hải — Maritime Expedition (Cobalt Ocean & Orange)</option>
-<option value="style_10_terminal_crt_green_phosphor.html">10. Màn Hình CRT Terminal Cobalt — Hacker CLI Terminal (Cobalt & Orange Phosphor)</option>
-<option value="style_11_scandinavian_botanical_warmth.html">11. Bắc Âu Hữu Cơ & Hygge Ấm Áp — Nordic Warmth Hygge (Cobalt & Warm Orange)</option>
-<option value="style_12_mondrian_de_stijl.html">12. Tân Tạo Hình Piet Mondrian 1917 — De Stijl Grid (Cobalt & Orange Brand Blocks)</option>
-<option value="style_13_y2k_liquid_chrome_cyber.html">13. Y2K Kim Loại Lỏng Millennium — Y2K Liquid Chrome (Cobalt Blue & Neon Orange)</option>
-<option value="style_14_comic_hero_action_panels.html">14. Truyện Tranh Biệt Đội Pop Action — Graphic Novel Action (Orange & Cobalt Panels)</option>
-<option value="style_15_dark_academia_chiaroscuro.html">15. Hàn Lâm Tri Thức Chiaroscuro — Dark Academia (Deep Cobalt & Amber Orange)</option>
-<option value="style_16_swiss_international_grid.html">16. Lưới Thụy Sĩ Quốc Tế Chuẩn Mực — Swiss International Typographic (Orange & Cobalt)</option>
-<option value="style_17_industrial_teenage_engineering.html">17. Cơ Khí Teenage Engineering Hi-Fi — Industrial Mechanical (Orange Dial & Cobalt Shell)</option>
-<option value="style_18_military_combat_topo_map.html">18. Bản Đồ Tác Chiến Dã Chiến Quân Sự — Topographic Tactical Map (Cobalt Grid & Orange Ops)</option>
-<option value="style_19_neo_baroque_diplomatic_decree.html">19. Chiếu Chỉ Hoàng Gia Ngoại Giao — Neo-Baroque Royal Decree (Imperial Cobalt & Orange)</option>
-<option value="style_20_visionos_spatial_glass_3d.html">20. Giao Diện Không Gian VisionOS 3D — Spatial Glass 3D (Cobalt Aura & Neon Orange)</option>
 
+    <div class="hub-controls">
+      <div class="search-input-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Tìm theo tên, phong cách..." oninput="handleSearch(this.value)">
+      </div>
+
+      <select class="hub-select" id="quick-select" onchange="switchSlide(this.value)">
+        <!-- Populated via JS -->
       </select>
-      <button class="hub-btn" onclick="openCurrentSlideInNewTab()">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở File Độc Lập
-      </button>
-      <button class="hub-btn" onclick="toggleFullscreen()">
-        <i class="fa-solid fa-expand"></i> Phóng To (F)
-      </button>
+
+      <a id="btn-fullscreen" href="#" target="_blank" class="btn-action btn-primary" title="Mở slide độc lập toàn màn hình">
+        <i class="fa-solid fa-up-right-from-square"></i> Mở Toàn Màn Hình
+      </a>
     </div>
   </header>
 
-  <!-- Horizontal Scroll Tabs -->
-  <nav class="tabs-nav" id="tabsNav">
-    <button class="style-tab active" onclick="switchSlide('style_01_japanese_wabi_sabi.html', 0)" id="tab-0">01. Thiền & Wabi-Sabi Á Đông</button>
-<button class="style-tab " onclick="switchSlide('style_02_art_deco_luxury_gold.html', 1)" id="tab-1">02. Art Deco Hoàng Gia 1920s</button>
-<button class="style-tab " onclick="switchSlide('style_03_nasa_apollo_flight_manual.html', 2)" id="tab-2">03. Sổ Tay Kỹ Thuật NASA 1969</button>
-<button class="style-tab " onclick="switchSlide('style_04_retro_synthwave_80s.html', 3)" id="tab-3">04. Thập Niên 80 Synthwave Cyber</button>
-<button class="style-tab " onclick="switchSlide('style_05_blueprint_cad_drafting.html', 4)" id="tab-4">05. Bản Vẽ Kỹ Thuật CAD Xanh & Cam</button>
-<button class="style-tab " onclick="switchSlide('style_06_constructivism_avant_garde.html', 5)" id="tab-5">06. Chủ Nghĩa Kiến Tạo 1920s</button>
-<button class="style-tab " onclick="switchSlide('style_07_monochrome_gallery_vogue.html', 6)" id="tab-6">07. Tạp Chí Nghệ Thuật High-Fashion</button>
-<button class="style-tab " onclick="switchSlide('style_08_memphis_milano_pop_art.html', 7)" id="tab-7">08. Trường Phái Memphis Pop Art</button>
-<button class="style-tab " onclick="switchSlide('style_09_vintage_maritime_cartography.html', 8)" id="tab-8">09. Hải Đồ Thám Hiểm Hàng Hải</button>
-<button class="style-tab " onclick="switchSlide('style_10_terminal_crt_green_phosphor.html', 9)" id="tab-9">10. Màn Hình CRT Terminal Cobalt</button>
-<button class="style-tab " onclick="switchSlide('style_11_scandinavian_botanical_warmth.html', 10)" id="tab-10">11. Bắc Âu Hữu Cơ & Hygge Ấm Áp</button>
-<button class="style-tab " onclick="switchSlide('style_12_mondrian_de_stijl.html', 11)" id="tab-11">12. Tân Tạo Hình Piet Mondrian 1917</button>
-<button class="style-tab " onclick="switchSlide('style_13_y2k_liquid_chrome_cyber.html', 12)" id="tab-12">13. Y2K Kim Loại Lỏng Millennium</button>
-<button class="style-tab " onclick="switchSlide('style_14_comic_hero_action_panels.html', 13)" id="tab-13">14. Truyện Tranh Biệt Đội Pop Action</button>
-<button class="style-tab " onclick="switchSlide('style_15_dark_academia_chiaroscuro.html', 14)" id="tab-14">15. Hàn Lâm Tri Thức Chiaroscuro</button>
-<button class="style-tab " onclick="switchSlide('style_16_swiss_international_grid.html', 15)" id="tab-15">16. Lưới Thụy Sĩ Quốc Tế Chuẩn Mực</button>
-<button class="style-tab " onclick="switchSlide('style_17_industrial_teenage_engineering.html', 16)" id="tab-16">17. Cơ Khí Teenage Engineering Hi-Fi</button>
-<button class="style-tab " onclick="switchSlide('style_18_military_combat_topo_map.html', 17)" id="tab-17">18. Bản Đồ Tác Chiến Dã Chiến Quân Sự</button>
-<button class="style-tab " onclick="switchSlide('style_19_neo_baroque_diplomatic_decree.html', 18)" id="tab-18">19. Chiếu Chỉ Hoàng Gia Ngoại Giao</button>
-<button class="style-tab " onclick="switchSlide('style_20_visionos_spatial_glass_3d.html', 19)" id="tab-19">20. Giao Diện Không Gian VisionOS 3D</button>
+  <!-- Category Nav Bar -->
+  <div class="cat-nav">
+    <div class="cat-pills">
+      <button class="cat-pill active" onclick="filterCategory('all', this)">
+        <i class="fa-solid fa-layer-group"></i> Tất Cả <span class="count">65</span>
+      </button>
+      <button class="cat-pill" onclick="filterCategory('diverse', this)">
+        <i class="fa-solid fa-palette"></i> Nghệ Thuật Triết Lý <span class="count">20</span>
+      </button>
+      <button class="cat-pill" onclick="filterCategory('creative', this)">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> Ý Tưởng Cực Đoan <span class="count">5</span>
+      </button>
+      <button class="cat-pill" onclick="filterCategory('modern', this)">
+        <i class="fa-solid fa-laptop-code"></i> Hiện Đại & Tối Giản <span class="count">20</span>
+      </button>
+      <button class="cat-pill" onclick="filterCategory('archetype', this)">
+        <i class="fa-solid fa-shapes"></i> Khung Kiến Trúc Macro <span class="count">20</span>
+      </button>
+    </div>
 
-  </nav>
+    <div class="nav-arrow-group">
+      <span id="slide-counter" style="font-size: 12px; font-weight: 700; color: #94A3B8; margin-right: 8px;">1 / 65</span>
+      <button class="btn-nav-arrow" onclick="prevSlide()" title="Slide Trước (Phím Mũi Tên Trái)"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="btn-nav-arrow" onclick="nextSlide()" title="Slide Sau (Phím Mũi Tên Phải)"><i class="fa-solid fa-chevron-right"></i></button>
+      <button class="btn-nav-arrow" onclick="reloadSlide()" title="Tải lại slide hiện tại"><i class="fa-solid fa-rotate-right"></i></button>
+    </div>
+  </div>
 
-  <!-- Stage Viewport with Iframe -->
-  <main id="viewport">
-    <iframe id="slide-frame" src="style_01_japanese_wabi_sabi.html"></iframe>
+  <!-- Master Main Showcase -->
+  <main class="hub-main">
+    <!-- Left Sidebar: Catalog -->
+    <aside class="hub-sidebar">
+      <div class="sidebar-header">
+        <span>Danh Mục Slide (<span id="visible-count">65</span> Mẫu)</span>
+        <span style="font-size: 11px; color: var(--brand-orange);"><i class="fa-solid fa-bolt"></i> 100% Vector Sharp</span>
+      </div>
+      <div class="template-list" id="template-list">
+        <!-- Rendered by JS -->
+      </div>
+    </aside>
+
+    <!-- Right Presentation Stage -->
+    <section class="hub-stage-container">
+      <div class="stage-info-bar">
+        <div class="stage-meta-title">
+          <span class="meta-name" id="display-name">01. Thiền & Wabi-Sabi Á Đông</span>
+          <span style="opacity: 0.3;">•</span>
+          <span class="meta-genre" id="display-genre">Asian Zen & Sumi Ink (Orange & Cobalt)</span>
+        </div>
+        <div class="meta-swatches" id="display-swatches">
+          <!-- Swatches rendered by JS -->
+        </div>
+      </div>
+
+      <div class="stage-canvas">
+        <div class="iframe-wrapper">
+          <iframe id="slide-preview" src="style_01_japanese_wabi_sabi.html" title="Slide Preview"></iframe>
+        </div>
+      </div>
+
+      <div class="stage-footer">
+        <div class="stage-desc">
+          <i class="fa-solid fa-circle-info"></i>
+          <span id="display-desc">Tĩnh tại, mộc mạc với vòng tròn Thiền Ensō lam cobalt, triện son Cam Đại Nam, nét chữ Noto Serif JP thanh thoát và khoảng trắng cân bằng.</span>
+        </div>
+        <div>
+          <span style="font-size: 11px; color: #64748B;">Điều hướng: Phím <kbd style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:3px;">←</kbd> <kbd style="background:rgba(255,255,255,0.1); padding:2px 5px; border-radius:3px;">→</kbd></span>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- Bottom Details Bar -->
-  <footer class="hub-footer">
-    <div class="footer-left">
-      <div class="style-title-current" id="currentStyleName">01. Thiền & Wabi-Sabi Á Đông</div>
-      <div class="style-genre-badge" id="currentGenre">Asian Zen & Sumi Ink</div>
-      <div class="swatches-box" id="currentSwatches"></div>
-      <div class="style-desc-current" id="currentDesc">Tĩnh tại, mộc mạc với vòng tròn Thiền Ensō, triện son đỏ Hanko...</div>
-    </div>
-    <div class="footer-nav">
-      <button class="hub-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i> Trước</button>
-      <div class="counter-pill" id="counterPill">01 / 20</div>
-      <button class="hub-btn" onclick="nextSlide()">Sau <i class="fa-solid fa-chevron-right"></i></button>
-    </div>
-  </footer>
-
   <script>
-    const STYLES = [
+    const templates = [
       {
-      file: "style_01_japanese_wabi_sabi.html",
-      name: "01. Thiền & Wabi-Sabi Á Đông",
-      genre: "Asian Zen & Sumi Ink (Orange/Cobalt)",
+      id: "style_01_japanese_wabi_sabi.html",
+      num: "01",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Thiền & Wabi-Sabi Á Đông",
+      genre: "Asian Zen & Sumi Ink (Orange & Cobalt)",
       desc: "Tĩnh tại, mộc mạc với vòng tròn Thiền Ensō lam cobalt, triện son Cam Đại Nam, nét chữ Noto Serif JP thanh thoát và khoảng trắng cân bằng.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #00224F;" title="#00224F"></span>'
     },
     {
-      file: "style_02_art_deco_luxury_gold.html",
-      name: "02. Art Deco Hoàng Gia 1920s",
+      id: "style_02_art_deco_luxury_gold.html",
+      num: "02",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Art Deco Hoàng Gia 1920s",
       genre: "Roaring 20s Luxury (Cobalt & Orange Gold)",
       desc: "Xanh cobalt sâu phối cam hoàng gia ánh kim, góc vát Ziggurat, hoa văn tia nắng mặt trời và font Cinzel Decorative quý phái.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #02122B;" title="#02122B"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
     },
     {
-      file: "style_03_nasa_apollo_flight_manual.html",
-      name: "03. Sổ Tay Kỹ Thuật NASA 1969",
+      id: "style_03_nasa_apollo_flight_manual.html",
+      num: "03",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Sổ Tay Kỹ Thuật NASA 1969",
       genre: "Apollo Flight Manual Spec (Cam/Cobalt)",
       desc: "Giấy kỹ thuật sáng, đường gióng xanh cobalt, con dấu cam DNU 'FLIGHT APPROVED', font Space Mono và hệ thống telemetry.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F4F7FB;" title="#F4F7FB"></span><span class="swatch" style="background: #001D45;" title="#001D45"></span>'
     },
     {
-      file: "style_04_retro_synthwave_80s.html",
-      name: "04. Thập Niên 80 Synthwave Cyber",
+      id: "style_04_retro_synthwave_80s.html",
+      num: "04",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Thập Niên 80 Synthwave Cyber",
       genre: "Retro Cyber Outrun (Cobalt & Orange Glow)",
       desc: "Lưới 3D perspective xanh cobalt lướt về chân trời cam rực rỡ, ánh hào quang neon kép, font Orbitron cơ bắp.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #0052CC;" title="#0052CC"></span><span class="swatch" style="background: #020B1A;" title="#020B1A"></span><span class="swatch" style="background: #FFB366;" title="#FFB366"></span>'
     },
     {
-      file: "style_05_blueprint_cad_drafting.html",
-      name: "05. Bản Vẽ Kỹ Thuật CAD Xanh & Cam",
+      id: "style_05_blueprint_cad_drafting.html",
+      num: "05",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Bản Vẽ Kỹ Thuật CAD Xanh & Cam",
       genre: "Architectural Blueprint CAD (Cobalt & Orange)",
       desc: "Nền xanh cobalt giấy can kỹ thuật, đường lưới kích thước CAD trắng/cam đo lường, bảng Title Block chuẩn kiến trúc sư.",
       swatches: '<span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #00193D;" title="#00193D"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
     },
     {
-      file: "style_06_constructivism_avant_garde.html",
-      name: "06. Chủ Nghĩa Kiến Tạo 1920s",
+      id: "style_06_constructivism_avant_garde.html",
+      num: "06",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Chủ Nghĩa Kiến Tạo 1920s",
       genre: "Avant-Garde Constructivism (Orange & Cobalt)",
       desc: "Đường chéo 25° xé toạc không gian theo phong cách Rodchenko, tương phản xanh cobalt và cam rực lửa, font Bebas Neue mạnh mẽ.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #002B66;" title="#002B66"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span>'
     },
     {
-      file: "style_07_monochrome_gallery_vogue.html",
-      name: "07. Tạp Chí Nghệ Thuật High-Fashion",
+      id: "style_07_monochrome_gallery_vogue.html",
+      num: "07",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Tạp Chí Nghệ Thuật High-Fashion",
       genre: "Gallery Magazine (Cobalt & Orange Accent)",
       desc: "Xanh cobalt quý phái điểm xuyết cam Đại Nam, khoảng trắng 65% sang trọng, thẻ Placard bảo tàng và font Playfair lãng mạn.",
       swatches: '<span class="swatch" style="background: #002B66;" title="#002B66"></span><span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #F1F5F9;" title="#F1F5F9"></span>'
     },
     {
-      file: "style_08_memphis_milano_pop_art.html",
-      name: "08. Trường Phái Memphis Pop Art",
+      id: "style_08_memphis_milano_pop_art.html",
+      num: "08",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Trường Phái Memphis Pop Art",
       genre: "Memphis Postmodernism (Orange & Cobalt)",
       desc: "Bùng nổ năng lượng tương phản cam - xanh cobalt với họa tiết doodle, chấm bi bi-văng, hình khối 3D và bóng đổ phẳng 8px.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFF9F2;" title="#FFF9F2"></span><span class="swatch" style="background: #001F4D;" title="#001F4D"></span>'
     },
     {
-      file: "style_09_vintage_maritime_cartography.html",
-      name: "09. Hải Đồ Thám Hiểm Hàng Hải",
+      id: "style_09_vintage_maritime_cartography.html",
+      num: "09",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Hải Đồ Thám Hiểm Hàng Hải",
       genre: "Maritime Expedition (Cobalt Ocean & Orange)",
       desc: "Hải đồ đại dương xanh cobalt phối chỉ hướng cam, hoa tiêu La bàn Compass Rose 16 hướng, tọa độ vĩ độ khắc viền.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F0F5FA;" title="#F0F5FA"></span><span class="swatch" style="background: #00224F;" title="#00224F"></span>'
     },
     {
-      file: "style_10_terminal_crt_green_phosphor.html",
-      name: "10. Màn Hình CRT Terminal Cobalt",
+      id: "style_10_terminal_crt_green_phosphor.html",
+      num: "10",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Màn Hình CRT Terminal Cobalt",
       genre: "Hacker CLI Terminal (Cobalt & Orange Phosphor)",
       desc: "Ống phóng điện tử CRT cổ điển với vạch quét Scanlines, ánh xanh cobalt huỳnh quang và cam phosphor, lệnh Linux Shell.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #010C1A;" title="#010C1A"></span><span class="swatch" style="background: #60A5FA;" title="#60A5FA"></span>'
     },
     {
-      file: "style_11_scandinavian_botanical_warmth.html",
-      name: "11. Bắc Âu Hữu Cơ & Hygge Ấm Áp",
+      id: "style_11_scandinavian_botanical_warmth.html",
+      num: "11",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Bắc Âu Hữu Cơ & Hygge Ấm Áp",
       genre: "Nordic Warmth Hygge (Cobalt & Warm Orange)",
       desc: "Nền giấy be sáng thanh lịch, điểm nhấn xanh cobalt thâm trầm và cam đất ấm áp, đường cong bo góc mềm mại thư thái.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #00224F;" title="#00224F"></span>'
     },
     {
-      file: "style_12_mondrian_de_stijl.html",
-      name: "12. Tân Tạo Hình Piet Mondrian 1917",
+      id: "style_12_mondrian_de_stijl.html",
+      num: "12",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Tân Tạo Hình Piet Mondrian 1917",
       genre: "De Stijl Grid (Cobalt & Orange Brand Blocks)",
       desc: "Lưới thanh dầm đen xanh cobalt dày 12px chia các khối màu nguyên bản (Cam Đại Nam, Xanh Cobalt, Trắng tuyết) bất đối xứng.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020B1A;" title="#020B1A"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
     },
     {
-      file: "style_13_y2k_liquid_chrome_cyber.html",
-      name: "13. Y2K Kim Loại Lỏng Millennium",
+      id: "style_13_y2k_liquid_chrome_cyber.html",
+      num: "13",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Y2K Kim Loại Lỏng Millennium",
       genre: "Y2K Liquid Chrome (Cobalt Blue & Neon Orange)",
       desc: "Ngôi sao 4 cánh Starburst cam neon, viền kim loại lỏng chrome xanh cobalt phát quang và phong cách công nghệ năm 2000.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #0052CC;" title="#0052CC"></span><span class="swatch" style="background: #020D20;" title="#020D20"></span><span class="swatch" style="background: #38BDF8;" title="#38BDF8"></span>'
     },
     {
-      file: "style_14_comic_hero_action_panels.html",
-      name: "14. Truyện Tranh Biệt Đội Pop Action",
+      id: "style_14_comic_hero_action_panels.html",
+      num: "14",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Truyện Tranh Biệt Đội Pop Action",
       genre: "Graphic Novel Action (Orange & Cobalt Panels)",
       desc: "Chấm bi halftone cam/cobalt, bóng thoại nhọn Speech Bubble, khung tranh xéo nghiêng hành động và font Bangers siêu ấn tượng.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFF9F2;" title="#FFF9F2"></span><span class="swatch" style="background: #001B3D;" title="#001B3D"></span>'
     },
     {
-      file: "style_15_dark_academia_chiaroscuro.html",
-      name: "15. Hàn Lâm Tri Thức Chiaroscuro",
+      id: "style_15_dark_academia_chiaroscuro.html",
+      num: "15",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Hàn Lâm Tri Thức Chiaroscuro",
       genre: "Dark Academia (Deep Cobalt & Amber Orange)",
       desc: "Vệt sáng chiaroscuro chiếu rọi từ màn đêm xanh cobalt, sắc cam hoàng kim cổ điển, không khí trang nghiêm của viện hàn lâm.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #010D1F;" title="#010D1F"></span><span class="swatch" style="background: #E0EAFF;" title="#E0EAFF"></span>'
     },
     {
-      file: "style_16_swiss_international_grid.html",
-      name: "16. Lưới Thụy Sĩ Quốc Tế Chuẩn Mực",
+      id: "style_16_swiss_international_grid.html",
+      num: "16",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Lưới Thụy Sĩ Quốc Tế Chuẩn Mực",
       genre: "Swiss International Typographic (Orange & Cobalt)",
       desc: "Lưới 12 cột toán học của Josef Müller-Brockmann, số thứ tự khổng lồ 100px màu cam làm neo thị giác, cấu trúc xanh cobalt chuẩn mực.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #001D45;" title="#001D45"></span>'
     },
     {
-      file: "style_17_industrial_teenage_engineering.html",
-      name: "17. Cơ Khí Teenage Engineering Hi-Fi",
+      id: "style_17_industrial_teenage_engineering.html",
+      num: "17",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Cơ Khí Teenage Engineering Hi-Fi",
       genre: "Industrial Mechanical (Orange Dial & Cobalt Shell)",
       desc: "Thẩm mỹ vỏ máy xám đá Thụy Điển, lỗ đột CNC dập nổi, cam cơ khí & xanh cobalt kỹ thuật nổi bật, font Space Mono.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #EDF2F7;" title="#EDF2F7"></span><span class="swatch" style="background: #00224F;" title="#00224F"></span>'
     },
     {
-      file: "style_18_military_combat_topo_map.html",
-      name: "18. Bản Đồ Tác Chiến Dã Chiến Quân Sự",
+      id: "style_18_military_combat_topo_map.html",
+      num: "18",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Bản Đồ Tác Chiến Dã Chiến Quân Sự",
       genre: "Topographic Tactical Map (Cobalt Grid & Orange Ops)",
       desc: "Đường đồng mức địa hình cao độ xanh cobalt dã chiến, lưới tọa độ quân sự UTM, điểm chỉ huy cam chiến thuật và font Black Ops One.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #02122B;" title="#02122B"></span><span class="swatch" style="background: #60A5FA;" title="#60A5FA"></span>'
     },
     {
-      file: "style_19_neo_baroque_diplomatic_decree.html",
-      name: "19. Chiếu Chỉ Hoàng Gia Ngoại Giao",
+      id: "style_19_neo_baroque_diplomatic_decree.html",
+      num: "19",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Chiếu Chỉ Hoàng Gia Ngoại Giao",
       genre: "Neo-Baroque Royal Decree (Imperial Cobalt & Orange)",
       desc: "Sắc lam cobalt vương triều phối cam ánh kim quý phái, đường diềm cung đình chạm khắc, hoa văn Baroque góc slide uy nghiêm trường tồn.",
       swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #001E47;" title="#001E47"></span><span class="swatch" style="background: #FFEBD6;" title="#FFEBD6"></span>'
     },
     {
-      file: "style_20_visionos_spatial_glass_3d.html",
-      name: "20. Giao Diện Không Gian VisionOS 3D",
+      id: "style_20_visionos_spatial_glass_3d.html",
+      num: "20",
+      cat: "diverse",
+      cat_badge: "Nghệ Thuật",
+      name: "Giao Diện Không Gian VisionOS 3D",
       genre: "Spatial Glass 3D (Cobalt Aura & Neon Orange)",
       desc: "Kính mờ frosted glass blur 40px lơ lửng đa tầng, ánh sáng cực quang xanh cobalt và cam huỳnh quang huyền ảo, giao diện tương lai.",
       swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #0052CC;" title="#0052CC"></span><span class="swatch" style="background: #020E24;" title="#020E24"></span><span class="swatch" style="background: #93C5FD;" title="#93C5FD"></span>'
+    },
+    {
+      id: "creative_01_cyber_hologram_hud.html",
+      num: "21",
+      cat: "creative",
+      cat_badge: "Cực Đoan",
+      name: "Phòng Tác Chiến Hologram HUD War Room",
+      genre: "Cyber Hologram HUD (Sci-Fi Radar War Room)",
+      desc: "Radar quét mạng lưới 360°, tọa độ vệ tinh quân sự, thông số telemetry thời gian thực và giao diện tương lai như buồng lái chỉ huy.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #030A16;" title="#030A16"></span><span class="swatch" style="background: #38BDF8;" title="#38BDF8"></span>'
+    },
+    {
+      id: "creative_02_vintage_broadsheet_newspaper.html",
+      num: "22",
+      cat: "creative",
+      cat_badge: "Cực Đoan",
+      name: "Trang Nhất Nhật Báo Lịch Sử 1945",
+      genre: "Historic Broadsheet Newspaper (Cobalt & Orange Stamp)",
+      desc: "Dàn trang 4 cột báo in cổ điển, font Playfair Display hoa mỹ, triện son Cam Đại Nam 'BẢN TIN ĐẶC BIỆT' và hình khắc gỗ lịch sử.",
+      swatches: '<span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #F4EBD9;" title="#F4EBD9"></span><span class="swatch" style="background: #1E293B;" title="#1E293B"></span>'
+    },
+    {
+      id: "creative_03_vision_frosted_aurora.html",
+      num: "23",
+      cat: "creative",
+      cat_badge: "Cực Đoan",
+      name: "Kính Mờ Cực Quang VisionOS Spatial",
+      genre: "Frosted Glass Aurora (Spatial Computing 3D Cards)",
+      desc: "Lớp kính khúc xạ mờ đục cao cấp, ánh hào quang cực quang cam - cobalt huyền ảo, các thẻ tương tác 3D với depth of field điện ảnh.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020C1E;" title="#020C1E"></span><span class="swatch" style="background: #60A5FA;" title="#60A5FA"></span>'
+    },
+    {
+      id: "creative_04_top_secret_military_dossier.html",
+      num: "24",
+      cat: "creative",
+      cat_badge: "Cực Đoan",
+      name: "Hồ Sơ Mật Tuyệt Mật Giải Mật Bộ Quốc Phòng",
+      genre: "Top-Secret Declassified Dossier (Cobalt & Orange Tape)",
+      desc: "Tập hồ sơ dã chiến kẹp giấy ghim kim loại, dấu triện 'GIẢI MẬT' đỏ cam, băng niêm phong an ninh và font máy đánh chữ cổ điển.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #002B66;" title="#002B66"></span><span class="swatch" style="background: #EFE6D5;" title="#EFE6D5"></span><span class="swatch" style="background: #0F172A;" title="#0F172A"></span>'
+    },
+    {
+      id: "creative_05_neo_brutalist_bold_poster.html",
+      num: "25",
+      cat: "creative",
+      cat_badge: "Cực Đoan",
+      name: "Áp Phích Nghệ Thuật Neo-Brutalist Táo Bạo",
+      genre: "Neo-Brutalist Bold Poster (Ultra Contrast & Raw Grid)",
+      desc: "Đường viền đen dày 4px đập thẳng vào mắt, bóng đổ cứng góc 45 độ, kiểu chữ khổng lồ sắc nét và bảng màu tương phản mạnh bùng nổ.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #002B66;" title="#002B66"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #000000;" title="#000000"></span>'
+    },
+    {
+      id: "modern_01_linear_dark.html",
+      num: "26",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Khối Trụ Đen Tối Giản The Monolith",
+      genre: "Minimalist Dark Monolith (Linear UI & Orange Glow)",
+      desc: "Thanh điều hướng nổi elip bo tròn hoàn hảo, bố cục 3 trục kết nối chỉ huy, nền gradient tối sâu hút và ánh neon cam chỉ dẫn.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #0F172A;" title="#0F172A"></span><span class="swatch" style="background: #030712;" title="#030712"></span><span class="swatch" style="background: #94A3B8;" title="#94A3B8"></span>'
+    },
+    {
+      id: "modern_02_stripe_gradient.html",
+      num: "27",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Điện Ảnh Toàn Khung Full-Bleed",
+      genre: "Full-Bleed Cinematic Gradient (FinTech Precision)",
+      desc: "Ảnh nền toàn khổ phủ gradient chuyển sắc mượt mà, typography tương phản cao cực nét và các thẻ nổi bọc kính.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #0A192F;" title="#0A192F"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "modern_03_swiss_grid.html",
+      num: "28",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Lưới Bento Bất Đối Xứng Asymmetric",
+      genre: "Asymmetric Bento Grid (Modern Swiss Typography)",
+      desc: "Phân chia không gian khoa học theo phong cách Bento Box của Apple, lưới bố cục bất đối xứng nhưng tối ưu thị giác tuyệt đối.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span>'
+    },
+    {
+      id: "modern_04_floating_glass_bento.html",
+      num: "29",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Ba Cột Kính Nổi Triple Floating Pillars",
+      genre: "Layered Floating Frosted Glass (Depth UI)",
+      desc: "Ba thẻ kính mờ lơ lửng với viền phản quang phát sáng, gradient chuyển màu cam sang xanh cobalt tạo chiều sâu không gian 3 chiều.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #050C1A;" title="#050C1A"></span><span class="swatch" style="background: #E2E8F0;" title="#E2E8F0"></span>'
+    },
+    {
+      id: "modern_05_industrial_hifi.html",
+      num: "30",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Độ Chính Xác Kỹ Thuật Số Hi-Fi",
+      genre: "Precision High-Fidelity Tech (Studio Audio Console)",
+      desc: "Lấy cảm hứng từ bảng điều khiển âm thanh Hi-Fi và thiết bị phòng thu cao cấp, các thông số kỹ thuật được căn gióng từng pixel.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #111827;" title="#111827"></span><span class="swatch" style="background: #E5E7EB;" title="#E5E7EB"></span>'
+    },
+    {
+      id: "modern_06_monochrome_editorial.html",
+      num: "31",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Tạp Chí Đơn Sắc Sang Trọng Editorial",
+      genre: "Ultra-Clean Monochrome Editorial (Haute Couture)",
+      desc: "Khoảng trắng tinh khiết, kiểu chữ thanh mảnh kiêu kỳ, điểm nhấn màu cam Đại Nam tinh tế trên nền xanh cobalt thâm trầm.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F9FAFB;" title="#F9FAFB"></span><span class="swatch" style="background: #111827;" title="#111827"></span>'
+    },
+    {
+      id: "modern_07_gradient_mesh.html",
+      num: "32",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Giao Diện Dòng Lệnh Terminal Cyber",
+      genre: "Cyber Command Line Terminal (Hacker Matrix)",
+      desc: "Mô phỏng bảng điều khiển trung tâm tác chiến với mã hóa dòng lệnh thời gian thực, đèn trạng thái nhấp nháy và đồ họa radar.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020817;" title="#020817"></span><span class="swatch" style="background: #38BDF8;" title="#38BDF8"></span>'
+    },
+    {
+      id: "modern_08_bauhaus_geometric.html",
+      num: "33",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Cân Bằng Hình Học Bauhaus Geometric",
+      genre: "Constructive Bauhaus Geometry (Form Follows Function)",
+      desc: "Tập hợp các khối hình học cơ bản (tam giác, hình tròn, chữ nhật) tạo nên một cấu trúc thị giác vững chắc, hiện đại và cân đối.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #0F172A;" title="#0F172A"></span>'
+    },
+    {
+      id: "modern_09_nordic_warm.html",
+      num: "34",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Tối Giản Ấm Áp Bắc Âu Nordic Warm",
+      genre: "Organic Minimalist Nordic (Scandi Cozy Simplicity)",
+      desc: "Sắc thái ấm áp của gỗ sồi và nắng sớm, bố cục nhẹ nhàng thư thái phù hợp với các nội dung mang tính nhân văn và giáo dục.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FAF8F5;" title="#FAF8F5"></span><span class="swatch" style="background: #1E293B;" title="#1E293B"></span>'
+    },
+    {
+      id: "modern_10_dark_bento_matrix.html",
+      num: "35",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Buồng Lái Hàng Không Cockpit HUD",
+      genre: "Flight Avionics Telemetry (Fighter Cockpit Display)",
+      desc: "Đường chân trời nhân tạo, la bàn hướng bay, chỉ số lực đẩy phản lực và hệ thống ngắm bắn hỏa lực chuẩn hóa theo tiêm kích Su-30MK2.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #030A18;" title="#030A18"></span><span class="swatch" style="background: #7DD3FC;" title="#7DD3FC"></span>'
+    },
+    {
+      id: "modern_11_ribbon_diagonal.html",
+      num: "36",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Đường Cắt Đa Giác Động Dynamic Polygon",
+      genre: "Angular Diagonal Slice (Motion & Velocity)",
+      desc: "Các lát cắt chéo 15 độ tạo cảm giác chuyển động tốc độ cao, phân chia slide thành các vùng thông tin độc lập sắc bén.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #002B66;" title="#002B66"></span><span class="swatch" style="background: #090D16;" title="#090D16"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "modern_12_product_spotlight.html",
+      num: "37",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Tiêu Điểm Sản Phẩm Product Spotlight",
+      genre: "Keynote Hardware Spotlight (Apple Keynote Style)",
+      desc: "Vầng sáng hội tụ trung tâm chiếu thẳng vào chủ thể chính, văn bản giải thích phụ trợ tinh giản tuyệt đối để tôn vinh hiện vật.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #000000;" title="#000000"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "modern_13_layered_glass_stack.html",
+      num: "38",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Ngăn Thẻ Kính Xếp Chồng 3D Stack",
+      genre: "3D Rotated Glass Layer Stack (Card Deck Depth)",
+      desc: "Xếp chồng thẻ bài 3D có độ nghiêng perspective và đổ bóng động, thể hiện sự phát triển theo từng giai đoạn liên tiếp.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #0A1124;" title="#0A1124"></span><span class="swatch" style="background: #94A3B8;" title="#94A3B8"></span>'
+    },
+    {
+      id: "modern_14_cyber_lab_mono.html",
+      num: "39",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Bản Vẽ Kỹ Thuật Technical CAD Blueprint",
+      genre: "Blueprint Monospace Lab (Engineering Precision)",
+      desc: "Lưới tọa độ milimet, các chú thích đo đạc mũi tên cơ khí chính xác, mã hiệu tiêu chuẩn và bảng tra cứu quy chuẩn kỹ thuật.",
+      swatches: '<span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #010A1A;" title="#010A1A"></span><span class="swatch" style="background: #67E8F9;" title="#67E8F9"></span>'
+    },
+    {
+      id: "modern_15_split_contrast_duo.html",
+      num: "40",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Tương Phản Hai Nửa Màn Hình Split Duo",
+      genre: "Two-Tone High Contrast Split (Yin & Yang Contrast)",
+      desc: "Nửa trái sáng - nửa phải tối hoặc nửa cam Đại Nam - nửa lam Cobalt, so sánh trực quan đối lập hai thực thể hoặc hai giai đoạn lịch sử.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #020917;" title="#020917"></span>'
+    },
+    {
+      id: "modern_16_cinematic_panorama.html",
+      num: "41",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Toàn Cảnh Panorama Điện Ảnh 21:9",
+      genre: "Cinematic Ultrawide Vista (IMAX Letterbox View)",
+      desc: "Khung hình tỷ lệ điện ảnh 21:9 với viền đen letterbox trên dưới, tái hiện đại cảnh hùng vĩ của cuộc duyệt binh và khí tài quân sự.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #05070B;" title="#05070B"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "modern_17_big_metrics_clean.html",
+      num: "42",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Chỉ Số Thống Kê Lớn Mega Metrics",
+      genre: "Clean High-Impact Analytics (Executive Big Numbers)",
+      desc: "Con số thống kê kích thước khổng lồ 96px làm tâm điểm chú ý, đi kèm nhãn chú thích và thanh tiến trình phần trăm đạt mục tiêu.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #0F172A;" title="#0F172A"></span>'
+    },
+    {
+      id: "modern_18_borderless_whitespace.html",
+      num: "43",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Khoảng Trắng Không Biên Giới Borderless",
+      genre: "Zen Pure Whitespace (Radical Simplicity)",
+      desc: "Loại bỏ hoàn toàn mọi đường viền hộp, để nội dung tự do hít thở trong không gian trắng khoáng đạt, mang lại cảm giác đẳng cấp tối thượng.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #334155;" title="#334155"></span>'
+    },
+    {
+      id: "modern_19_radial_concentric.html",
+      num: "44",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Mạng Lưới Quỹ Đạo Tâm Điểm Radial Focus",
+      genre: "Concentric Network Orbits (Planetary Gravity System)",
+      desc: "Vòng tròn đồng tâm tỏa ra từ hạt nhân lãnh đạo trung tâm, kết nối các lực lượng vệ tinh quay xung quanh theo quỹ đạo hiệp đồng.",
+      swatches: '<span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #030816;" title="#030816"></span><span class="swatch" style="background: #93C5FD;" title="#93C5FD"></span>'
+    },
+    {
+      id: "modern_20_gridline_architect.html",
+      num: "45",
+      cat: "modern",
+      cat_badge: "Hiện Đại",
+      name: "Lưới Kiến Trúc Đường Nét Mảnh Gridline",
+      genre: "Fine Line Architectural Blueprint (Modular Construct)",
+      desc: "Các đường kẻ tóc mảnh mai 1px phân chia mô-đun chuẩn xác, kết hợp góc định vị dấu cộng thập tự của bản đồ vệ tinh quân sự.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #0A1120;" title="#0A1120"></span><span class="swatch" style="background: #CBD5E1;" title="#CBD5E1"></span>'
+    },
+    {
+      id: "template_01_hero_cover.html",
+      num: "46",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Trang Bìa Hero Cover Cao Cấp",
+      genre: "Macro Archetype 01: Master Title & Keynote Cover",
+      desc: "Slide mở đầu trọng thể cho bài giảng & báo cáo chiến lược, hiệu ứng ánh sáng gradient cobalt/cam, thương hiệu DNU nổi bật.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020B1A;" title="#020B1A"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_02_toc.html",
+      num: "47",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Mục Lục Tổng Quan Chương Trình",
+      genre: "Macro Archetype 02: Table of Contents & Agenda",
+      desc: "Bố cục chia 4 phần nội dung logic với mã số La Mã, thanh tiến trình trực quan giúp người học dễ dàng nắm bắt khung bài giảng.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #0A192F;" title="#0A192F"></span>'
+    },
+    {
+      id: "template_03_quote.html",
+      num: "48",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Trích Dẫn Lời Bác & Tuyên Ngôn Lãnh Đạo",
+      genre: "Macro Archetype 03: Executive Quote & Wisdom",
+      desc: "Dấu ngoặc kép khổng lồ phong cách nghệ thuật, typography trang trọng làm nổi bật lời căn dặn thiêng liêng của Chủ tịch Hồ Chí Minh.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #0A162B;" title="#0A162B"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_04_timeline.html",
+      num: "49",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Dòng Thời Gian Lịch Sử & Lộ Trình",
+      genre: "Macro Archetype 04: Chronological Roadmap & History",
+      desc: "Trục thời gian nằm ngang qua 4 mốc son chói lọi (1944, 1954, 1975, Ngày nay) với các mốc neon cam định vị trên nền cobalt.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #030A18;" title="#030A18"></span><span class="swatch" style="background: #E2E8F0;" title="#E2E8F0"></span>'
+    },
+    {
+      id: "template_05_three_pillars.html",
+      num: "50",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Ba Trụ Cột Chiến Lược Trọng Tâm",
+      genre: "Macro Archetype 05: Three Core Strategic Pillars",
+      desc: "Cấu trúc 3 cột phân định rõ ràng các mục tiêu: Chính Trị Tư Tưởng, Tổ Chức Lực Lượng, Kỷ Luật Kỹ Thuật Tác Chiến.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #02122B;" title="#02122B"></span>'
+    },
+    {
+      id: "template_06_hierarchy.html",
+      num: "51",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Sơ Đồ Cơ Cấu Tổ Chức & Chỉ Huy",
+      genre: "Macro Archetype 06: Command Structure & Hierarchy Tree",
+      desc: "Cây phân cấp chỉ huy từ Bộ Quốc Phòng -> Quân khu -> Sư đoàn -> Trung đoàn với đường gióng liên kết mạng lưới rõ ràng.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #040D1D;" title="#040D1D"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_07_matrix.html",
+      num: "52",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Ma Trận Phân Tích Chiến Lược 2x2",
+      genre: "Macro Archetype 07: 2x2 Decision Matrix & Quadrants",
+      desc: "Bốn góc phần tư phân loại theo mức độ đe dọa và khả năng ứng phó, công cụ ra quyết định chiến lược chuẩn mực.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #0A1F3D;" title="#0A1F3D"></span>'
+    },
+    {
+      id: "template_08_dual_contrast.html",
+      num: "53",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "So Sánh Đối Chiếu Song Song",
+      genre: "Macro Archetype 08: Dual Contrast Side-by-Side Analysis",
+      desc: "Bảng so sánh hai cột đối ứng trực diện: Quân đội Nhân dân vs Lực lượng thù địch hoặc Chiến tranh truyền thống vs Công nghệ cao.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020A16;" title="#020A16"></span><span class="swatch" style="background: #F1F5F9;" title="#F1F5F9"></span>'
+    },
+    {
+      id: "template_09_weapon_specs.html",
+      num: "54",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Thông Số Kỹ Thuật Khí Tài & Trang Bị",
+      genre: "Macro Archetype 09: Defense Equipment Technical Specs",
+      desc: "Hồ sơ thông số súng tiểu liên AK-47, tên lửa S-300 và tàu hộ vệ tên lửa Gepard 3.9 với thước đo kỹ thuật và bảng dữ liệu chuẩn.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #050F21;" title="#050F21"></span><span class="swatch" style="background: #38BDF8;" title="#38BDF8"></span>'
+    },
+    {
+      id: "template_10_cinematic.html",
+      num: "55",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Toàn Cảnh Điện Ảnh Toàn Khung",
+      genre: "Macro Archetype 10: Full-Frame Hero Cinematic",
+      desc: "Hình ảnh lực lượng vũ trang hùng tráng tràn viền, văn bản phủ mờ tinh xảo tạo cảm xúc tự hào và truyền cảm hứng mạnh mẽ.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020712;" title="#020712"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_11_process_flow.html",
+      num: "56",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Lưu Đồ Tiến Trình 4 Bước Chuẩn Hóa",
+      genre: "Macro Archetype 11: 4-Step Standardized Workflow",
+      desc: "Lưu đồ tuần tự: Chuẩn bị -> Cơ động -> Đột kích -> Củng cố trận địa, mũi tên chuyển động linh hoạt với số thứ tự phát sáng.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #0B192C;" title="#0B192C"></span>'
+    },
+    {
+      id: "template_12_qa_accordion.html",
+      num: "57",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Khối Hỏi Đáp & Giải Mã Tình Huống",
+      genre: "Macro Archetype 12: Interactive Q&A Accordion",
+      desc: "Bố cục câu hỏi thảo luận và lời giải chiến thuật, thiết kế mô-đun đóng mở thông minh phù hợp cho phần ôn tập và thảo luận nhóm.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #050E20;" title="#050E20"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_13_big_numbers.html",
+      num: "58",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Chỉ Số Dữ Liệu Lớn & Thống Kê",
+      genre: "Macro Archetype 13: Big Data High-Impact KPI Metrics",
+      desc: "Bộ 4 con số thống kê đột phá (100% Sẵn sàng, 0 Sai phạm, 5 Triệu chiến sĩ dự bị, 24/7 Cảnh giác) khắc sâu ấn tượng người xem.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020917;" title="#020917"></span><span class="swatch" style="background: #FF7A00;" title="#FF7A00"></span>'
+    },
+    {
+      id: "template_14_case_study.html",
+      num: "59",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Nghiên Cứu Tình Huống Thực Chiến",
+      genre: "Macro Archetype 14: Battlefield Tactical Case Study",
+      desc: "Bản phân tích tình huống thực chiến: Bối cảnh chiến dịch -> Diễn biến xung đột -> Quyết sách xử lý -> Bài học kinh nghiệm xương máu.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FAFBFD;" title="#FAFBFD"></span><span class="swatch" style="background: #0A1D3A;" title="#0A1D3A"></span>'
+    },
+    {
+      id: "template_15_joint_triangle.html",
+      num: "60",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Tam Giác Phối Hợp Tác Chiến",
+      genre: "Macro Archetype 15: Synergistic Defense Triangle",
+      desc: "Sơ đồ tam giác 3 đỉnh tương hỗ: Bộ đội chủ lực • Bộ đội địa phương • Dân quân tự vệ, thể hiện thế trận chiến tranh nhân dân bất bại.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #040B18;" title="#040B18"></span><span class="swatch" style="background: #E2E8F0;" title="#E2E8F0"></span>'
+    },
+    {
+      id: "template_16_guidelines.html",
+      num: "61",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Quy Chuẩn & Nguyên Tắc Khung Hành Động",
+      genre: "Macro Archetype 16: Operational Guidelines & Standards",
+      desc: "Hệ thống các quy tắc vàng trong học tập và rèn luyện quốc phòng: 10 lời thề danh dự, 12 điều kỷ luật khi quan hệ với nhân dân.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #F8FAFC;" title="#F8FAFC"></span><span class="swatch" style="background: #07172F;" title="#07172F"></span>'
+    },
+    {
+      id: "template_17_gallery.html",
+      num: "62",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Thư Viện Tư Liệu Hình Ảnh Thực Địa",
+      genre: "Macro Archetype 17: Multi-Angle Visual Evidence Gallery",
+      desc: "Bộ sưu tập 4 khung ảnh thực địa sắc nét, chú thích tọa độ và sự kiện lịch sử ghi dấu bước trưởng thành của Quân đội ta.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020710;" title="#020710"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
+    },
+    {
+      id: "template_18_legal_notice.html",
+      num: "63",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Khuyến Cáo Pháp Lý & Kỷ Luật Quân Sự",
+      genre: "Macro Archetype 18: Security & Regulatory Compliance",
+      desc: "Cảnh báo bảo mật thông tin, trách nhiệm công dân và pháp luật nhà nước về Quốc phòng An ninh, biểu tượng khiên bảo vệ uy nghiêm.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #0A1428;" title="#0A1428"></span><span class="swatch" style="background: #F1F5F9;" title="#F1F5F9"></span>'
+    },
+    {
+      id: "template_19_summary_checklist.html",
+      num: "64",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Bảng Tiêu Chí Tóm Tắt & Hành Động",
+      genre: "Macro Archetype 19: Executive Checklist & Milestones",
+      desc: "Danh sách kiểm tra 5 tiêu chí hành động cốt lõi cần hoàn thành trước khi kết thúc bài giảng, tích xanh xác nhận hoàn thành.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span><span class="swatch" style="background: #021229;" title="#021229"></span>'
+    },
+    {
+      id: "template_20_closing.html",
+      num: "65",
+      cat: "archetype",
+      cat_badge: "Kiến Trúc",
+      name: "Lời Kết & Thông Tin Liên Hệ Đào Tạo",
+      genre: "Macro Archetype 20: Concluding Remarks & Official Contacts",
+      desc: "Trang kết thúc ấn tượng sâu đậm: Lời cảm ơn, Slogan 'HỌC ĐỂ THAY ĐỔI', thông tin liên hệ Khoa GDQP-AN ĐH Đại Nam và mã QR học liệu.",
+      swatches: '<span class="swatch" style="background: #EA580C;" title="#EA580C"></span><span class="swatch" style="background: #003882;" title="#003882"></span><span class="swatch" style="background: #020917;" title="#020917"></span><span class="swatch" style="background: #FFFFFF;" title="#FFFFFF"></span>'
     }
     ];
 
-    let currentIndex = 0;
+    let currentIdx = 0;
+    let filteredTemplates = [...templates];
 
-    function updateFooter(idx) {
-      const s = STYLES[idx];
-      document.getElementById('currentStyleName').textContent = s.name;
-      document.getElementById('currentGenre').textContent = s.genre;
-      document.getElementById('currentDesc').textContent = s.desc;
-      document.getElementById('currentSwatches').innerHTML = s.swatches;
-      document.getElementById('counterPill').textContent = `${String(idx + 1).padStart(2, '0')} / 20`;
-      document.getElementById('styleSelect').value = s.file;
+    function init() {
+      renderList();
+      populateSelect();
+      loadSlide(0);
 
-      // Update active tab
-      document.querySelectorAll('.style-tab').forEach((t, i) => {
-        if (i === idx) {
-          t.classList.add('active');
-          t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } else {
-          t.classList.remove('active');
-        }
+      // Keyboard navigation
+      window.addEventListener('keydown', (e) => {
+        if (e.target.tagName === 'INPUT') return;
+        if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
+        if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
       });
     }
 
-    function switchSlide(filename, idx) {
-      if (idx === undefined) {
-        idx = STYLES.findIndex(s => s.file === filename);
-        if (idx === -1) idx = 0;
-      }
-      currentIndex = idx;
-      document.getElementById('slide-frame').src = filename;
-      updateFooter(idx);
+    function renderList() {
+      const container = document.getElementById('template-list');
+      container.innerHTML = '';
+      
+      filteredTemplates.forEach((t) => {
+        const globalIdx = templates.findIndex(item => item.id === t.id);
+        const isActive = globalIdx === currentIdx;
+        const card = document.createElement('div');
+        card.className = `card-item ${isActive ? 'active' : ''}`;
+        card.id = `card-${t.id}`;
+        card.onclick = () => switchSlide(t.id);
+
+        card.innerHTML = `
+          <div class="card-item-top">
+            <span class="card-item-num">MẪU ${t.num}</span>
+            <span class="card-item-badge badge-${t.cat}">${t.cat_badge}</span>
+          </div>
+          <div class="card-item-title">${t.name}</div>
+          <div class="card-item-genre">${t.genre}</div>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('visible-count').textContent = filteredTemplates.length;
     }
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + STYLES.length) % STYLES.length;
-      switchSlide(STYLES[currentIndex].file, currentIndex);
+    function populateSelect() {
+      const select = document.getElementById('quick-select');
+      select.innerHTML = '';
+      templates.forEach((t) => {
+        const opt = document.createElement('option');
+        opt.value = t.id;
+        opt.textContent = `${t.num}. [${t.cat_badge}] ${t.name}`;
+        select.appendChild(opt);
+      });
+    }
+
+    function switchSlide(id) {
+      const idx = templates.findIndex(t => t.id === id);
+      if (idx !== -1) {
+        loadSlide(idx);
+      }
+    }
+
+    function loadSlide(idx) {
+      if (idx < 0 || idx >= templates.length) return;
+      currentIdx = idx;
+      const t = templates[idx];
+
+      // Update iframe
+      const iframe = document.getElementById('slide-preview');
+      iframe.src = t.id;
+
+      // Update info
+      document.getElementById('display-name').textContent = `${t.num}. ${t.name}`;
+      document.getElementById('display-genre').textContent = t.genre;
+      document.getElementById('display-desc').textContent = t.desc;
+      document.getElementById('display-swatches').innerHTML = t.swatches;
+      document.getElementById('btn-fullscreen').href = t.id;
+      document.getElementById('quick-select').value = t.id;
+      document.getElementById('slide-counter').textContent = `${idx + 1} / ${templates.length}`;
+
+      // Update active cards
+      document.querySelectorAll('.card-item').forEach(c => c.classList.remove('active'));
+      const activeCard = document.getElementById(`card-${t.id}`);
+      if (activeCard) {
+        activeCard.classList.add('active');
+        activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     }
 
     function nextSlide() {
-      currentIndex = (currentIndex + 1) % STYLES.length;
-      switchSlide(STYLES[currentIndex].file, currentIndex);
+      const nextIdx = (currentIdx + 1) % templates.length;
+      loadSlide(nextIdx);
     }
 
-    function openCurrentSlideInNewTab() {
-      window.open(STYLES[currentIndex].file, '_blank');
+    function prevSlide() {
+      const prevIdx = (currentIdx - 1 + templates.length) % templates.length;
+      loadSlide(prevIdx);
     }
 
-    function toggleFullscreen() {
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(() => {});
+    function reloadSlide() {
+      const iframe = document.getElementById('slide-preview');
+      iframe.src = iframe.src;
+    }
+
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (cat === 'all') {
+        filteredTemplates = [...templates];
       } else {
-        if (document.exitFullscreen) document.exitFullscreen();
+        filteredTemplates = templates.filter(t => t.cat === cat);
       }
-    }
+      renderList();
 
-    // Keyboard navigation
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-        e.preventDefault(); nextSlide();
-      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-        e.preventDefault(); prevSlide();
-      } else if (e.key.toLowerCase() === 'f') {
-        e.preventDefault(); toggleFullscreen();
-      }
-    });
-
-    // Synchronize iframe scaling with parent container
-    function scaleFrame() {
-      try {
-        const frame = document.getElementById('slide-frame');
-        if (frame && frame.contentWindow && frame.contentWindow.updateStageScale) {
-          frame.contentWindow.updateStageScale();
+      // If current slide is not in filtered list, switch to first visible
+      if (filteredTemplates.length > 0) {
+        const isCurrentVisible = filteredTemplates.some(t => t.id === templates[currentIdx].id);
+        if (!isCurrentVisible) {
+          switchSlide(filteredTemplates[0].id);
         }
-      } catch (e) {}
+      }
     }
 
-    const slideFrameEl = document.getElementById('slide-frame');
-    slideFrameEl.addEventListener('load', () => {
-      scaleFrame();
-      setTimeout(scaleFrame, 60);
-      setTimeout(scaleFrame, 250);
-    });
-    window.addEventListener('resize', scaleFrame);
+    function handleSearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        filteredTemplates = [...templates];
+      } else {
+        filteredTemplates = templates.filter(t => 
+          t.name.toLowerCase().includes(q) ||
+          t.genre.toLowerCase().includes(q) ||
+          t.desc.toLowerCase().includes(q) ||
+          t.num.includes(q)
+        );
+      }
+      renderList();
+      if (filteredTemplates.length > 0) {
+        switchSlide(filteredTemplates[0].id);
+      }
+    }
 
-    // Initialize footer
-    window.addEventListener('DOMContentLoaded', () => {
-      updateFooter(0);
-      if (window.lucide) lucide.createIcons();
-      scaleFrame();
-    });
+    window.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>

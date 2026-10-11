@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14: Technical Blueprint CAD | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #00223A; color: #E0F2FE; }
+#slide-stage {position: absolute; background: #00223A; padding: 50px 70px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid #38BDF8; font-family: 'Space Mono', monospace;
+  background-image: 
+    linear-gradient(rgba(56,189,248,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,0.1) 1px, transparent 1px);
+  background-size: 30px 30px; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.blueprint-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px; flex: 1; align-items: center; margin: 20px 0;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #38BDF8; padding-bottom: 14px;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="height: 36px; filter: brightness(0) invert(1);">
+    <span style="color: #FF7A00; font-weight: 700; font-size: 18px;">[BLUEPRINT // HỌC ĐỂ THAY ĐỔI]</span>
+  </div>
+  <div style="font-size: 17px; color: #38BDF8;">CAD_DWG: S-300PMU1_AIR_DEFENSE // MẪU 14</div>
+</div>
+
+<div class="blueprint-split">
+  <div>
+    <div style="font-size: 15px; color: #7DD3FC;">DWG NO: BQP-AD-2026-C3</div>
+    <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 44px; font-weight: 900; color: #FFF; margin: 10px 0 16px 0;">
+      HỆ THỐNG TÊN LỬA S-300PMU1
+    </h2>
+    <p class="font-25" style="color: #BAE6FD; margin-bottom: 24px;">
+      Tổ hợp tên lửa phòng không tầm xa chiến lược: khả năng phát hiện đồng thời 100 mục tiêu, bám sát và tiêu diệt mục tiêu ở cự ly tới 150 km từ độ cao 10m đến 27.000m.
+    </p>
+
+    <div style="border: 1px dashed #38BDF8; padding: 20px; background: rgba(0,34,58,0.6);">
+      <div style="color: #FCD34D; font-size: 16px; margin-bottom: 6px;">THÔNG SỐ KỸ THUẬT CAD:</div>
+      <div style="font-size: 19px; line-height: 1.6;">
+        |&lt;--- TẦM BẮN HIỆU QUẢ: 150 KM ---&gt;|<br>
+        |&lt;--- VẬN TỐC TÊN LỬA: MACH 6.0 ---&gt;|<br>
+        |&lt;--- THỜI GIAN TRIỂN KHAI: 5 PHÚT ---&gt;|
+      </div>
+    </div>
+  </div>
+
+  <div style="border: 2px solid #38BDF8; padding: 10px; background: rgba(0,0,0,0.3); height: 460px;">
+    <img src="assets/vn-ten-lua-s300.jpg" alt="S300" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; border-top: 2px solid #38BDF8; padding-top: 14px; font-size: 16px; color: #7DD3FC;">
+  <div>TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • ĐẠI ĐỘI 6</div>
+  <div>KHOA GDQP-AN ĐẠI HỌC ĐẠI NAM</div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

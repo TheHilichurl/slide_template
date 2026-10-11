@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12: Product Spotlight | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #030712; color: #FFF; }
+#slide-stage {position: absolute; background: radial-gradient(circle at 50% 50%, #0D1629 0%, #030712 100%);
+  padding: 50px 80px; display: flex; flex-direction: column; justify-content: space-between; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.callout-pill {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(20px); border-radius: 16px; padding: 20px 28px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5); width: 340px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="height: 38px; filter: brightness(0) invert(1);">
+    <span style="color: #FF7A00; font-weight: 800; font-size: 20px;">HỌC ĐỂ THAY ĐỔI</span>
+  </div>
+  <div style="font-size: 18px; color: #94A3B8;">MẪU 12: PRODUCT SPOTLIGHT (APPLE STYLE)</div>
+</div>
+
+<!-- Center Spotlight Layout -->
+<div style="display: grid; grid-template-columns: 340px 1fr 340px; gap: 40px; align-items: center; flex: 1;">
+  <!-- Left Callout -->
+  <div style="display: flex; flex-direction: column; gap: 24px;">
+    <div class="callout-pill">
+      <div style="color: #FF7A00; font-weight: 800; font-size: 18px;">TÊN LỬA CLUB-S</div>
+      <div style="font-size: 32px; font-weight: 900; color: #FFF; margin: 4px 0;">300 KM TẦM BẮN</div>
+      <p class="font-25" style="font-size: 19px; color: #CBD5E1;">Bắn tên lửa hành trình tấn công mục tiêu đất liền và mặt biển từ lòng biển sâu.</p>
+    </div>
+
+    <div class="callout-pill">
+      <div style="color: #38BDF8; font-weight: 800; font-size: 18px;">ĐỘ SÂU LẶN</div>
+      <div style="font-size: 32px; font-weight: 900; color: #FFF; margin: 4px 0;">300 MÉT</div>
+      <p class="font-25" style="font-size: 19px; color: #CBD5E1;">Hoạt động liên tục 45 ngày đêm bảo vệ vững chắc thềm lục địa.</p>
+    </div>
+  </div>
+
+  <!-- Center Hero Image Frame -->
+  <div style="position: relative; height: 520px; border-radius: 28px; overflow: hidden; border: 2px solid rgba(255,255,255,0.2); box-shadow: 0 40px 100px rgba(0,0,0,0.9);">
+    <img src="assets/vn-gepard-ship.jpg" alt="Hero Asset" style="width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; bottom: 24px; left: 32px; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); padding: 12px 24px; border-radius: 9999px;">
+      <span style="font-size: 22px; font-weight: 800; color: #FFF;">TIÊU ĐIỂM: KHÍ TÀI TÁC CHIẾN BIỂN ĐẢO</span>
+    </div>
+  </div>
+
+  <!-- Right Callout -->
+  <div style="display: flex; flex-direction: column; gap: 24px;">
+    <div class="callout-pill">
+      <div style="color: #10B981; font-weight: 800; font-size: 18px;">HỐ ĐEN ĐẠI DƯƠNG</div>
+      <div style="font-size: 32px; font-weight: 900; color: #FFF; margin: 4px 0;">6 TÀU NGẦM KILO</div>
+      <p class="font-25" style="font-size: 19px; color: #CBD5E1;">Độ ồn cực thấp, hấp thụ sóng âm sonar của đối phương.</p>
+    </div>
+
+    <div class="callout-pill">
+      <div style="color: #F59E0B; font-weight: 800; font-size: 18px;">SẴN SÀNG TÁC CHIẾN</div>
+      <div style="font-size: 32px; font-weight: 900; color: #FFF; margin: 4px 0;">LỮ ĐOÀN 189</div>
+      <p class="font-25" style="font-size: 19px; color: #CBD5E1;">Làm chủ hoàn toàn kỹ thuật và quy trình tác chiến hiện đại.</p>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; font-size: 18px; color: #64748B;">
+  <div>TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • ĐẠI ĐỘI 6</div>
+  <div>KHOA GDQP-AN ĐẠI HỌC ĐẠI NAM</div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

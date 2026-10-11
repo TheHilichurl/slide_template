@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 Mẫu Cấu Trúc Bố Cục Slide Hoàn Toàn Mới (Macro-Architecture Slide System) | ĐH Đại Nam</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       HỆ THỐNG BIẾN THEME (CSS CUSTOM PROPERTIES)
+       ========================================================================== */
+    :root {
+      /* Theme 01: Cam Đại Nam & Xanh Cobalt (Default) */
+      --color-primary: #EA580C;
+      --color-primary-bright: #FF7A00;
+      --color-primary-soft: rgba(234, 88, 12, 0.12);
+      --color-primary-glow: rgba(255, 122, 0, 0.35);
+
+      --color-secondary-dark: #00265B;
+      --color-secondary: #003882;
+      --color-secondary-bright: #0047AB;
+      --color-secondary-soft: rgba(0, 56, 130, 0.08);
+
+      --color-stage-bg: #060D1A;
+      --color-slide-bg: #F8FAFD;
+      --color-card-bg: #FFFFFF;
+      --color-card-border: rgba(0, 56, 130, 0.14);
+
+      --color-text-title: #0A1B39;
+      --color-text-body: #1E293B;
+      --color-text-muted: #475569;
+      --color-gold: #F59E0B;
+      --color-emerald: #10B981;
+      --color-crimson: #DC2626;
+
+      /* Cỡ chữ nội dung chuẩn theo yêu cầu: 25px */
+      --font-body-size: 25px;
+      --font-family-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-family-body: 'Be Vietnam Pro', sans-serif;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 4px 10px rgba(0, 40, 100, 0.06);
+      --shadow-md: 0 12px 28px rgba(0, 45, 110, 0.12);
+      --shadow-lg: 0 20px 48px rgba(0, 38, 91, 0.18);
+    }
+
+    [data-theme="military"] {
+      --color-primary: #15803D;
+      --color-primary-bright: #16A34A;
+      --color-primary-soft: rgba(21, 128, 61, 0.14);
+      --color-primary-glow: rgba(22, 163, 74, 0.35);
+      --color-secondary-dark: #0A2E17;
+      --color-secondary: #14532D;
+      --color-secondary-bright: #15803D;
+      --color-secondary-soft: rgba(20, 83, 45, 0.08);
+      --color-card-border: rgba(20, 83, 45, 0.18);
+      --color-stage-bg: #07170E;
+    }
+
+    [data-theme="navy"] {
+      --color-primary: #0284C7;
+      --color-primary-bright: #38BDF8;
+      --color-primary-soft: rgba(2, 132, 199, 0.14);
+      --color-primary-glow: rgba(56, 189, 248, 0.35);
+      --color-secondary-dark: #03142B;
+      --color-secondary: #072A52;
+      --color-secondary-bright: #0369A1;
+      --color-secondary-soft: rgba(7, 42, 82, 0.08);
+      --color-card-border: rgba(7, 42, 82, 0.18);
+      --color-stage-bg: #020D1A;
+    }
+
+    [data-theme="cyber"] {
+      --color-primary: #06B6D4;
+      --color-primary-bright: #22D3EE;
+      --color-primary-soft: rgba(6, 182, 212, 0.14);
+      --color-primary-glow: rgba(34, 211, 238, 0.35);
+      --color-secondary-dark: #091220;
+      --color-secondary: #0F172A;
+      --color-secondary-bright: #1E293B;
+      --color-secondary-soft: rgba(15, 23, 42, 0.08);
+      --color-card-border: rgba(6, 182, 212, 0.25);
+      --color-stage-bg: #050B14;
+    }
+
+    [data-theme="crimson"] {
+      --color-primary: #DC2626;
+      --color-primary-bright: #EF4444;
+      --color-primary-soft: rgba(220, 38, 38, 0.14);
+      --color-primary-glow: rgba(239, 68, 68, 0.35);
+      --color-secondary-dark: #450A0A;
+      --color-secondary: #7F1D1D;
+      --color-secondary-bright: #991B1B;
+      --color-secondary-soft: rgba(127, 29, 29, 0.08);
+      --color-card-border: rgba(127, 29, 29, 0.18);
+      --color-stage-bg: #140404;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: var(--color-stage-bg);
+      font-family: var(--font-family-body);
+      font-size: var(--font-body-size);
+      color: var(--color-text-body);
+      user-select: none;
+    }
+
+    /* Top Progress Bar */
+    #top-progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--color-primary-bright), var(--color-gold), var(--color-secondary-bright));
+      width: 5%;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 9999;
+    }
+
+    /* Fixed Viewport Stage (1920x1080) */
+    #viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 75% 25%, var(--color-secondary-dark) 0%, #03060C 100%);
+    }
+
+    #slide-stage {
+      position: absolute;
+      width: 1920px;
+      height: 1080px;
+      left: 50%;
+      top: 50%;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.85);
+      background-color: var(--color-slide-bg);
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1920px;
+      height: 1080px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      overflow: hidden;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+      z-index: 10;
+    }
+
+    /* Common Card Styles */
+    .card-base {
+      background: #FFFFFF;
+      border: 2px solid var(--color-card-border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .font-25, p.font-25, ul.font-25 li {
+      font-size: var(--font-body-size);
+      line-height: 1.5;
+      color: var(--color-text-body);
+    }
+
+    /* ==========================================================================
+       20 BỐ CỤC KIẾN TRÚC VĨ MÔ MỚI (MACRO-ARCHITECTURE ARCHETYPES)
+       ========================================================================== */
+
+    /* ARCHETYPE 1: FLOATING GLASS BADGES (KHÔNG HEADER/FOOTER, TRÀN VIỀN) */
+    .arch-floating-badges {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .floating-brand-pill {
+      position: absolute;
+      top: 40px;
+      left: 50px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(0, 56, 130, 0.15);
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      z-index: 30;
+    }
+    .floating-slide-num {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      background: var(--color-secondary-dark);
+      color: #FFF;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 800;
+      font-size: 19px;
+      z-index: 30;
+    }
+
+    /* ARCHETYPE 2: LEFT VERTICAL RAIL (CỘT DỌC TRÁI NGUYÊN KHỐI) */
+    .arch-left-sidebar {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      height: 100%;
+      width: 100%;
+    }
+    .sidebar-rail {
+      background: var(--color-secondary-dark);
+      color: #FFF;
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 5px solid var(--color-primary-bright);
+      z-index: 20;
+    }
+    .main-canvas-free {
+      padding: 48px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    /* ARCHETYPE 3: ASYMMETRIC SPLIT 40/60 (NỬA TỐI NỬA ẢNH ĐẬM CHẤT KEYNOTE) */
+    .arch-split-40-60 {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 42% 58%;
+      height: 100%;
+      width: 100%;
+    }
+    .split-left-panel {
+      background: var(--color-secondary-dark);
+      color: #FFF;
+      padding: 60px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    /* ARCHETYPE 4: FRAMED ART STUDIO CANVAS (KHUNG TRANH VIỀN 4 GÓC) */
+    .arch-framed-canvas {
+      position: absolute;
+      inset: 0;
+      padding: 30px;
+      background: #F1F5F9;
+      display: flex;
+      flex-direction: column;
+    }
+    .frame-border-box {
+      border: 3px solid var(--color-secondary);
+      border-radius: var(--radius-lg);
+      background: #FFF;
+      height: 100%;
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .frame-header-stamp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px dashed rgba(0, 56, 130, 0.2);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    /* ARCHETYPE 5: BOTTOM MACOS DOCK BAR (THANH DOCK ĐÁY NỔI) */
+    .arch-bottom-dock {
+      position: absolute;
+      inset: 0;
+      padding: 40px 60px 110px 60px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .floating-bottom-dock {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(6, 17, 39, 0.94);
+      backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: var(--radius-full);
+      padding: 10px 36px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: #FFF;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+      z-index: 50;
+    }
+
+    /* ARCHETYPE 6: MAGAZINE EDITORIAL MASTHEAD (TIÊU ĐỀ BÁO CHÍ) */
+    .arch-magazine-masthead {
+      position: absolute;
+      inset: 0;
+      padding: 44px 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    .masthead-top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 4px solid var(--color-secondary-dark);
+      padding-bottom: 14px;
+    }
+
+    /* ARCHETYPE 7: DIAGONAL CLIP ANGLE (CẮT CHÉO NĂNG ĐỘNG) */
+    .arch-diagonal-split {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .diagonal-left-hero {
+      position: absolute;
+      inset: 0;
+      width: 58%;
+      background: var(--color-secondary-dark);
+      clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+      color: #FFF;
+      padding: 70px 90px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    /* ARCHETYPE 8: TACTICAL MILITARY HUD BEZEL (GIAO DIỆN QUÂN SỰ) */
+    .arch-military-hud {
+      position: absolute;
+      inset: 0;
+      background: #020914;
+      color: #00F0FF;
+      border: 6px solid #00F0FF;
+      box-shadow: inset 0 0 40px rgba(0,240,255,0.25);
+      padding: 40px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ARCHETYPE 9: RIGHT VERTICAL RAIL (CỘT DỌC PHẢI) */
+    .arch-right-sidebar {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      height: 100%;
+      width: 100%;
+    }
+
+    /* ARCHETYPE 10: TOP PANORAMA + BOTTOM SHELF */
+    .arch-panorama-shelf {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-rows: 1.15fr 0.85fr;
+      padding: 30px 40px;
+      gap: 24px;
+      height: 100%;
+    }
+
+    /* ARCHETYPE 11: FLOATING BADGES + 2x2 QUADRANT AXES */
+    .arch-quadrant-axes {
+      position: absolute;
+      inset: 0;
+      padding: 50px 70px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* ARCHETYPE 12: DUAL COLUMN SIDEBAR 30/70 - ACCORDION */
+    .arch-sidebar-30-70 {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 32% 68%;
+      padding: 40px;
+      gap: 36px;
+      height: 100%;
+    }
+
+    /* ARCHETYPE 13: MONOLITH CARD CENTER (KHỐI ĐƠN TRUNG TÂM) */
+    .arch-monolith-card {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: radial-gradient(circle at 50% 50%, var(--color-secondary-soft) 0%, #030812 100%);
+    }
+
+    /* ARCHETYPE 14: STEPPED COMMAND PYRAMID */
+    .arch-command-pyramid {
+      position: absolute;
+      inset: 0;
+      padding: 50px 70px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ARCHETYPE 15: HONEYCOMB MATRIX (TỔ ONG) */
+    .arch-honeycomb-matrix {
+      position: absolute;
+      inset: 0;
+      padding: 40px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ARCHETYPE 16: TOP APP BAR WITH SEGMENTED SWITCHER */
+    .arch-top-app-bar {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-rows: 80px 1fr;
+      height: 100%;
+    }
+
+    /* ARCHETYPE 17: ELECTRONIC RADAR CONSOLE */
+    .arch-radar-console {
+      position: absolute;
+      inset: 0;
+      background: #020C1B;
+      padding: 30px;
+      color: #FFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ARCHETYPE 18: 3-STAGE HORIZON TRANSFORMATION */
+    .arch-horizon-transform {
+      position: absolute;
+      inset: 0;
+      padding: 50px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* ARCHETYPE 19: OFFICIAL DISPATCH BRIEFING (CÔNG VĂN MẬT) */
+    .arch-official-dispatch {
+      position: absolute;
+      inset: 0;
+      padding: 50px 80px;
+      background: #FFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 8px solid var(--color-secondary-dark);
+    }
+
+    /* ARCHETYPE 20: SWISS MINIMALIST POSTER */
+    .arch-swiss-poster {
+      position: absolute;
+      inset: 0;
+      padding: 60px 80px;
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 60px;
+      align-items: center;
+      background: #FFFFFF;
+    }
+
+    /* THEME CUSTOMIZER DRAWER */
+    #theme-panel {
+      position: fixed;
+      top: 110px;
+      right: 24px;
+      background: rgba(6, 17, 39, 0.95);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 320px;
+      transform: translateX(360px);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #theme-panel.open { transform: translateX(0); }
+
+    .theme-preset-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .theme-preset-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: var(--color-primary-bright);
+    }
+
+    /* HUD Controls */
+    #presentation-hud {
+      position: fixed;
+      bottom: 24px;
+      right: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(6, 17, 39, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .hud-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+    .hud-btn:hover {
+      background: var(--color-primary-bright);
+      transform: scale(1.08);
+    }
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      <section class="slide active" id="slide-2" data-slide-index="2">
+        <div class="arch-left-sidebar">
+          <!-- CỘT DỌC TRÁI -->
+          <div class="sidebar-rail">
+            <div>
+              <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="width: 100%; filter: brightness(0) invert(1);">
+              <div style="margin-top: 24px; padding: 8px 12px; background: var(--color-primary-bright); border-radius: 6px; font-weight: 900; font-size: 20px; text-align: center; letter-spacing: 1px;">
+                HỌC ĐỂ THAY ĐỔI
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px; font-size: 19px; color: #93C5FD;">
+              <div>● Chuyên đề C3</div>
+              <div>● Quân Binh Chủng</div>
+              <div>● ĐH Đại Nam</div>
+            </div>
+
+            <div>
+              <div style="font-size: 16px; color: #94A3B8;">Đơn vị báo cáo</div>
+              <div style="font-size: 20px; font-weight: 800; color: #FFF;">C6 • B1 • T1</div>
+              <div style="font-size: 28px; font-weight: 900; color: #FFD166; margin-top: 8px;">02 / 20</div>
+            </div>
+          </div>
+
+          <!-- CANVAS CHÍNH (BENTO GRID RỘNG RÃI) -->
+          <div class="main-canvas-free">
+            <div style="display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 24px; height: 100%;">
+              <div style="grid-row: 1 / 3; border-radius: var(--radius-lg); overflow: hidden; position: relative; box-shadow: var(--shadow-md);">
+                <img src="assets/vn-gepard-ship.jpg" alt="Bento Large" style="width: 100%; height: 100%; object-fit: cover;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(6,17,39,0.92) 100%); padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; color: #FFF;">
+                  <span style="background: var(--color-primary); color: #FFF; padding: 4px 12px; border-radius: 4px; font-weight: 800; font-size: 18px; align-self: flex-start;">HẢI QUÂN NHÂN DÂN</span>
+                  <h3 style="font-size: 34px; font-weight: 900; margin-top: 8px;">Bảo Vệ Thềm Lục Địa Thiêng Liêng</h3>
+                  <p class="font-25" style="color: #CBD5E1; margin-top: 6px;">Cột bên trái tối ưu hóa không gian, giúp nội dung chính trải rộng thoải mái.</p>
+                </div>
+              </div>
+
+              <div class="card-base" style="border-left: 8px solid var(--color-primary); justify-content: center;">
+                <div style="font-size: 42px; font-weight: 900; color: var(--color-primary);">5 VÙNG HQ</div>
+                <div style="font-size: 24px; font-weight: 700; color: var(--color-secondary-dark);">Bao Quát Toàn Bộ Vùng Biển</div>
+                <p class="font-25">Từ Vịnh Bắc Bộ, quần đảo Trường Sa đến vùng biển Tây Nam.</p>
+              </div>
+
+              <div class="card-base" style="border-left: 8px solid var(--color-secondary); justify-content: center;">
+                <div style="font-size: 42px; font-weight: 900; color: var(--color-secondary);">KILO 636</div>
+                <div style="font-size: 24px; font-weight: 700; color: var(--color-secondary-dark);">Hố Đen Đại Dương</div>
+                <p class="font-25">Lực lượng tàu ngầm hiện đại bảo vệ vững chắc biển sâu.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    function switchInnerTab(tabIdx, btnEl) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btnEl.classList.add('active');
+      document.querySelectorAll('.inner-tab-pane').forEach((p, idx) => {
+        p.style.display = (idx === tabIdx) ? 'grid' : 'none';
+      });
+      if (window.lucide) window.lucide.createIcons();
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18: Borderless Whitespace | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #FAF9F6; color: #1A1A1A; }
+#slide-stage {position: absolute; background: #FAF9F6; padding: 70px 100px;
+  display: flex; flex-direction: column; justify-content: space-between; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.borderless-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 70px; align-items: center; flex: 1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="display: flex; align-items: center; gap: 18px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="height: 42px;">
+    <span style="color: #EA580C; font-weight: 800; font-size: 20px;">HỌC ĐỂ THAY ĐỔI</span>
+  </div>
+  <div style="font-size: 18px; color: #71717A;">MẪU 18: BORDERLESS EDITORIAL</div>
+</div>
+
+<div class="borderless-grid">
+  <div>
+    <div style="font-size: 17px; font-weight: 800; color: #EA580C; letter-spacing: 2px;">
+      THẾ TRẬN LÒNG DÂN
+    </div>
+    <h1 style="font-size: 52px; font-weight: 900; line-height: 1.15; margin: 16px 0 24px 0; color: #0A0A0A;">
+      Dân Quân Tự Vệ: <br>Bức Tường Thành Rộng Khắp
+    </h1>
+    <p class="font-25" style="color: #404040; line-height: 1.65;">
+      Lực lượng vũ trang quần chúng không thoát ly sản xuất, là thành phần nòng cốt trong phong trào toàn dân đánh giặc giữ nước. Khi có chiến sự, DQTV cùng bộ đội địa phương bám trụ kiên cường tiêu hao lực lượng địch tại chỗ.
+    </p>
+    <div style="margin-top: 30px; font-size: 20px; font-weight: 700; color: #737373;">
+      "Ở đâu có dân, ở đó có thế trận quốc phòng toàn dân vững chắc."
+    </div>
+  </div>
+
+  <div style="height: 480px; overflow: hidden; border-radius: 16px; box-shadow: 0 25px 60px rgba(0,0,0,0.12);">
+    <img src="assets/vn-dan-quan-tu-ve.jpg" alt="DQTV" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; font-size: 18px; color: #737373;">
+  <div>TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • ĐẠI ĐỘI 6</div>
+  <div>KHOA GDQP-AN ĐẠI HỌC ĐẠI NAM</div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

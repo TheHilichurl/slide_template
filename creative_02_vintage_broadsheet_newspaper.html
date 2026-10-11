@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu Đột Phá 02: Historic Broadsheet Newspaper | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --news-paper-bg: #FDFBF7;
+      --news-paper-border: #00224F;
+      --news-ink: #0A192F;
+      --news-muted: #475569;
+      --news-crimson: #EA580C;
+      --news-gold: #003882;
+      --font-body-size: 25px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #262320;
+      font-family: 'Lora', Georgia, serif;
+      color: var(--news-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slide-stage {
+      position: absolute;
+      width: 1920px;
+      height: 1080px;
+      left: 50%;
+      top: 50%;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      background: var(--news-paper-bg);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      padding: 40px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid #D4D4D8;
+    }
+
+    /* Viền chỉ may kép Broadsheet */
+    .newspaper-border-box {
+      border: 4px solid var(--news-paper-border);
+      outline: 2px solid var(--news-paper-border);
+      outline-offset: 4px;
+      height: 100%;
+      padding: 24px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-image: radial-gradient(#E4E0D7 0.8px, transparent 0.8px);
+      background-size: 24px 24px;
+    }
+
+    /* Măng-sét báo chí (Masthead) */
+    .newspaper-masthead {
+      border-bottom: 3px double var(--news-paper-border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+
+    .masthead-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--news-paper-border);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: var(--news-muted);
+    }
+
+    .masthead-main {
+      display: grid;
+      grid-template-columns: 320px 1fr 320px;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .masthead-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1;
+      color: #0F172A;
+    }
+
+    .brand-stamp-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .newspaper-logo-img {
+      height: 44px;
+      filter: contrast(1.2);
+    }
+
+    .slogan-banner-ribbon {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--news-crimson);
+      border: 2px solid var(--news-crimson);
+      padding: 4px 14px;
+      display: inline-block;
+      letter-spacing: 2px;
+    }
+
+    /* Tiêu đề giật tít lớn toàn trang */
+    .headline-strip {
+      text-align: center;
+      border-bottom: 2px solid var(--news-paper-border);
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+
+    .main-headline-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 1.2;
+      color: var(--news-ink);
+    }
+
+    .sub-headline-text {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 26px;
+      color: var(--news-gold);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* Bố cục 3 cột báo chí kinh điển */
+    .newspaper-columns {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 36px;
+      flex: 1;
+      align-items: start;
+    }
+
+    .news-col {
+      position: relative;
+    }
+
+    .news-col:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: -18px;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background: #D4D4D8;
+    }
+
+    .font-25 {
+      font-size: var(--font-body-size);
+      line-height: 1.55;
+      text-align: justify;
+    }
+
+    /* Chữ cái đầu dòng Drop-Cap */
+    .drop-cap-classic {
+      float: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 82px;
+      line-height: 0.8;
+      font-weight: 900;
+      color: var(--news-crimson);
+      margin-right: 14px;
+      margin-top: 4px;
+    }
+
+    /* Khung danh ngôn đóng khung chỉ may */
+    .quote-box-vintage {
+      border: 2px dashed var(--news-paper-border);
+      padding: 20px;
+      background: #F4EFE6;
+      margin-top: 20px;
+      font-style: italic;
+      position: relative;
+    }
+
+    /* Khung ảnh in báo kèm chú thích */
+    .press-photo-frame {
+      border: 2px solid var(--news-paper-border);
+      padding: 10px;
+      background: #FFFFFF;
+      box-shadow: 4px 6px 14px rgba(0,0,0,0.12);
+      position: relative;
+    }
+
+    .photo-caption {
+      font-size: 19px;
+      font-style: italic;
+      color: var(--news-muted);
+      margin-top: 10px;
+      border-top: 1px solid #E4E4E7;
+      padding-top: 6px;
+    }
+
+    /* Con dấu mực đỏ tròn */
+    .red-seal-stamp {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--news-crimson);
+      outline: 1px dashed var(--news-crimson);
+      outline-offset: -6px;
+      color: var(--news-crimson);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 900;
+      font-size: 13px;
+      line-height: 1.1;
+      transform: rotate(-15deg);
+      background: rgba(254, 242, 242, 0.9);
+      pointer-events: none;
+      box-shadow: 0 4px 10px rgba(153, 27, 27, 0.2);
+    }
+
+    /* Footer báo chí */
+    .newspaper-footer {
+      border-top: 3px double var(--news-paper-border);
+      padding-top: 12px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Cinzel', serif;
+      font-size: 17px;
+      color: var(--news-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+    <div id="slide-stage">
+      <div class="newspaper-border-box">
+
+        <!-- MĂNG-SÉT BÁO CHÍ (MASTHEAD) -->
+        <header class="newspaper-masthead">
+          <div class="masthead-meta-row">
+            <div>SỐ PHÁT HÀNH: CHUYÊN ĐỀ ĐẶC BIỆT C3 • 2026</div>
+            <div>BỘ QUỐC PHÒNG — QUÂN ĐỘI NHÂN DÂN VIỆT NAM</div>
+            <div>HÀ NỘI, THÁNG 10 NĂM 2026</div>
+          </div>
+
+          <div class="masthead-main">
+            <!-- Khối bên trái: Logo Đại Nam -->
+            <div class="brand-stamp-box">
+              <img src="assets/dai-nam-logo-ngang.svg" alt="DNU Logo" class="newspaper-logo-img">
+              <div style="font-size: 15px; font-weight: 700; color: #71717A; font-family: 'Cinzel';">
+                KHOA GDQP-AN • TIỂU ĐỘI 1
+              </div>
+            </div>
+
+            <!-- Tên Tờ Báo Ở Giữa -->
+            <div>
+              <h1 class="masthead-title">Nhật Báo Quân Sự</h1>
+              <div style="font-family: 'Lora'; font-style: italic; font-size: 18px; color: var(--news-muted); margin-top: 4px;">
+                Cơ quan nghiên cứu khoa học quân sự & giáo dục quốc phòng toàn dân
+              </div>
+            </div>
+
+            <!-- Khối bên phải: Slogan & Số hiệu -->
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 6px;">
+              <div class="slogan-banner-ribbon">HỌC ĐỂ THAY ĐỔI</div>
+              <div style="font-size: 16px; font-weight: 700; color: #18181B; font-family: 'Cinzel';">
+                ĐƠN VỊ: C6 • B1 • T1
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- TIÊU ĐỀ GIẬT TÍT TRANG NHẤT -->
+        <div class="headline-strip">
+          <h2 class="main-headline-text">
+            Kế Thừa Truyền Thống Đánh Giặc Giữ Nước: <br>
+            Nghệ Thuật Quân Sự Độc Đáo Của Dân Tộc Việt Nam
+          </h2>
+          <div class="sub-headline-text">
+            Tư tưởng "Dựng nước đi đôi với giữ nước" và quy luật "Giữ nước từ khi nước chưa nguy"
+          </div>
+        </div>
+
+        <!-- 3 CỘT BÁO CHÍ KINH ĐIỂN -->
+        <div class="newspaper-columns">
+          
+          <!-- CỘT 1: BÀI XÃ LUẬN MỞ ĐẦU -->
+          <div class="news-col">
+            <h3 style="font-family: 'Playfair Display'; font-size: 28px; font-weight: 800; margin-bottom: 12px; border-bottom: 1px solid var(--news-paper-border); padding-bottom: 4px;">
+              Cội Nguồn Nghìn Năm
+            </h3>
+            <p class="font-25">
+              <span class="drop-cap-classic">T</span>rải qua hàng nghìn năm dựng nước và giữ nước, dân tộc Việt Nam đã hun đúc nên một nền nghệ thuật quân sự độc đáo và sáng tạo. Đó là nghệ thuật lấy nhỏ đánh lớn, lấy ít địch nhiều, lấy trí nhân để thay cường bạo.
+            </p>
+            <p class="font-25" style="margin-top: 14px;">
+              Lịch sử đã chứng minh, quy luật tồn tại và phát triển của dân tộc ta luôn gắn liền với nhiệm vụ quốc phòng toàn dân. Khi có giặc ngoại xâm thì "cả nước chung sức, trăm họ là binh".
+            </p>
+
+            <div class="quote-box-vintage">
+              <div style="font-weight: 700; color: var(--news-crimson); font-size: 21px; margin-bottom: 6px;">
+                HUẤN THỊ BÁC HỒ TẠI ĐỀN HÙNG:
+              </div>
+              <p style="font-size: 22px; line-height: 1.45; color: #18181B;">
+                "Các Vua Hùng đã có công dựng nước, Bác cháu ta phải cùng nhau giữ lấy nước."
+              </p>
+              <div style="text-align: right; font-size: 17px; margin-top: 8px; color: var(--news-muted);">
+                — Ngày 19/9/1954
+              </div>
+            </div>
+          </div>
+
+          <!-- CỘT 2: PHÂN TÍCH TỔ CHỨC HIỆN ĐẠI -->
+          <div class="news-col">
+            <h3 style="font-family: 'Playfair Display'; font-size: 28px; font-weight: 800; margin-bottom: 12px; border-bottom: 1px solid var(--news-paper-border); padding-bottom: 4px;">
+              Tổ Chức Lực Lượng Mới
+            </h3>
+            <p class="font-25">
+              Bước vào thời kỳ mới, Quân đội nhân dân Việt Nam tiếp tục quán triệt tinh thần tinh gọn, mạnh, tiến lên hiện đại theo tinh thần Nghị quyết Quân ủy Trung ương và Thông tư 83/2025/TT-BQP.
+            </p>
+
+            <div style="border-left: 3px solid var(--news-gold); padding-left: 16px; margin: 18px 0;">
+              <h4 style="font-family: 'Cinzel'; font-size: 21px; font-weight: 800; color: var(--news-gold);">
+                3 CHỨC NĂNG CỐT LÕI
+              </h4>
+              <ul style="margin-left: 20px; margin-top: 8px; font-size: 22px; line-height: 1.5;">
+                <li><strong>Đội quân chiến đấu:</strong> Sẵn sàng bảo vệ toàn vẹn lãnh thổ.</li>
+                <li><strong>Đội quân công tác:</strong> Gắn bó máu thịt với nhân dân.</li>
+                <li><strong>Đội quân lao động sản xuất:</strong> Xây dựng kinh tế kết hợp quốc phòng.</li>
+              </ul>
+            </div>
+
+            <p class="font-25">
+              Hệ thống phòng thủ khu vực được củng cố theo cấp chính quyền mới, bảo đảm thế trận chiến tranh nhân dân liên hoàn, vững chắc từ cơ sở.
+            </p>
+          </div>
+
+          <!-- CỘT 3: ẢNH TƯ LIỆU IN BÁO & DẤU CHỨNG THỰC -->
+          <div class="news-col">
+            <div class="press-photo-frame">
+              <!-- Con dấu triện đỏ tròn -->
+              <div class="red-seal-stamp">
+                <span>CHỨNG THỰC</span>
+                <span style="font-size: 15px; margin: 2px 0;">★ BQP ★</span>
+                <span>LƯU HÀNH 2026</span>
+              </div>
+
+              <img src="assets/vn-hung-temple.jpg" alt="Den Hung" style="width: 100%; height: 260px; object-fit: cover; filter: sepia(0.2) contrast(1.1);">
+              <div class="photo-caption">
+                <strong>Tư liệu lịch sử:</strong> Khu Di tích lịch sử Đền Hùng (Phú Thọ) — Nơi khởi nguồn sức mạnh đại đoàn kết toàn dân tộc Việt Nam.
+              </div>
+            </div>
+
+            <div style="background: #EFE9DD; border: 1px solid #D4D4D8; padding: 18px; margin-top: 20px;">
+              <h4 style="font-family: 'Playfair Display'; font-size: 22px; font-weight: 800; color: var(--news-crimson); margin-bottom: 6px;">
+                MẪU TRÌNH BÀY ĐỘT PHÁ 02
+              </h4>
+              <p style="font-size: 20px; line-height: 1.45; color: #3F3F46;">
+                Bố cục Broadsheet báo chí in ấn cổ điển mang lại chiều sâu học thuật và cảm giác trang nghiêm lịch sử cho bài báo cáo.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FOOTER BÁO CHÍ -->
+        <footer class="newspaper-footer">
+          <div>XUẤT BẢN BỞI KHOA GDQP-AN • TRƯỜNG ĐẠI HỌC ĐẠI NAM</div>
+          <div>BẢN QUYỀN ẤN BẢN HỌC THUẬT QUÂN SỰ 2026</div>
+          <div>TRANG 01 / TẬP SAN ĐẶC BIỆT</div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', updateStageScale);
+  </script>
+</body>
+</html>

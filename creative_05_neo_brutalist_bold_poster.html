@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu Đột Phá 05: Neo-Brutalist Bold Poster | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@600;700;800&family=Space+Mono:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brutal-yellow: #FF7A00;
+      --brutal-orange: #003882;
+      --brutal-black: #001F4D;
+      --brutal-white: #FFFFFF;
+      --brutal-cyan: #FFB366;
+      --font-body-size: 25px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #0A0A0A;
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--brutal-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slide-stage {
+      position: absolute;
+      width: 1920px;
+      height: 1080px;
+      left: 50%;
+      top: 50%;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      background-color: var(--brutal-yellow);
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.9);
+      border: 6px solid var(--brutal-black);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Dải sọc cảnh báo Hazard Stripes chạy mép trên */
+    .hazard-stripe-bar {
+      height: 24px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        var(--brutal-black),
+        var(--brutal-black) 20px,
+        var(--brutal-yellow) 20px,
+        var(--brutal-yellow) 40px
+      );
+      border-bottom: 4px solid var(--brutal-black);
+    }
+
+    /* Canvas Brutalist chính */
+    .brutal-canvas {
+      flex: 1;
+      padding: 32px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Top Bar: Sticker Logo & Slogan */
+    .brutal-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brutal-logo-badge {
+      background: var(--brutal-white);
+      border: 4px solid var(--brutal-black);
+      padding: 10px 24px;
+      box-shadow: 6px 6px 0px var(--brutal-black);
+      transform: rotate(-2deg);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brutal-slogan-tape {
+      background: var(--brutal-orange);
+      color: var(--brutal-white);
+      border: 4px solid var(--brutal-black);
+      padding: 10px 32px;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      box-shadow: 6px 6px 0px var(--brutal-black);
+      transform: rotate(2deg);
+      text-transform: uppercase;
+    }
+
+    /* Bố cục lưới 2 cột Brutalist Modular Grid */
+    .brutal-grid-layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      margin: 16px 0;
+    }
+
+    /* Khối Text lớn bên trái */
+    .brutal-text-card {
+      background: var(--brutal-white);
+      border: 5px solid var(--brutal-black);
+      box-shadow: 12px 12px 0px var(--brutal-black);
+      padding: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .brutal-tag-label {
+      background: var(--brutal-black);
+      color: var(--brutal-yellow);
+      display: inline-block;
+      align-self: flex-start;
+      font-family: 'Space Mono', monospace;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 6px 16px;
+      text-transform: uppercase;
+    }
+
+    .brutal-headline {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+
+    .font-25 {
+      font-size: var(--font-body-size);
+      line-height: 1.5;
+      color: #18181B;
+      font-weight: 600;
+    }
+
+    /* Cột bên phải: Ảnh có viền đậm + Sticker tròn + Thẻ chỉ số */
+    .brutal-visual-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+    }
+
+    .brutal-image-frame {
+      position: relative;
+      border: 5px solid var(--brutal-black);
+      box-shadow: 10px 10px 0px var(--brutal-black);
+      background: var(--brutal-black);
+      height: 380px;
+      overflow: hidden;
+    }
+
+    .brutal-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.15) saturate(1.1);
+    }
+
+    /* Sticker tròn xoay góc dán đè lên ảnh */
+    .brutal-round-sticker {
+      position: absolute;
+      top: -24px;
+      right: -24px;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: var(--brutal-cyan);
+      border: 4px solid var(--brutal-black);
+      box-shadow: 6px 6px 0px var(--brutal-black);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 1.1;
+      transform: rotate(15deg);
+      z-index: 10;
+    }
+
+    /* 2 Thẻ chỉ số Brutal bên dưới ảnh */
+    .brutal-stat-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .brutal-stat-pill {
+      background: var(--brutal-white);
+      border: 4px solid var(--brutal-black);
+      box-shadow: 8px 8px 0px var(--brutal-black);
+      padding: 20px;
+    }
+
+    /* Bottom Bar */
+    .brutal-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--brutal-black);
+      color: var(--brutal-white);
+      padding: 14px 28px;
+      border: 4px solid var(--brutal-black);
+      box-shadow: 6px 6px 0px rgba(0,0,0,0.5);
+      font-family: 'Space Mono', monospace;
+      font-size: 19px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+    <div id="slide-stage">
+      
+      <!-- Băng sọc chéo Hazard Stripe trên đỉnh -->
+      <div class="hazard-stripe-bar"></div>
+
+      <!-- Canvas Neo-Brutalist -->
+      <div class="brutal-canvas">
+        
+        <!-- TOP ROW: STICKER LOGO & SLOGAN -->
+        <div class="brutal-top-row">
+          <div class="brutal-logo-badge">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="DNU Logo" style="height: 42px;">
+            <div style="font-size: 18px; font-weight: 900; border-left: 2px solid #000; padding-left: 12px;">
+              GDQP-AN 2026
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 24px;">
+            <div class="brutal-slogan-tape">
+              ★ HỌC ĐỂ THAY ĐỔI ★
+            </div>
+            <div style="background: var(--brutal-black); color: var(--brutal-white); padding: 8px 20px; font-size: 20px; font-weight: 900; box-shadow: 4px 4px 0px rgba(0,0,0,0.3);">
+              C6 • B1 • T1
+            </div>
+          </div>
+        </div>
+
+        <!-- MAIN MODULAR GRID -->
+        <div class="brutal-grid-layout">
+          
+          <!-- KHỐI TEXT LỚN BÊN TRÁI -->
+          <div class="brutal-text-card">
+            <div class="brutal-tag-label">
+              ⚡ BINH CHỦNG HỢP THÀNH • HỎA LỰC TIÊN PHONG
+            </div>
+
+            <h1 class="brutal-headline">
+              Sức Mạnh Tiên Phong: <br>
+              <span style="color: var(--brutal-orange);">Hỏa Lực Mặt Đất</span> & Đột Kích Thọc Sâu
+            </h1>
+
+            <p class="font-25">
+              Pháo binh — Tên lửa là hỏa lực mặt đất chủ yếu: "Chân đồng, vai sắt, đánh giỏi, bắn trúng". Kết hợp Binh chủng Tăng Thiết giáp tạo thành nắm đấm cơ động tiêu diệt mục tiêu chỉ huy đối phương.
+            </p>
+
+            <div style="background: var(--brutal-yellow); border: 3px solid var(--brutal-black); padding: 18px; font-size: 22px; font-weight: 700; line-height: 1.5;">
+              💥 <strong>NGUYÊN TẮC HIỆP ĐỒNG:</strong> Lấy hành động tác chiến của Binh chủng hợp thành làm trung tâm; hiệp đồng chặt chẽ về mục tiêu, thời gian và khu vực.
+            </div>
+          </div>
+
+          <!-- CỘT BÊN PHẢI: ẢNH + STICKER TRÒN + CHỈ SỐ -->
+          <div class="brutal-visual-col">
+            
+            <div class="brutal-image-frame">
+              <!-- Sticker tròn xoay góc -->
+              <div class="brutal-round-sticker">
+                <span style="font-size: 24px;">★</span>
+                <span>100% SẴN SÀNG</span>
+                <span style="font-size: 13px;">TÁC CHIẾN</span>
+              </div>
+
+              <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Artillery Force">
+            </div>
+
+            <!-- 2 Thẻ chỉ số Brutalist -->
+            <div class="brutal-stat-row">
+              <div class="brutal-stat-pill">
+                <div style="font-family: 'Space Mono'; font-size: 16px; color: #52525B; font-weight: 700;">LỮ ĐOÀN 490</div>
+                <div style="font-size: 32px; font-weight: 900; color: var(--brutal-orange); margin: 4px 0;">SCUD-B</div>
+                <p style="font-size: 18px; font-weight: 700; color: #18181B;">Tên lửa chiến dịch răn đe tầm xa uy lực.</p>
+              </div>
+
+              <div class="brutal-stat-pill">
+                <div style="font-family: 'Space Mono'; font-size: 16px; color: #52525B; font-weight: 700;">ĐỘT KÍCH NHANH</div>
+                <div style="font-size: 32px; font-weight: 900; color: var(--brutal-black); margin: 4px 0;">T-90S</div>
+                <p style="font-size: 18px; font-weight: 700; color: #18181B;">Vỏ giáp phản ứng nổ & hệ thống Shtora-1.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- BOTTOM TICKER ROW -->
+        <div class="brutal-bottom-row">
+          <div>TRƯỜNG ĐẠI HỌC ĐẠI NAM • BÀI BÁO CÁO GDQP-AN C3</div>
+          <div>MẪU ĐỘT PHÁ 05: NEO-BRUTALIST BOLD POSTER</div>
+          <div style="color: var(--brutal-yellow);">TIỂU ĐỘI 1 • ĐẠI ĐỘI 6</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', updateStageScale);
+  </script>
+</body>
+</html>

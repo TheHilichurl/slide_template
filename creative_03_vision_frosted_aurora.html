@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mẫu Đột Phá 03: VisionOS Frosted Glass Aurora | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --aurora-peach: #FF7A00;
+      --aurora-purple: #EA580C;
+      --aurora-cyan: #0052CC;
+      --aurora-blue: #003882;
+      --glass-bg: rgba(255, 255, 255, 0.07);
+      --glass-bg-hover: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --glass-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      --font-body-size: 25px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #030712;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #slide-stage {
+      position: absolute;
+      width: 1920px;
+      height: 1080px;
+      left: 50%;
+      top: 50%;
+      transform-origin: center center;
+      transform: translate(-50%, -50%);
+      background-color: #050B17;
+      overflow: hidden;
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.85);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hiệu ứng Nền Cực Quang Iridescent Aurora Glow */
+    .aurora-blob-1 {
+      position: absolute;
+      top: -200px;
+      left: 10%;
+      width: 900px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255, 122, 0, 0.45) 0%, rgba(234, 88, 12, 0.25) 50%, transparent 70%);
+      filter: blur(100px);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatAurora1 12s ease-in-out infinite alternate;
+    }
+
+    .aurora-blob-2 {
+      position: absolute;
+      bottom: -250px;
+      right: 5%;
+      width: 1000px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(0, 82, 204, 0.45) 0%, rgba(0, 56, 130, 0.3) 50%, transparent 70%);
+      filter: blur(120px);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatAurora2 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatAurora1 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(120px, 80px) scale(1.15); }
+    }
+    @keyframes floatAurora2 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-100px, -60px) scale(1.1); }
+    }
+
+    /* Canvas nội dung kính */
+    .frosted-canvas {
+      position: absolute;
+      inset: 0;
+      padding: 48px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 10;
+    }
+
+    /* Đảo Kính Nổi Đỉnh Slide (Floating Dynamic Island) */
+    .floating-glass-island {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--glass-bg);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 9999px;
+      padding: 14px 32px;
+      box-shadow: var(--glass-shadow);
+    }
+
+    .brand-glass-unit {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-logo-frosted {
+      height: 38px;
+      filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3));
+    }
+
+    .slogan-aurora-pill {
+      background: linear-gradient(135deg, #FF7A00, #FF007A);
+      color: #FFFFFF;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 16px rgba(255, 122, 0, 0.4);
+    }
+
+    /* Header tiêu đề chữ bay bổng */
+    .frosted-hero-header {
+      margin: 28px 0 20px 0;
+    }
+
+    .glass-badge-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 20px;
+      border-radius: 9999px;
+      font-size: 19px;
+      font-weight: 700;
+      color: #F8FAFC;
+      letter-spacing: 0.5px;
+    }
+
+    .frosted-title-text {
+      font-size: 50px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-top: 14px;
+      background: linear-gradient(135deg, #FFFFFF 30%, #E2E8F0 70%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .font-25 {
+      font-size: var(--font-body-size);
+      line-height: 1.55;
+      color: #E2E8F0;
+    }
+
+    /* Lưới 3 Thẻ Kính Không Gian 3D (Spatial Glass Cards) */
+    .spatial-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      flex: 1;
+      align-items: stretch;
+      margin: 10px 0 24px 0;
+    }
+
+    .spatial-glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(35px);
+      -webkit-backdrop-filter: blur(35px);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 28px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--glass-shadow);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .spatial-glass-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      background: var(--glass-bg-hover);
+      border-color: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    }
+
+    .card-photo-glass {
+      width: 100%;
+      height: 220px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    }
+
+    .card-photo-glass img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .spatial-glass-card:hover .card-photo-glass img {
+      transform: scale(1.08);
+    }
+
+    /* Chân trang Dock Kính */
+    .frosted-bottom-dock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      padding: 12px 32px;
+      font-size: 19px;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="viewport">
+    <div id="slide-stage">
+      <!-- Cực Quang Phát Quang Phía Sau -->
+      <div class="aurora-blob-1"></div>
+      <div class="aurora-blob-2"></div>
+
+      <!-- Canvas Kính Không Gian -->
+      <div class="frosted-canvas">
+
+        <!-- ĐẢO KÍNH ĐỈNH SLIDE (FLOATING DYNAMIC ISLAND) -->
+        <div class="floating-glass-island">
+          <div class="brand-glass-unit">
+            <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" class="brand-logo-frosted">
+            <div style="width: 1px; height: 26px; background: rgba(255,255,255,0.25);"></div>
+            <div class="slogan-aurora-pill">HỌC ĐỂ THAY ĐỔI</div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 28px;">
+            <div style="font-size: 19px; font-weight: 700; color: #CBD5E1;">
+              <i data-lucide="layers" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 6px; color: #38BDF8;"></i>
+              MẪU ĐỘT PHÁ 03: VISION-OS FROSTED GLASS
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 18px; border-radius: 9999px; font-weight: 800; font-size: 18px;">
+              C6 • B1 • T1
+            </div>
+          </div>
+        </div>
+
+        <!-- TIÊU ĐỀ KHÍ THẾ NỔI TRÊN NỀN KÍNH -->
+        <div class="frosted-hero-header">
+          <div class="glass-badge-label">
+            <i data-lucide="sparkles" style="width: 18px; height: 18px; color: #F59E0B;"></i>
+            HỆ THỐNG PHÒNG KHÔNG — KHÔNG QUÂN HIỆN ĐẠI
+          </div>
+          <h1 class="frosted-title-text">
+            Bảo Vệ Bầu Trời Tổ Quốc: <br>
+            Thế Trận Lưới Lửa Đa Tầng Từ Mặt Đất Đến Tầng Khí Quyển
+          </h1>
+        </div>
+
+        <!-- 3 THẺ KÍNH KHÔNG GIAN 3D (SPATIAL GLASS CARDS) -->
+        <div class="spatial-card-grid">
+          
+          <!-- THẺ 1: TIÊM KÍCH SU-30MK2 -->
+          <div class="spatial-glass-card">
+            <div>
+              <div class="card-photo-glass">
+                <img src="assets/vn-su30mk2.jpg" alt="Su-30MK2">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="color: #38BDF8; font-weight: 800; font-size: 18px; letter-spacing: 1px;">KHÔNG QUÂN TIÊM KÍCH</span>
+                <span style="background: rgba(56, 189, 248, 0.2); color: #38BDF8; padding: 2px 10px; border-radius: 9999px; font-size: 16px; font-weight: 700;">MACH 2.0</span>
+              </div>
+              <h3 style="font-size: 30px; font-weight: 800; color: #FFF; margin-bottom: 8px;">Hổ Mang Su-30MK2</h3>
+              <p class="font-25">
+                Tiêm kích đa năng tác chiến tầm xa, bán kính chiến đấu trên 3.000 km, mang tên lửa diệt hạm Kh-31 tuần tiễu bảo vệ vùng trời và Trường Sa.
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px; font-size: 20px; color: #94A3B8;">
+              <i data-lucide="check-circle" style="width: 18px; height: 18px; vertical-align: middle; color: #10B981; margin-right: 6px;"></i>
+              3 Sư đoàn Không quân nòng cốt
+            </div>
+          </div>
+
+          <!-- THẺ 2: TÊN LỬA PHÒNG KHÔNG S-300 -->
+          <div class="spatial-glass-card">
+            <div>
+              <div class="card-photo-glass">
+                <img src="assets/vn-ten-lua-s300.jpg" alt="S-300">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="color: #F97316; font-weight: 800; font-size: 18px; letter-spacing: 1px;">TÊN LỬA CHIẾN LƯỢC</span>
+                <span style="background: rgba(249, 115, 22, 0.2); color: #FB923C; padding: 2px 10px; border-radius: 9999px; font-size: 16px; font-weight: 700;">TẦM BẮN 150 KM</span>
+              </div>
+              <h3 style="font-size: 30px; font-weight: 800; color: #FFF; margin-bottom: 8px;">Lưới Lửa S-300PMU1</h3>
+              <p class="font-25">
+                Lá chắn tên lửa phòng không tầm xa hiện đại bảo vệ các trung tâm đầu não chính trị, kinh tế; khả năng tiêu diệt đồng thời nhiều mục tiêu bay.
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px; font-size: 20px; color: #94A3B8;">
+              <i data-lucide="check-circle" style="width: 18px; height: 18px; vertical-align: middle; color: #10B981; margin-right: 6px;"></i>
+              6 Sư đoàn Phòng không bảo vệ bầu trời
+            </div>
+          </div>
+
+          <!-- THẺ 3: RADAR CẢNH GIỚI ĐIỆN TỬ -->
+          <div class="spatial-glass-card">
+            <div>
+              <div class="card-photo-glass">
+                <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Radar Phòng Không">
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                <span style="color: #A855F7; font-weight: 800; font-size: 18px; letter-spacing: 1px;">MẮT THẦN CANH TRỜI</span>
+                <span style="background: rgba(168, 85, 247, 0.2); color: #C084FC; padding: 2px 10px; border-radius: 9999px; font-size: 16px; font-weight: 700;">24/7 BÁM MỤC TIÊU</span>
+              </div>
+              <h3 style="font-size: 30px; font-weight: 800; color: #FFF; margin-bottom: 8px;">Binh Chủng Ra-đa</h3>
+              <p class="font-25">
+                Hệ thống ra-đa cảnh giới 3D thế hệ mới phát hiện mục tiêu tàng hình, bảo đảm "không để Tổ quốc bị bất ngờ bởi các tình huống trên không".
+              </p>
+            </div>
+            <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 14px; margin-top: 14px; font-size: 20px; color: #94A3B8;">
+              <i data-lucide="check-circle" style="width: 18px; height: 18px; vertical-align: middle; color: #10B981; margin-right: 6px;"></i>
+              Quản lý bầu trời quốc gia thông suốt
+            </div>
+          </div>
+
+        </div>
+
+        <!-- DOCK KÍNH DƯỚI ĐÁY SLIDE -->
+        <div class="frosted-bottom-dock">
+          <div><i data-lucide="shield" style="width: 18px; height: 18px; vertical-align: middle; color: #F59E0B; margin-right: 6px;"></i>GIÁO DỤC QUỐC PHÒNG & AN NINH • BÀI GIẢNG ĐIỆN TỬ ĐẠI HỌC ĐẠI NAM</div>
+          <div style="color: #FFF; font-weight: 700;">THIẾT KẾ KÍNH MỜ KHÔNG GIAN SPATIAL UI • VISION-OS</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

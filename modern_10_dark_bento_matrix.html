@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10: Flight HUD Cockpit | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #010A14; color: #00F0FF; }
+#slide-stage {position: absolute; background: radial-gradient(circle at 50% 50%, #031427 0%, #010A14 100%);
+  padding: 40px 60px; display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid #00F0FF; box-shadow: inset 0 0 60px rgba(0,240,255,0.2);
+  font-family: 'Chakra Petch', sans-serif; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.hud-flight-grid {
+  display: grid; grid-template-columns: 280px 1fr 280px; gap: 36px; flex: 1; align-items: center; margin: 16px 0;
+}
+.pitch-ladder {
+  width: 240px; height: 2px; background: #00F0FF; margin: 16px auto; position: relative;
+}
+.pitch-ladder::before, .pitch-ladder::after {
+  content: ''; position: absolute; width: 2px; height: 16px; background: #00F0FF;
+}
+.pitch-ladder::before { left: 0; } .pitch-ladder::after { right: 0; }
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,240,255,0.3); padding-bottom: 12px;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="height: 34px; filter: drop-shadow(0 0 8px #00F0FF) brightness(1.5);">
+    <span style="color: #FF7A00; font-weight: 700; letter-spacing: 2px;">[HUD // HỌC ĐỂ THAY ĐỔI]</span>
+  </div>
+  <div>COCKPIT_HUD_SIMULATOR // SU-30MK2 // MẪU 10</div>
+</div>
+
+<div class="hud-flight-grid">
+  <!-- Left Speed & Weapon Tape -->
+  <div style="background: rgba(0,240,255,0.05); border: 1px solid rgba(0,240,255,0.3); padding: 20px;">
+    <div style="font-size: 16px; color: #94A3B8;">TỐC ĐỘ (IAS)</div>
+    <div style="font-size: 44px; font-weight: 900; color: #FFF;">MACH 2.0</div>
+    <div style="border-top: 1px solid rgba(0,240,255,0.2); margin-top: 14px; padding-top: 14px;">
+      <div style="font-size: 16px; color: #94A3B8;">VŨ KHÍ SẴN SÀNG</div>
+      <div style="font-size: 22px; font-weight: 700; color: #FF7A00;">Kh-31A DIỆT HẠM</div>
+      <div style="font-size: 22px; font-weight: 700; color: #FFF; margin-top: 6px;">R-77 KHÔNG ĐỐI KHÔNG</div>
+    </div>
+  </div>
+
+  <!-- Center Artificial Horizon & Target Reticle -->
+  <div style="text-align: center; position: relative;">
+    <div style="width: 160px; height: 160px; border: 2px dashed #00F0FF; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center;">
+      <div style="width: 20px; height: 20px; border: 2px solid #FF3366;"></div>
+    </div>
+    
+    <div class="pitch-ladder"></div>
+    <div class="pitch-ladder" style="width: 180px;"></div>
+    <div class="pitch-ladder" style="width: 120px;"></div>
+
+    <h2 style="font-size: 38px; font-weight: 900; color: #FFF; margin-top: 16px;">
+      KHÔNG QUÂN TIÊM KÍCH SU-30MK2
+    </h2>
+    <p class="font-25" style="color: #94A3B8; max-width: 650px; margin: 8px auto 0 auto;">
+      Bảo vệ chủ quyền vùng trời biển đảo Tổ quốc, sẵn sàng xuất kích đánh chặn các mục tiêu đường không và mặt biển xa.
+    </p>
+  </div>
+
+  <!-- Right Altitude & Radar Telemetry Tape -->
+  <div style="background: rgba(0,240,255,0.05); border: 1px solid rgba(0,240,255,0.3); padding: 20px;">
+    <div style="font-size: 16px; color: #94A3B8;">ĐỘ CAO (ALT)</div>
+    <div style="font-size: 44px; font-weight: 900; color: #FFF;">18.000 M</div>
+    <div style="border-top: 1px solid rgba(0,240,255,0.2); margin-top: 14px; padding-top: 14px;">
+      <div style="font-size: 16px; color: #94A3B8;">TỌA ĐỘ MỤC TIÊU</div>
+      <div style="font-size: 20px; font-weight: 700; color: #10B981;">TRƯỜNG SA 100% OK</div>
+      <div style="font-size: 18px; color: #FFF; margin-top: 6px;">RADAR: N001VE BÁM BẮT</div>
+    </div>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; font-size: 16px; color: #64748B;">
+  <div>TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • ĐẠI ĐỘI 6</div>
+  <div>KHOA GDQP-AN ĐẠI HỌC ĐẠI NAM</div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16: Cinematic Panorama 21:9 | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #060B14; color: #FFF; }
+#slide-stage {position: absolute; background: #060B14; display: grid; grid-template-rows: 62% 38%;
+  height: 100%; width: 100%; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.shelf-bottom {
+  background: #0B1324; border-top: 2px solid rgba(255,255,255,0.15);
+  padding: 30px 60px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; align-items: center;
+}
+.shelf-tile {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 24px; border-radius: 12px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<!-- Top 21:9 Cinematic Image Frame -->
+<div style="position: relative; overflow: hidden;">
+  <img src="assets/vn-su30mk2.jpg" alt="Su-30" style="width: 100%; height: 100%; object-fit: cover;">
+  <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, transparent 40%, rgba(6,11,20,0.9) 100%);"></div>
+
+  <!-- Top Floating Brand -->
+  <div style="position: absolute; top: 40px; left: 60px; display: flex; align-items: center; gap: 16px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Logo" style="height: 38px; filter: brightness(0) invert(1);">
+    <span style="color: #FF7A00; font-weight: 800; font-size: 20px;">HỌC ĐỂ THAY ĐỔI</span>
+  </div>
+  <div style="position: absolute; top: 40px; right: 60px; font-size: 18px; color: #CBD5E1;">
+    MẪU 16: CINEMATIC PANORAMA 21:9
+  </div>
+
+  <div style="position: absolute; bottom: 30px; left: 60px;">
+    <h1 style="font-size: 46px; font-weight: 900; line-height: 1.2;">
+      Tiêm Kích Su-30MK2: Sải Cánh Canh Giữ Vùng Trời
+    </h1>
+  </div>
+</div>
+
+<!-- Bottom Shelf: 3 Specs Trays -->
+<div class="shelf-bottom">
+  <div class="shelf-tile">
+    <div style="color: #FF7A00; font-size: 16px; font-weight: 800;">TỐC ĐỘ CHIẾN ĐẤU</div>
+    <div style="font-size: 34px; font-weight: 900; color: #FFF; margin: 4px 0;">MACH 2.0</div>
+    <p class="font-25" style="font-size: 19px; color: #94A3B8;">Vận tốc gấp 2 lần vận tốc âm thanh, cơ động xuất kích thần tốc.</p>
+  </div>
+
+  <div class="shelf-tile">
+    <div style="color: #38BDF8; font-size: 16px; font-weight: 800;">BÁN KÍNH TÁC CHIẾN</div>
+    <div style="font-size: 34px; font-weight: 900; color: #FFF; margin: 4px 0;">3.000 KM</div>
+    <p class="font-25" style="font-size: 19px; color: #94A3B8;">Tuần tra bao quát quần đảo Trường Sa và toàn bộ thềm lục địa.</p>
+  </div>
+
+  <div class="shelf-tile">
+    <div style="color: #10B981; font-size: 16px; font-weight: 800;">TẢI TRỌNG VŨ KHÍ</div>
+    <div style="font-size: 34px; font-weight: 900; color: #FFF; margin: 4px 0;">8 TẤN VŨ KHÍ</div>
+    <p class="font-25" style="font-size: 19px; color: #94A3B8;">Mang tên lửa diệt hạm siêu âm Kh-31 và bom thông minh.</p>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

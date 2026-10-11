@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01: The Monolith | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Cinzel:wght@700&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --font-body-size: 25px;
+      --font-family-main: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-family-main);
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      overflow: hidden;
+     transform: translate(-50%, -50%);}
+    .font-25 { font-size: var(--font-body-size); line-height: 1.55; }
+    
+body { background: #030712; color: #FFFFFF; }
+#slide-stage {position: absolute; background: radial-gradient(circle at 50% 30%, #0F172A 0%, #030712 100%);
+  padding: 60px 80px;
+  display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; left: 50%; top: 50%; transform-origin: center center; transform: translate(-50%, -50%);}
+.floating-brand-top {
+  display: flex; align-items: center; gap: 20px;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px); padding: 12px 32px; border-radius: 9999px;
+}
+.thread-timeline {
+  width: 100%; max-width: 1400px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: left;
+  border-top: 2px solid rgba(255,122,0,0.4); padding-top: 30px; position: relative;
+}
+.thread-timeline::before {
+  content: ''; position: absolute; top: -7px; left: 0; width: 12px; height: 12px;
+  background: #FF7A00; border-radius: 50%; box-shadow: 0 0 15px #FF7A00;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="floating-brand-top">
+  <img src="assets/dai-nam-logo-ngang.svg" alt="DNU Logo" style="height: 38px; filter: brightness(0) invert(1);">
+  <div style="width: 1px; height: 24px; background: rgba(255,255,255,0.3);"></div>
+  <span style="color: #FF7A00; font-weight: 800; font-size: 20px;">HỌC ĐỂ THAY ĐỔI</span>
+  <span style="opacity: 0.5;">•</span>
+  <span style="font-size: 18px; color: #94A3B8;">MẪU 01: THE MONOLITH MINIMAL</span>
+</div>
+
+<div style="max-width: 1300px; margin: 40px 0;">
+  <div style="color: #FF7A00; font-size: 22px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">
+    NGUYÊN TẮC HIỆP ĐỒNG TÁC CHIẾN TỐI CAO
+  </div>
+  <h1 style="font-size: 64px; font-weight: 900; line-height: 1.2; margin: 16px 0 24px 0;">
+    "Lấy Hành Động Của Binh Chủng Hợp Thành Làm Trung Tâm"
+  </h1>
+  <p class="font-25" style="max-width: 1000px; margin: 0 auto; color: #94A3B8;">
+    Mọi hỏa lực Không quân, Pháo binh, Tên lửa và chi viện Hải quân đều quy tụ bảo đảm cho Bộ binh cơ giới và Tăng thiết giáp đột kích thọc sâu làm chủ trận địa.
+  </p>
+</div>
+
+<div class="thread-timeline">
+  <div>
+    <div style="color: #FF7A00; font-size: 32px; font-weight: 900;">01. THỐNG NHẤT</div>
+    <div style="font-size: 22px; font-weight: 700; color: #FFF; margin: 6px 0;">Mục Tiêu & Ý Định</div>
+    <p class="font-25" style="font-size: 20px; color: #94A3B8;">Người chỉ huy quán triệt sâu sắc mục tiêu tác chiến cho mọi cánh quân.</p>
+  </div>
+  <div>
+    <div style="color: #FF7A00; font-size: 32px; font-weight: 900;">02. CHÍNH XÁC</div>
+    <div style="font-size: 22px; font-weight: 700; color: #FFF; margin: 6px 0;">Thời Gian Khai Hỏa</div>
+    <p class="font-25" style="font-size: 20px; color: #94A3B8;">Hỏa lực dọn đường đồng loạt, phân chia ranh giới an toàn không bắn nhầm.</p>
+  </div>
+  <div>
+    <div style="color: #FF7A00; font-size: 32px; font-weight: 900;">03. LIÊN THÔNG</div>
+    <div style="font-size: 22px; font-weight: 700; color: #FFF; margin: 6px 0;">Chỉ Huy Không Ngắt Quãng</div>
+    <p class="font-25" style="font-size: 20px; color: #94A3B8;">Thông tin liên lạc vô tuyến và cơ yếu bảo đảm chỉ huy thông suốt 24/7.</p>
+  </div>
+</div>
+
+<div style="display: flex; justify-content: space-between; width: 100%; font-size: 19px; color: #64748B;">
+  <div>TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • ĐẠI ĐỘI 6</div>
+  <div>GIÁO DỤC QUỐC PHÒNG & AN NINH C3</div>
+</div>
+
+    </div>
+  </div>
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const stageWidth = 1920;
+      const stageHeight = 1080;
+      const scale = Math.min(window.innerWidth / stageWidth, window.innerHeight / stageHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
