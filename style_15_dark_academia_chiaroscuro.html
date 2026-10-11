@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 15: Dark Academia (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --aca-bg: #010E24;
+  --aca-cobalt: #003882;
+  --aca-orange: #FF7A00;
+  --aca-cream: #F1F5F9;
+  --font-body-size: 25px;
+}
+body { background: #000714; color: var(--aca-cream); font-family: 'Playfair Display', serif; }
+#slide-stage {
+  background: radial-gradient(circle at 40% 30%, #062659 0%, var(--aca-bg) 100%);
+  padding: 56px 80px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.8);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 2px solid var(--aca-orange);
+}
+
+.aca-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255, 122, 0, 0.4); padding-bottom: 24px;
+}
+.aca-slogan {
+  font-family: 'Cinzel', serif; font-size: 19px; color: var(--aca-orange);
+  letter-spacing: 4px;
+}
+
+.aca-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center;
+  flex: 1; padding: 36px 0;
+}
+
+.aca-title {
+  font-family: 'Cinzel', serif; font-size: 50px; font-weight: 700;
+  line-height: 1.2; color: #FFFFFF; margin-bottom: 20px;
+}
+.aca-title span { color: var(--aca-orange); }
+
+.aca-quote-card {
+  background: rgba(0, 56, 130, 0.4); border: 1px solid var(--aca-orange);
+  padding: 24px 28px; margin-top: 24px; border-radius: 4px;
+}
+
+.aca-photo {
+  border: 2px solid var(--aca-orange); padding: 10px; background: rgba(1, 14, 36, 0.8);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+}
+.aca-photo img { width: 100%; height: 480px; object-fit: cover; display: block; filter: contrast(110%); }
+
+.aca-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255, 122, 0, 0.4); padding-top: 20px;
+  font-family: 'Cinzel', serif; font-size: 17px; color: var(--aca-orange);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="aca-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px; filter: drop-shadow(0 0 8px var(--aca-orange));">
+    <div class="aca-slogan">✦ HỌC ĐỂ THAY ĐỔI ✦</div>
+  </div>
+  <div style="font-family: 'Cinzel', serif; font-size: 18px; color: var(--aca-orange);">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="aca-grid">
+  <div>
+    <div style="font-family: 'Cinzel', serif; font-size: 17px; color: var(--aca-orange); letter-spacing: 3px; margin-bottom: 8px;">
+      LUẬN ĐỀ 15 // DARK ACADEMIA (CAM & COBALT)
+    </div>
+    <h1 class="aca-title">BA CHỨC NĂNG CƠ BẢN CỦA <span>QUÂN ĐỘI NHÂN DÂN</span></h1>
+    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.6; color: #CBD5E1;">
+      Quân đội nhân dân Việt Nam từ nhân dân mà ra, vì nhân dân mà chiến đấu; gánh vác trọn vẹn 3 thiên chức cao cả trong sự nghiệp xây dựng và bảo vệ Tổ quốc xã hội chủ nghĩa.
+    </p>
+
+    <div class="aca-quote-card">
+      <div style="font-size: 24px; color: var(--aca-orange); margin-bottom: 8px; font-weight: 700;">
+        I. Đội quân chiến đấu • II. Đội quân công tác • III. Đội quân lao động sản xuất
+      </div>
+      <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; color: #E2E8F0; line-height: 1.5;">
+        Luôn gắn bó máu thịt với nhân dân, là chỗ dựa tin cậy vững chắc của Đảng và Nhà nước.
+      </div>
+    </div>
+  </div>
+
+  <div class="aca-photo">
+    <img src="assets/vn-ba-thu-quan.jpg" alt="Bảo vệ chủ quyền thiêng liêng">
+    <div style="padding: 10px 14px; font-family: 'Cinzel', serif; font-size: 18px; color: var(--aca-orange); border-top: 1px solid var(--aca-orange);">
+      HÌNH ẢNH "BỘ ĐỘI CỤ HỒ" TRONG LÒNG NHÂN DÂN
+    </div>
+  </div>
+</main>
+
+<footer class="aca-footer">
+  <div>KHOA GIÁO DỤC QUỐC PHÒNG & AN NINH • ĐH ĐẠI NAM</div>
+  <div>SLIDE 15 / 20 • DARK ACADEMIA CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

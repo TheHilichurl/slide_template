@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 09: Maritime Cartography (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --sea-parchment: #F1F6FB;
+  --sea-cobalt: #003366;
+  --sea-cobalt-dark: #001F3F;
+  --sea-orange: #EA580C;
+  --sea-orange-light: #FF8533;
+  --font-body-size: 25px;
+}
+body { background: #021226; color: var(--sea-cobalt); font-family: 'Lora', serif; }
+#slide-stage {
+  background: var(--sea-parchment);
+  background-image: radial-gradient(rgba(0, 51, 102, 0.08) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 51, 102, 0.7);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px double var(--sea-cobalt);
+  outline: 2px solid var(--sea-orange);
+  outline-offset: -12px;
+}
+
+.sea-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--sea-cobalt); padding-bottom: 18px;
+}
+.sea-slogan {
+  font-family: 'Cinzel', serif; font-size: 19px; font-weight: 700;
+  color: var(--sea-orange); letter-spacing: 3px;
+}
+
+.sea-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0;
+}
+
+.sea-title {
+  font-family: 'Cinzel', serif; font-size: 48px; font-weight: 700;
+  line-height: 1.2; color: var(--sea-cobalt-dark); margin-bottom: 16px;
+}
+.sea-title span { color: var(--sea-orange); }
+
+.sea-scroll-box {
+  background: rgba(255, 255, 255, 0.7); border: 2px solid var(--sea-cobalt);
+  padding: 20px 24px; margin-top: 24px; position: relative;
+  box-shadow: 4px 4px 0px var(--sea-orange);
+}
+.sea-scroll-box::before {
+  content: "☸"; position: absolute; right: 16px; top: 12px;
+  font-size: 28px; color: var(--sea-orange);
+}
+
+.sea-photo {
+  border: 3px solid var(--sea-cobalt); padding: 8px; background: #FFF;
+  box-shadow: 0 15px 35px rgba(0, 51, 102, 0.25);
+}
+.sea-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+
+.sea-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--sea-cobalt); padding-top: 14px;
+  font-family: 'Cinzel', serif; font-size: 17px; color: var(--sea-cobalt);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="sea-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 44px;">
+    <div class="sea-slogan">✦ HẢI TRÌNH ĐẠI NAM :: HỌC ĐỂ THAY ĐỔI ✦</div>
+  </div>
+  <div style="font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: var(--sea-cobalt);">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="sea-main">
+  <div>
+    <div style="font-family: 'Cinzel', serif; font-size: 17px; color: var(--sea-orange); letter-spacing: 3px; margin-bottom: 8px;">
+      CHUYÊN KHẢO 09 // HẢI ĐỒ THÁM HIỂM (CAM & COBALT)
+    </div>
+    <h1 class="sea-title">CHỦ QUYỀN BIỂN ĐẢO <span>THIÊNG LIÊNG CỦA TỔ QUỐC</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.6; color: #1E293B;">
+      Việt Nam là quốc gia biển với bờ biển dài trên 3.260 km và hàng ngàn đảo, quần đảo. Bảo vệ chủ quyền biển đảo là nhiệm vụ thiêng liêng và bất khả xâm phạm của toàn dân tộc.
+    </p>
+
+    <div class="sea-scroll-box">
+      <div style="font-family: 'Cinzel', serif; font-size: 21px; font-weight: 700; color: var(--sea-cobalt); margin-bottom: 6px;">
+        ✦ HỆ THỐNG 5 VÙNG HẢI QUÂN CHIẾN LƯỢC:
+      </div>
+      <div style="font-size: var(--font-body-size); line-height: 1.5; color: #0F172A;">
+        Vùng 1 (Vịnh Bắc Bộ) • Vùng 2 (Nam Trung Bộ) • Vùng 3 (Miền Trung) • Vùng 4 (Trường Sa) • Vùng 5 (Tây Nam Bộ).
+      </div>
+    </div>
+  </div>
+
+  <div class="sea-photo">
+    <img src="assets/vn-gepard-ship.jpg" alt="Chiến hạm Gepard Hải quân">
+    <div style="padding: 10px 14px; font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700; color: var(--sea-cobalt); border-top: 1px solid var(--sea-cobalt);">
+      KÝ HIỆU HQ-012 LÝ THÁI TỔ • TUẦN TRA QUẦN ĐẢO TRƯỜNG SA
+    </div>
+  </div>
+</main>
+
+<footer class="sea-footer">
+  <div>HẢI ĐỒ QUỐC PHÒNG TOÀN DÂN • ĐẠI HỌC ĐẠI NAM</div>
+  <div style="color: var(--sea-orange);">SLIDE 09 / 20 • MARITIME CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

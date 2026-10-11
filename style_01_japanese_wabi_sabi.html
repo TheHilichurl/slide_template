@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 01: Japanese Wabi-Sabi (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif+JP:wght@400;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --theme-orange: #EA580C;
+  --theme-orange-bright: #FF7A00;
+  --theme-cobalt: #003882;
+  --theme-cobalt-dark: #00224F;
+  --theme-cobalt-light: #EBF3FC;
+  --wabi-paper: #F8FAFC;
+  --font-body-size: 25px;
+}
+body { background: #0A1322; color: var(--theme-cobalt-dark); font-family: 'Noto Serif JP', serif; }
+#slide-stage {
+  background: var(--wabi-paper);
+  background-image: radial-gradient(#D6E4F0 1.5px, transparent 1.5px), radial-gradient(var(--theme-cobalt-light) 1px, transparent 1px);
+  background-size: 40px 40px, 16px 16px;
+  background-position: 0 0, 20px 20px;
+  box-shadow: 0 40px 100px rgba(0, 34, 79, 0.5);
+  padding: 56px 80px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 2px solid #CBD5E1;
+}
+
+/* Enso circle watermark in subtle cobalt */
+.enso-circle {
+  position: absolute; right: 80px; top: 120px; width: 620px; height: 620px;
+  border-radius: 50%;
+  border: 28px solid rgba(0, 56, 130, 0.05);
+  border-top-color: transparent;
+  transform: rotate(-35deg);
+  pointer-events: none;
+}
+
+/* Hanko Seal Stamp in DNU Orange */
+.hanko-stamp {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid var(--theme-orange); color: var(--theme-orange);
+  padding: 4px 14px; font-weight: 700; font-size: 16px;
+  letter-spacing: 2px; text-transform: uppercase;
+  border-radius: 4px; background: rgba(234, 88, 12, 0.06);
+}
+
+.top-bar-zen {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid rgba(0, 56, 130, 0.15); padding-bottom: 24px;
+}
+.zen-brand-left {
+  display: flex; align-items: center; gap: 24px;
+}
+.zen-brand-left img { height: 46px; }
+.zen-slogan {
+  font-family: 'Cinzel', serif; font-size: 18px; font-weight: 700;
+  color: var(--theme-orange); letter-spacing: 3px;
+  border-left: 2px solid rgba(0, 56, 130, 0.2); padding-left: 20px;
+}
+
+.zen-meta-right {
+  display: flex; align-items: center; gap: 16px; font-size: 18px; color: var(--theme-cobalt); font-weight: 600;
+}
+
+.zen-body-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  flex: 1; padding: 40px 0;
+}
+
+.zen-hero-text h1 {
+  font-size: 56px; font-weight: 900; line-height: 1.15;
+  color: var(--theme-cobalt-dark); margin-bottom: 20px; letter-spacing: -0.5px;
+}
+.zen-hero-text h1 span { color: var(--theme-orange); }
+
+.zen-hero-subtitle {
+  font-size: 26px; color: var(--theme-cobalt); margin-bottom: 32px; font-style: italic; font-weight: 600;
+}
+.zen-desc-para {
+  font-size: var(--font-body-size); line-height: 1.6; color: #1E293B;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-left: 4px solid var(--theme-orange); padding-left: 24px;
+}
+
+.zen-image-container {
+  position: relative; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 34, 79, 0.18);
+  border: 2px solid rgba(0, 56, 130, 0.2);
+}
+.zen-image-container img {
+  width: 100%; height: 500px; object-fit: cover; display: block;
+}
+.zen-image-caption {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0, 34, 79, 0.95));
+  color: #FFFFFF; padding: 24px 28px; font-size: 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.zen-bottom-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid rgba(0, 56, 130, 0.15); padding-top: 20px;
+  font-size: 19px; color: var(--theme-cobalt); font-weight: 600;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="enso-circle"></div>
+<header class="top-bar-zen">
+  <div class="zen-brand-left">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam">
+    <div class="zen-slogan">HỌC ĐỂ THAY ĐỔI</div>
+  </div>
+  <div class="zen-meta-right">
+    <div class="hanko-stamp">KỶ LUẬT THÉP</div>
+    <span>Tiểu đội 1 • Trung đội 1 • Đại đội 6</span>
+  </div>
+</header>
+
+<main class="zen-body-grid">
+  <div>
+    <div style="font-size: 18px; color: var(--theme-orange); font-weight: 700; letter-spacing: 4px; margin-bottom: 12px;">PHONG CÁCH 01 • WABI-SABI Á ĐÔNG (CAM & COBALT)</div>
+    <h1>DỰNG NƯỚC ĐI ĐÔI VỚI <span>GIỮ NƯỚC</span></h1>
+    <div class="zen-hero-subtitle">Tư tưởng quân sự ngàn năm gìn giữ non sông Việt Nam</div>
+    <p class="zen-desc-para">
+      Nghệ thuật quân sự dân tộc kết tinh qua các thời kỳ dựng nước và giữ nước: lấy đại nghĩa thắng hung tàn, lấy chí nhân thay cường bạo. Giữ nước từ khi nước chưa nguy, phát huy thế trận lòng dân làm nền tảng vững chắc cho sự trường tồn của quốc gia dân tộc.
+    </p>
+  </div>
+  <div class="zen-image-container">
+    <img src="assets/vn-hung-temple.jpg" alt="Đền Hùng cội nguồn dân tộc">
+    <div class="zen-image-caption">
+      <strong style="color: var(--theme-orange-bright);">Đền Hùng — Cội nguồn dân tộc:</strong> "Các Vua Hùng đã có công dựng nước, Bác cháu ta phải cùng nhau giữ lấy nước."
+    </div>
+  </div>
+</main>
+
+<footer class="zen-bottom-bar">
+  <div>Chuyên đề GDQP-AN • Khoa Giáo dục Quốc phòng & An ninh ĐH Đại Nam</div>
+  <div style="font-family: 'Cinzel', serif; letter-spacing: 2px; color: var(--theme-orange);">SLIDE 01 / 20 • THIỀN CAM & XANH COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

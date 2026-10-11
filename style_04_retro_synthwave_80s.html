@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 04: Retro 80s Synthwave (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Plus+Jakarta+Sans:wght@500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --synth-bg: #020C1F;
+  --synth-cobalt: #003882;
+  --synth-cyan-cobalt: #0088FF;
+  --synth-orange: #FF6B00;
+  --synth-orange-bright: #FFA033;
+  --font-body-size: 25px;
+}
+body { background: #010611; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: linear-gradient(180deg, #020C1F 0%, #061F4D 50%, #0A2F72 100%);
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.8);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 3px solid var(--synth-orange);
+  overflow: hidden;
+}
+
+.synth-grid-floor {
+  position: absolute; bottom: 0; left: -20%; width: 140%; height: 260px;
+  background-image: 
+    linear-gradient(rgba(0, 136, 255, 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 0, 0.45) 1px, transparent 1px);
+  background-size: 60px 40px;
+  transform: perspective(300px) rotateX(65deg);
+  transform-origin: bottom center;
+  pointer-events: none; opacity: 0.7;
+}
+
+.synth-header {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--synth-orange); padding-bottom: 20px;
+}
+.synth-slogan {
+  font-family: 'Orbitron', sans-serif; font-size: 20px; font-weight: 900;
+  color: var(--synth-orange-bright); text-shadow: 0 0 12px var(--synth-orange);
+}
+
+.synth-body {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  flex: 1; padding: 32px 0; z-index: 1;
+}
+
+.synth-title {
+  font-family: 'Orbitron', sans-serif; font-size: 54px; font-weight: 900;
+  line-height: 1.15; color: #FFFFFF;
+  text-shadow: 0 0 20px var(--synth-cyan-cobalt);
+  margin-bottom: 20px;
+}
+.synth-title span { color: var(--synth-orange); text-shadow: 0 0 20px var(--synth-orange); }
+
+.synth-card-box {
+  background: rgba(2, 12, 31, 0.85); backdrop-filter: blur(12px);
+  border: 1px solid var(--synth-orange); box-shadow: 0 0 25px rgba(255, 107, 0, 0.3);
+  padding: 24px; border-radius: 8px; margin-top: 24px;
+}
+
+.synth-photo-box {
+  border: 3px solid var(--synth-cyan-cobalt); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 0 35px rgba(255, 107, 0, 0.4); position: relative;
+}
+.synth-photo-box img {
+  width: 100%; height: 480px; object-fit: cover; display: block;
+}
+
+.synth-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(0, 136, 255, 0.5); padding-top: 18px;
+  font-size: 18px; color: var(--synth-orange-bright); z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="synth-grid-floor"></div>
+
+<header class="synth-header">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 44px; filter: drop-shadow(0 0 10px var(--synth-orange));">
+    <div class="synth-slogan">★ HỌC ĐỂ THAY ĐỔI ★</div>
+  </div>
+  <div style="font-family: 'Orbitron', sans-serif; font-size: 19px; color: #FFFFFF; text-shadow: 0 0 8px var(--synth-cyan-cobalt);">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="synth-body">
+  <div>
+    <div style="font-family: 'Orbitron', sans-serif; font-size: 18px; color: var(--synth-orange); letter-spacing: 4px; margin-bottom: 10px;">
+      STYLE 04 // 1980s SYNTHWAVE (CAM & COBALT)
+    </div>
+    <h1 class="synth-title">BINH CHỦNG TĂNG THIẾT GIÁP: <span>ĐỘT KÍCH</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #E2E8F0;">
+      Lực lượng đột kích quan trọng của Lục quân Việt Nam. Sở hữu sức cơ động cao, hỏa lực mạnh mẽ và vỏ giáp bảo vệ kiên cố, sẵn sàng đè bẹp các tuyến phòng thủ then chốt.
+    </p>
+
+    <div class="synth-card-box">
+      <div style="font-family: 'Orbitron', sans-serif; color: var(--synth-orange-bright); font-size: 22px; margin-bottom: 8px;">
+        ⚡ XE TĂNG CHỦ LỰC T-90S / T-90SK
+      </div>
+      <div style="font-size: var(--font-body-size); color: #CBD5E1; line-height: 1.5;">
+        Trang bị pháo 125mm, hệ thống phòng vệ chủ động Shtora-1 và giáp phản ứng nổ Kontakt-5 siêu việt.
+      </div>
+    </div>
+  </div>
+
+  <div class="synth-photo-box">
+    <img src="assets/vn-tang-thiet-giap.jpg" alt="Xe tăng Thiết giáp Quân đội Việt Nam">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(2, 12, 31, 0.9); padding: 14px 20px; font-size: 20px; color: var(--synth-orange-bright); border-top: 1px solid var(--synth-orange);">
+      ★ LỮ ĐOÀN XE TĂNG 201 • "ĐÃ RA QUÂN LÀ ĐÁNH THẮNG"
+    </div>
+  </div>
+</main>
+
+<footer class="synth-footer">
+  <div>GDQP-AN • BỘ MÔN QUÂN SỰ ĐH ĐẠI NAM</div>
+  <div style="font-family: 'Orbitron', sans-serif;">SLIDE 04 / 20 • SYNTHWAVE CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

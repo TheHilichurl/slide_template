@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 17: Teenage Engineering (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --te-grey: #E5EEF8;
+  --te-cobalt: #003366;
+  --te-cobalt-dark: #001A33;
+  --te-orange: #FF5500;
+  --te-border: #A3BFD9;
+  --font-body-size: 25px;
+}
+body { background: #0A192C; color: var(--te-cobalt-dark); font-family: 'Space Mono', monospace; }
+#slide-stage {
+  background: var(--te-grey);
+  padding: 44px 60px; box-shadow: 0 40px 140px rgba(0, 51, 102, 0.6);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid var(--te-cobalt);
+}
+
+.te-dot-strip {
+  position: absolute; right: 60px; top: 44px; display: flex; gap: 8px;
+}
+.te-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--te-orange); opacity: 0.8; }
+
+.te-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--te-cobalt); padding-bottom: 16px;
+}
+.te-slogan {
+  font-size: 18px; font-weight: 700; color: var(--te-orange); letter-spacing: 2px;
+}
+
+.te-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0;
+}
+
+.te-title {
+  font-size: 46px; font-weight: 700; line-height: 1.2; color: var(--te-cobalt);
+  margin-bottom: 16px; letter-spacing: -1px;
+}
+.te-title span { color: var(--te-orange); }
+
+.te-dial-card {
+  background: #D5E4F5; border: 2px solid var(--te-cobalt); padding: 20px 24px;
+  margin-top: 20px; box-shadow: 4px 4px 0px var(--te-orange);
+}
+
+.te-photo {
+  border: 3px solid var(--te-cobalt); padding: 6px; background: #FFF;
+  box-shadow: 6px 6px 0px var(--te-orange);
+}
+.te-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+
+.te-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--te-cobalt); padding-top: 14px; font-size: 17px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="te-dot-strip">
+  <div class="te-dot"></div><div class="te-dot"></div><div class="te-dot"></div><div class="te-dot"></div><div class="te-dot"></div>
+</div>
+
+<header class="te-top">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px;">
+    <div class="te-slogan">UNIT-OP-1 // HỌC ĐỂ THAY ĐỔI</div>
+  </div>
+  <div style="font-size: 18px; font-weight: 700; color: var(--te-cobalt);">DEV: T1-B1-C6</div>
+</header>
+
+<main class="te-main">
+  <div>
+    <div style="font-size: 16px; color: var(--te-orange); font-weight: 700; letter-spacing: 3px; margin-bottom: 8px;">
+      INDUSTRIAL DESIGN 17 // TEENAGE ENGINEERING (CAM & COBALT)
+    </div>
+    <h1 class="te-title">BỘ TỔNG THAM MƯU: <span>CƠ QUAN CHỈ HUY ĐIỀU HÀNH</span></h1>
+    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.55; color: #1E293B;">
+      Cơ quan chỉ huy tham mưu cao nhất của Quân đội nhân dân Việt Nam, nghiên cứu dự báo tình hình và tổ chức thực hiện kế hoạch tác chiến phòng thủ quốc gia.
+    </p>
+
+    <div class="te-dial-card">
+      <div style="color: var(--te-orange); font-weight: 700; font-size: 20px; margin-bottom: 8px;">
+        [CHỨC NĂNG THAM MƯU TÁC CHIẾN]
+      </div>
+      <div style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.5; color: #0F172A;">
+        Chỉ huy các Quân khu, Quân đoàn, Quân chủng và Binh chủng hợp thành trong thế trận phòng thủ liên hoàn vững chắc.
+      </div>
+    </div>
+  </div>
+
+  <div class="te-photo">
+    <img src="assets/vn-ten-lua-phong-khong.jpg" alt="Tên lửa phòng không sẵn sàng chiến đấu">
+    <div style="padding: 10px 14px; font-size: 17px; font-weight: 700; color: var(--te-cobalt); border-top: 2px solid var(--te-cobalt);">
+      TRỰC CHIẾN BẢO VỆ VÙNG TRỜI VÀ CĂN CỨ CHIẾN LƯỢC
+    </div>
+  </div>
+</main>
+
+<footer class="te-footer">
+  <div>SWEDISH PRECISION HARDWARE SPEC • ĐH ĐẠI NAM</div>
+  <div style="color: var(--te-orange);">SLIDE 17 / 20 • INDUSTRIAL HI-FI CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

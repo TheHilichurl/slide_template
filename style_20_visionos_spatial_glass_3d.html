@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 20: VisionOS Spatial (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --vis-bg: #010C1E;
+  --vis-cobalt: #003882;
+  --vis-cobalt-light: #38BDF8;
+  --vis-orange: #EA580C;
+  --vis-orange-bright: #FF7A00;
+  --vis-glass: rgba(0, 56, 130, 0.18);
+  --vis-border: rgba(255, 122, 0, 0.35);
+  --font-body-size: 25px;
+}
+body { background: #000612; color: #FFFFFF; font-family: 'Outfit', sans-serif; }
+#slide-stage {
+  background: radial-gradient(circle at 30% 20%, #0A2F72 0%, var(--vis-bg) 70%);
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.8);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 1px solid var(--vis-border);
+  overflow: hidden;
+}
+
+.vis-aurora-glow {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.3) 0%, transparent 70%);
+  bottom: -150px; right: -100px; pointer-events: none;
+}
+
+.vis-top {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--vis-glass); backdrop-filter: blur(30px);
+  border: 1px solid var(--vis-border); border-radius: 100px;
+  padding: 12px 28px;
+}
+.vis-slogan {
+  font-size: 19px; font-weight: 700; color: var(--vis-orange-bright); letter-spacing: 2px;
+}
+
+.vis-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 32px 0;
+}
+
+.vis-title {
+  font-size: 58px; font-weight: 900; line-height: 1.15;
+  background: linear-gradient(135deg, #FFFFFF 0%, #BAE6FD 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+.vis-title-sub { color: var(--vis-orange-bright); font-size: 26px; font-weight: 700; margin-bottom: 12px; }
+
+.vis-card {
+  background: var(--vis-glass); backdrop-filter: blur(40px);
+  border: 1px solid var(--vis-border); border-radius: 24px;
+  padding: 28px 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  margin-top: 24px;
+}
+
+.vis-photo {
+  border-radius: 28px; overflow: hidden; border: 2px solid var(--vis-orange);
+  box-shadow: 0 30px 70px rgba(0, 56, 130, 0.6); position: relative;
+}
+.vis-photo img { width: 100%; height: 480px; object-fit: cover; display: block; }
+
+.vis-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--vis-glass); backdrop-filter: blur(30px);
+  border: 1px solid var(--vis-border); border-radius: 100px;
+  padding: 12px 28px; font-size: 18px; color: #CBD5E1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="vis-aurora-glow"></div>
+
+<header class="vis-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 38px; filter: drop-shadow(0 0 10px var(--vis-orange));">
+    <div class="vis-slogan">✦ HỌC ĐỂ THAY ĐỔI ✦</div>
+  </div>
+  <div style="font-weight: 700; font-size: 19px; color: #FFFFFF;">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="vis-grid">
+  <div>
+    <div style="font-size: 17px; font-weight: 800; color: var(--vis-orange-bright); letter-spacing: 3px; margin-bottom: 8px;">
+      SPATIAL UI 20 // APPLE VISIONOS (CAM & COBALT)
+    </div>
+    <h1 class="vis-title">TỔNG KẾT & CẢM ƠN: VỮNG BƯỚC TƯƠNG LAI</h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #CBD5E1;">
+      Xin trân trọng cảm ơn ThS. Giáp Hoài Thế Anh cùng toàn thể các đồng chí sinh viên đã chú ý lắng nghe và đóng góp ý kiến cho bài báo cáo chuyên đề của Tiểu đội 1.
+    </p>
+
+    <div class="vis-card">
+      <div style="font-size: 24px; font-weight: 800; color: var(--vis-orange-bright); margin-bottom: 8px;">
+        ✦ KẾT TINH BẢN LĨNH & TRI THỨC ĐẠI HỌC ĐẠI NAM
+      </div>
+      <div style="font-size: var(--font-body-size); line-height: 1.5; color: #E2E8F0;">
+        "HỌC ĐỂ THAY ĐỔI" — Sẵn sàng cống hiến vì một Việt Nam hòa bình, giàu mạnh, hùng cường và vững bền muôn thuở.
+      </div>
+    </div>
+  </div>
+
+  <div class="vis-photo">
+    <img src="assets/vn-military-parade.jpg" alt="Duyệt binh quân sự hùng tráng">
+  </div>
+</main>
+
+<footer class="vis-footer">
+  <div>SPATIAL COMPUTING • ĐẠI HỌC ĐẠI NAM 2026</div>
+  <div style="color: var(--vis-orange-bright);">SLIDE 20 / 20 • VISIONOS CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

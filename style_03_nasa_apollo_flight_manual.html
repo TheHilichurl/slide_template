@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 03: NASA Apollo (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --nasa-paper: #F1F6FB;
+  --nasa-cobalt: #003882;
+  --nasa-cobalt-dark: #001F4D;
+  --nasa-orange: #EA580C;
+  --nasa-grid: #D2E3F4;
+  --font-body-size: 25px;
+}
+body { background: #061122; color: var(--nasa-cobalt-dark); font-family: 'Space Mono', monospace; }
+#slide-stage {
+  background: var(--nasa-paper);
+  background-image: linear-gradient(var(--nasa-grid) 1px, transparent 1px), linear-gradient(90deg, var(--nasa-grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  box-shadow: 0 40px 100px rgba(0, 31, 77, 0.6);
+  padding: 44px 60px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid var(--nasa-cobalt);
+}
+
+.apollo-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--nasa-cobalt); padding-bottom: 16px;
+}
+.apollo-stamp-orange {
+  display: inline-block; border: 2px solid var(--nasa-orange); color: var(--nasa-orange);
+  padding: 4px 12px; font-weight: 700; font-size: 16px; letter-spacing: 2px;
+  transform: rotate(-1.5deg); background: rgba(234, 88, 12, 0.08);
+}
+
+.apollo-grid-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 24px 0;
+}
+
+.apollo-code-block {
+  background: #E2EEF9; border: 2px solid var(--nasa-cobalt); padding: 20px 24px;
+  margin-top: 20px; font-size: 20px; line-height: 1.6;
+}
+.apollo-step {
+  display: flex; align-items: flex-start; gap: 14px; margin-bottom: 12px;
+}
+.apollo-step-num {
+  background: var(--nasa-orange); color: #FFF; padding: 2px 8px; font-size: 16px; font-weight: 700;
+}
+
+.apollo-image-box {
+  border: 2px solid var(--nasa-cobalt); padding: 6px; background: #FFF;
+  box-shadow: 6px 6px 0px var(--nasa-orange);
+}
+.apollo-image-box img {
+  width: 100%; height: 460px; object-fit: cover; display: block;
+}
+
+.apollo-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--nasa-cobalt); padding-top: 14px; font-size: 17px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="apollo-top">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px;">
+    <div style="font-size: 17px; font-weight: 700; color: var(--nasa-cobalt); border-left: 2px solid var(--nasa-cobalt); padding-left: 16px;">
+      DOC-REF // DNU-QPAN-1969 :: HỌC ĐỂ THAY ĐỔI
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <div class="apollo-stamp-orange">FLIGHT APPROVED</div>
+    <div style="font-size: 17px; font-weight: 700; color: var(--nasa-cobalt);">T1 • B1 • C6</div>
+  </div>
+</header>
+
+<main class="apollo-grid-main">
+  <div>
+    <div style="font-size: 16px; color: var(--nasa-orange); font-weight: 700; letter-spacing: 3px; margin-bottom: 8px;">
+      STYLE 03 // NASA APOLLO FLIGHT MANUAL (CAM & COBALT)
+    </div>
+    <h1 style="font-size: 48px; font-weight: 700; line-height: 1.2; color: var(--nasa-cobalt-dark); margin-bottom: 16px;">
+      QUÂN CHỦNG PHÒNG KHÔNG - KHÔNG QUÂN
+    </h1>
+    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.55; color: #1E293B;">
+      Lực lượng nòng cốt quản lý, bảo vệ vững chắc vùng trời quốc gia; sẵn sàng đánh bại mọi cuộc tiến công đường không của địch bằng vũ khí hiện đại.
+    </p>
+
+    <div class="apollo-code-block">
+      <div style="font-weight: 700; color: var(--nasa-cobalt); margin-bottom: 10px; font-size: 21px;">[HỆ THỐNG KHÍ TÀI TÁC CHIẾN]</div>
+      <div class="apollo-step">
+        <span class="apollo-step-num">01</span>
+        <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px;"><strong>Tiêm kích Su-30MK2:</strong> Hổ mang chúa bảo vệ bầu trời & biển đảo.</span>
+      </div>
+      <div class="apollo-step">
+        <span class="apollo-step-num">02</span>
+        <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px;"><strong>Tên lửa S-300PMU1:</strong> Lá chắn phòng không đa tầng tầm xa.</span>
+      </div>
+      <div class="apollo-step">
+        <span class="apollo-step-num">03</span>
+        <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px;"><strong>Radar cảnh giới 36D6:</strong> Trinh sát cảnh giới sớm không gian.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="apollo-image-box">
+    <img src="assets/vn-su30mk2.jpg" alt="Tiêm kích Su-30MK2 Không quân Việt Nam">
+    <div style="padding: 10px 14px; font-size: 18px; color: var(--nasa-cobalt-dark); border-top: 1px solid var(--nasa-cobalt); background: #FAF7F0;">
+      FIG-A3 :: TIÊM KÍCH ĐA NĂNG SU-30MK2 (TRUNG ĐOÀN 927)
+    </div>
+  </div>
+</main>
+
+<footer class="apollo-footer">
+  <div>MISSION: DEFENSE EDUCATION // DNU MILITARY ARCHIVE</div>
+  <div style="color: var(--nasa-orange);">SLIDE 03 / 20 • NASA CAM & COBALT SPEC</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

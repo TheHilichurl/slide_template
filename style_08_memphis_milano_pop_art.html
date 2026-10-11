@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 08: Memphis Pop Art (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --mem-orange: #FF6B00;
+  --mem-cobalt: #003882;
+  --mem-cobalt-dark: #001F4D;
+  --mem-sky: #BAE6FD;
+  --mem-cream: #FFFDF5;
+  --font-body-size: 25px;
+}
+body { background: #0A192F; color: var(--mem-cobalt-dark); font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: var(--mem-cream);
+  background-image: radial-gradient(var(--mem-cobalt) 2px, transparent 2px);
+  background-size: 32px 32px;
+  padding: 44px 60px; box-shadow: 0 40px 120px rgba(0, 56, 130, 0.5);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 6px solid var(--mem-cobalt);
+  overflow: hidden;
+}
+
+.mem-doodle-circle {
+  position: absolute; right: -40px; top: -40px; width: 160px; height: 160px;
+  background: var(--mem-orange); border-radius: 50%; border: 4px solid var(--mem-cobalt);
+  box-shadow: 6px 6px 0px var(--mem-cobalt); z-index: 0;
+}
+.mem-doodle-triangle {
+  position: absolute; left: 40px; bottom: 80px; width: 0; height: 0;
+  border-left: 35px solid transparent; border-right: 35px solid transparent;
+  border-bottom: 60px solid var(--mem-orange); transform: rotate(25deg); z-index: 0;
+}
+
+.mem-top {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #FFF; border: 4px solid var(--mem-cobalt);
+  box-shadow: 6px 6px 0px var(--mem-orange); padding: 16px 28px; z-index: 1;
+}
+.mem-slogan {
+  font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700;
+  background: var(--mem-orange); color: #FFF; padding: 6px 16px;
+  border: 3px solid var(--mem-cobalt); box-shadow: 3px 3px 0px var(--mem-cobalt);
+}
+
+.mem-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0; z-index: 1;
+}
+
+.mem-title {
+  font-family: 'Space Grotesk', sans-serif; font-size: 52px; font-weight: 700;
+  line-height: 1.15; color: var(--mem-cobalt); margin-bottom: 18px;
+}
+.mem-title span { color: var(--mem-orange); }
+
+.mem-card {
+  background: #FFFFFF; border: 4px solid var(--mem-cobalt);
+  box-shadow: 8px 8px 0px var(--mem-orange); padding: 24px; border-radius: 12px;
+  margin-top: 20px;
+}
+
+.mem-photo {
+  border: 5px solid var(--mem-cobalt); border-radius: 16px; overflow: hidden;
+  box-shadow: 10px 10px 0px var(--mem-orange); background: #FFF;
+}
+.mem-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+
+.mem-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--mem-cobalt); color: #FFF; border: 4px solid var(--mem-cobalt-dark);
+  box-shadow: 6px 6px 0px var(--mem-orange); padding: 12px 24px;
+  font-weight: 700; font-size: 19px; z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="mem-doodle-circle"></div>
+<div class="mem-doodle-triangle"></div>
+
+<header class="mem-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px;">
+    <div class="mem-slogan">HỌC ĐỂ THAY ĐỔI ⚡</div>
+  </div>
+  <div style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--mem-cobalt);">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="mem-main">
+  <div>
+    <div style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--mem-orange); margin-bottom: 8px;">
+      POP STYLE 08 // MEMPHIS POP ART (CAM & COBALT)
+    </div>
+    <h1 class="mem-title">BINH CHỦNG PHÁO BINH: <span>HỎA LỰC MẶT ĐẤT SỐ 1</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #1E293B;">
+      Pháo binh là hỏa lực mặt đất chủ yếu của Quân đội nhân dân Việt Nam, chi viện đắc lực cho các lực lượng bộ binh và tăng thiết giáp trên mọi chiến trường.
+    </p>
+
+    <div class="mem-card">
+      <div style="font-family: 'Space Grotesk', sans-serif; font-size: 22px; font-weight: 700; color: var(--mem-orange); margin-bottom: 8px;">
+        ★ TRUYỀN THỐNG 8 CHỮ VÀNG BÁC HỒ TRAO TẶNG:
+      </div>
+      <div style="font-size: var(--font-body-size); font-weight: 700; color: var(--mem-cobalt);">
+        "CHÂN ĐỒNG • VAI SẮT • ĐÁNH GIỎI • BẮN TRÚNG"
+      </div>
+    </div>
+  </div>
+
+  <div class="mem-photo">
+    <img src="assets/vn-phao-binh-bo-bien.jpg" alt="Pháo binh Quân đội Việt Nam">
+    <div style="background: var(--mem-orange); color: #FFF; padding: 12px 18px; font-weight: 700; font-size: 19px;">
+      LỮ ĐOÀN TÊN LỬA 490 & CÁC TRUNG ĐOÀN PHÁO BINH
+    </div>
+  </div>
+</main>
+
+<footer class="mem-footer">
+  <div>ĐẠI HỌC ĐẠI NAM • BỘ MÔN GDQP-AN</div>
+  <div style="color: var(--mem-orange);">SLIDE 08 / 20 • MEMPHIS CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

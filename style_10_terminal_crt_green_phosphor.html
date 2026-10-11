@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 10: CRT Terminal (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --crt-bg: #010A1A;
+  --crt-cobalt: #003882;
+  --crt-orange: #FF7A00;
+  --crt-orange-bright: #FFA44D;
+  --crt-cyan: #38BDF8;
+  --font-body-size: 25px;
+}
+body { background: #00050D; color: var(--crt-orange); font-family: 'Share Tech Mono', monospace; }
+#slide-stage {
+  background: var(--crt-bg);
+  padding: 44px 60px; box-shadow: 0 0 100px rgba(0, 56, 130, 0.6);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid var(--crt-orange); border-radius: 20px;
+  overflow: hidden;
+}
+
+.crt-scanlines {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(0, 56, 130, 0) 50%, rgba(0, 0, 0, 0.45) 50%), linear-gradient(90deg, rgba(255, 122, 0, 0.03), rgba(0, 56, 130, 0.02), rgba(0, 150, 255, 0.03));
+  background-size: 100% 4px, 6px 100%; pointer-events: none; z-index: 10; opacity: 0.7;
+}
+
+.crt-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--crt-orange); padding-bottom: 14px;
+}
+.crt-slogan {
+  font-family: 'VT323', monospace; font-size: 32px; letter-spacing: 2px;
+  color: var(--crt-orange-bright); text-shadow: 0 0 8px var(--crt-orange);
+}
+
+.crt-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 24px 0;
+}
+
+.crt-title {
+  font-family: 'VT323', monospace; font-size: 64px; line-height: 1.1;
+  color: #FFFFFF; text-shadow: 0 0 12px var(--crt-orange); margin-bottom: 16px;
+}
+.crt-title span { color: var(--crt-orange); }
+
+.crt-terminal-box {
+  background: #02122B; border: 2px solid var(--crt-orange);
+  padding: 20px; box-shadow: 0 0 20px rgba(255, 122, 0, 0.2); margin-top: 20px;
+}
+.crt-line { font-size: 22px; line-height: 1.6; }
+.crt-prompt { color: var(--crt-cyan); font-weight: 700; }
+
+.crt-photo {
+  border: 2px solid var(--crt-orange); padding: 4px; background: #000;
+  box-shadow: 0 0 25px rgba(0, 56, 130, 0.5); position: relative;
+}
+.crt-photo img { width: 100%; height: 460px; object-fit: cover; display: block; filter: contrast(110%); }
+
+.crt-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid rgba(255, 122, 0, 0.4); padding-top: 12px; font-size: 18px; color: var(--crt-cyan);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="crt-scanlines"></div>
+
+<header class="crt-top">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 38px; filter: drop-shadow(0 0 6px var(--crt-orange));">
+    <div class="crt-slogan">root@dnu:~# ./hoc-de-thay-doi.sh [HỌC ĐỂ THAY ĐỔI]</div>
+  </div>
+  <div style="font-family: 'VT323', monospace; font-size: 28px; color: var(--crt-cyan);">
+    SYS_ID: T1-B1-C6 // STATUS: ONLINE
+  </div>
+</header>
+
+<main class="crt-main">
+  <div>
+    <div style="font-size: 16px; letter-spacing: 3px; color: var(--crt-orange-bright); margin-bottom: 6px;">
+      [SYSTEM TERMINAL 10] // RETRO CRT PHOSPHOR (CAM & COBALT)
+    </div>
+    <h1 class="crt-title">BỘ TƯ LỆNH TÁC CHIẾN <span>KHÔNG GIAN MẠNG (86)</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #E2E8F0;">
+      Lực lượng tác chiến đặc biệt bảo vệ chủ quyền quốc gia trên không gian mạng; phòng chống chiến tranh thông tin, bảo vệ an ninh hạ tầng mạng và dữ liệu quốc gia.
+    </p>
+
+    <div class="crt-terminal-box">
+      <div class="crt-line"><span class="crt-prompt">$ nmap -sS -O mil-cyber-grid.vn</span></div>
+      <div class="crt-line">&gt; PORT 22/tcp OPEN ssh-secure-defense [COBALT GUARD]</div>
+      <div class="crt-line">&gt; PORT 443/tcp OPEN c4isr-command-center</div>
+      <div class="crt-line">&gt; THREAT DETECTION: 0 THREATS // STATUS: PROTECTED</div>
+      <div class="crt-line"><span class="crt-prompt">$ echo "HỌC ĐỂ THAY ĐỔI — SẴN SÀNG CHIẾN ĐẤU" _</span></div>
+    </div>
+  </div>
+
+  <div class="crt-photo">
+    <img src="assets/vn-khoa-hoc-cong-nghe.jpg" alt="Khoa học công nghệ tác chiến không gian mạng">
+    <div style="position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(1, 10, 26, 0.95); border: 1px solid var(--crt-orange); padding: 8px 12px; font-size: 17px; color: #FFFFFF;">
+      DIAGNOSTIC FEED: TRUNG TÂM GIÁM SÁT AN NINH MẠNG QUỐC GIA
+    </div>
+  </div>
+</main>
+
+<footer class="crt-footer">
+  <div>DNU LINUX KERNEL 6.8.0-MIL // KHOA GDQP-AN</div>
+  <div style="color: var(--crt-orange);">SLIDE 10 / 20 • CRT TERMINAL CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

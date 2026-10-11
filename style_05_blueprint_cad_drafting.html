@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 05: Architectural Blueprint (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --cad-cobalt: #002B5C;
+  --cad-grid: #0A3C7A;
+  --cad-orange: #FF7A00;
+  --cad-cyan: #38BDF8;
+  --cad-white: #FFFFFF;
+  --font-body-size: 25px;
+}
+body { background: #001B3A; color: var(--cad-white); font-family: 'Share Tech Mono', monospace; }
+#slide-stage {
+  background: var(--cad-cobalt);
+  background-image: 
+    linear-gradient(var(--cad-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cad-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  box-shadow: 0 40px 140px rgba(0, 43, 92, 0.9);
+  padding: 44px 56px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 3px solid var(--cad-orange);
+}
+
+.cad-top-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--cad-orange); padding-bottom: 16px;
+}
+.cad-slogan {
+  color: var(--cad-orange); font-size: 19px; font-weight: 700; letter-spacing: 3px;
+}
+
+.cad-main {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0;
+}
+
+.cad-title {
+  font-family: 'Chakra Petch', sans-serif; font-size: 50px; font-weight: 700;
+  color: var(--cad-white); line-height: 1.2; margin-bottom: 16px;
+}
+.cad-title span { color: var(--cad-orange); }
+
+.cad-spec-table {
+  width: 100%; border-collapse: collapse; margin-top: 24px;
+  border: 1px solid var(--cad-orange); font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.cad-spec-table td {
+  border: 1px solid rgba(255, 122, 0, 0.35); padding: 14px 18px;
+  font-size: var(--font-body-size);
+}
+.cad-spec-table tr:nth-child(even) { background: rgba(255, 122, 0, 0.08); }
+
+.cad-photo-frame {
+  border: 2px solid var(--cad-orange); padding: 6px; position: relative;
+}
+.cad-photo-frame img {
+  width: 100%; height: 460px; object-fit: cover; display: block;
+}
+
+.cad-title-block {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--cad-orange); padding-top: 14px;
+  font-size: 17px; color: #CBD5E1;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="cad-top-bar">
+  <div style="display: flex; align-items: center; gap: 20px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px;">
+    <div class="cad-slogan">DWG-SPEC // HỌC ĐỂ THAY ĐỔI</div>
+  </div>
+  <div style="font-size: 18px; color: var(--cad-orange);">TỔ CHỨC: T1 • B1 • C6</div>
+</header>
+
+<main class="cad-main">
+  <div>
+    <div style="color: var(--cad-orange); font-size: 17px; letter-spacing: 3px; margin-bottom: 8px;">
+      CAD-BLUEPRINT 05 // BẢN VẼ KỸ THUẬT (CAM & COBALT)
+    </div>
+    <h1 class="cad-title">HỆ THỐNG TÊN LỬA <span>S-300PMU1</span></h1>
+    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.55; color: #E2E8F0;">
+      Tổ hợp tên lửa phòng không tầm xa hiện đại, tạo nên lưới lửa bảo vệ các trung tâm chính trị, kinh tế và căn cứ chiến lược quốc gia.
+    </p>
+
+    <table class="cad-spec-table">
+      <tr>
+        <td style="color: var(--cad-orange); font-weight: 700;">Tầm bắn hạ mục tiêu</td>
+        <td>5km – 150km (Tên lửa 48N6E)</td>
+      </tr>
+      <tr>
+        <td style="color: var(--cad-orange); font-weight: 700;">Độ cao tác chiến</td>
+        <td>10m – 27.000m (Đa tầng phòng không)</td>
+      </tr>
+      <tr>
+        <td style="color: var(--cad-orange); font-weight: 700;">Khả năng đa kênh</td>
+        <td>Đồng thời bám bắt 6 mục tiêu, dẫn bắn 12 đạn</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="cad-photo-frame">
+    <img src="assets/vn-ten-lua-s300.jpg" alt="Tên lửa S-300 Phòng không Việt Nam">
+    <div style="position: absolute; bottom: 12px; left: 12px; right: 12px; background: rgba(0, 43, 92, 0.95); border: 1px solid var(--cad-orange); padding: 10px 14px; font-size: 18px; color: var(--cad-orange);">
+      DIAGRAM: BTL PHÒNG KHÔNG - KHÔNG QUÂN // ĐOÀN B61
+    </div>
+  </div>
+</main>
+
+<footer class="cad-title-block">
+  <div>SCALE: 1:100 • ARCHITECTURAL CAD REVISION 2026 • ĐH ĐẠI NAM</div>
+  <div style="color: var(--cad-orange);">SLIDE 05 / 20 • BLUEPRINT CAD CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

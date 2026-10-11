@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 07: Vogue Gallery (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,600;0,6..96,800;1,6..96,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --vogue-bg: #FFFFFF;
+  --vogue-cobalt: #003882;
+  --vogue-cobalt-dark: #00224F;
+  --vogue-orange: #EA580C;
+  --vogue-grey: #64748B;
+  --font-body-size: 25px;
+}
+body { background: #0A1322; color: var(--vogue-cobalt-dark); font-family: 'Inter', sans-serif; }
+#slide-stage {
+  background: var(--vogue-bg);
+  padding: 56px 88px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.4);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border-top: 8px solid var(--vogue-orange);
+  border-bottom: 8px solid var(--vogue-cobalt);
+}
+
+.mono-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 2px solid var(--vogue-cobalt); padding-bottom: 24px;
+}
+.mono-logo-box img { height: 42px; }
+.mono-slogan {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--vogue-orange); letter-spacing: 2px;
+}
+
+.mono-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+  flex: 1; padding: 48px 0;
+}
+
+.mono-issue {
+  font-size: 16px; letter-spacing: 5px; text-transform: uppercase; color: var(--vogue-orange);
+  margin-bottom: 16px; font-weight: 700;
+}
+.mono-title {
+  font-family: 'Playfair Display', serif; font-size: 58px; font-weight: 700;
+  line-height: 1.15; margin-bottom: 24px; color: var(--vogue-cobalt-dark);
+}
+.mono-title span { color: var(--vogue-orange); }
+
+.mono-body-text {
+  font-size: var(--font-body-size); line-height: 1.6; color: #334155;
+  margin-bottom: 28px;
+}
+
+.museum-placard {
+  border-left: 4px solid var(--vogue-orange); padding-left: 20px;
+  font-size: 21px; color: var(--vogue-cobalt); font-family: 'Playfair Display', serif; font-style: italic;
+}
+
+.mono-photo-frame {
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 56, 130, 0.2);
+  border: 2px solid var(--vogue-cobalt);
+}
+.mono-photo-frame img {
+  width: 100%; height: 500px; object-fit: cover; display: block;
+}
+.mono-photo-badge {
+  position: absolute; bottom: 20px; left: 20px; background: rgba(0, 34, 79, 0.9);
+  color: #FFF; padding: 8px 16px; font-size: 17px; letter-spacing: 1px;
+  border-left: 4px solid var(--vogue-orange);
+}
+
+.mono-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #CBD5E1; padding-top: 18px;
+  font-size: 17px; color: var(--vogue-cobalt); letter-spacing: 1px; font-weight: 600;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="mono-top">
+  <div class="mono-logo-box">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam">
+  </div>
+  <div class="mono-slogan">"HỌC ĐỂ THAY ĐỔI" — ĐẠI HỌC ĐẠI NAM</div>
+  <div style="font-size: 18px; font-weight: 700; color: var(--vogue-cobalt);">C6 • B1 • T1</div>
+</header>
+
+<main class="mono-grid">
+  <div>
+    <div class="mono-issue">STYLE 07 // VOGUE GALLERY (CAM & COBALT)</div>
+    <h1 class="mono-title">KỶ LUẬT LÀ SỨC MẠNH CỦA <span>QUÂN ĐỘI</span></h1>
+    <p class="mono-body-text">
+      Quân đội nhân dân Việt Nam là một khối thống nhất về ý chí và hành động. Lễ duyệt binh trang nghiêm biểu dương sức mạnh chính quy, tinh nhuệ và hiện đại, thể hiện niềm tự hào và quyết tâm bảo vệ vững chắc nền độc lập tự do.
+    </p>
+    <div class="museum-placard">
+      Triển lãm chuyên khảo tư liệu Lịch sử & Quốc phòng toàn dân. Tác phẩm ghi lại thời khắc hào hùng trên Quảng trường Ba Đình lịch sử.
+    </div>
+  </div>
+
+  <div class="mono-photo-frame">
+    <img src="assets/vn-ba-dinh.jpg" alt="Duyệt binh Ba Đình">
+    <div class="mono-photo-badge">TÁC PHẨM: DUYỆT BINH QUẢNG TRƯỜNG BA ĐÌNH</div>
+  </div>
+</main>
+
+<footer class="mono-footer">
+  <div>CURATED DEFENSE EXHIBITION • DNU DEPARTMENT OF DEFENSE</div>
+  <div style="font-family: 'Playfair Display', serif; color: var(--vogue-orange);">SLIDE 07 / 20 • VOGUE GALLERY CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

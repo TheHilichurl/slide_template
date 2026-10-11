@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 16: Swiss Grid (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --swiss-white: #FFFFFF;
+  --swiss-cobalt: #003882;
+  --swiss-cobalt-dark: #001F4D;
+  --swiss-orange: #EA580C;
+  --swiss-line: #E2E8F0;
+  --font-body-size: 25px;
+}
+body { background: #0A1322; color: var(--swiss-cobalt-dark); font-family: 'Inter', sans-serif; }
+#slide-stage {
+  background: var(--swiss-white);
+  padding: 56px 80px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.4);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border-left: 12px solid var(--swiss-orange);
+}
+
+.swiss-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 2px solid var(--swiss-cobalt); padding-bottom: 20px;
+}
+.swiss-slogan {
+  font-size: 19px; font-weight: 800; color: var(--swiss-orange); letter-spacing: 2px;
+}
+
+.swiss-main {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+  flex: 1; padding: 40px 0;
+}
+
+.swiss-num {
+  font-size: 100px; font-weight: 900; line-height: 0.85; color: var(--swiss-orange);
+  margin-bottom: 12px; letter-spacing: -4px;
+}
+.swiss-title {
+  font-size: 52px; font-weight: 900; line-height: 1.1; color: var(--swiss-cobalt-dark);
+  margin-bottom: 20px; letter-spacing: -1.5px;
+}
+.swiss-title span { color: var(--swiss-orange); }
+
+.swiss-desc {
+  font-size: var(--font-body-size); line-height: 1.55; color: #334155;
+  border-left: 4px solid var(--swiss-cobalt); padding-left: 20px;
+}
+
+.swiss-photo {
+  border: 2px solid var(--swiss-cobalt); box-shadow: 16px 16px 0px var(--swiss-orange);
+}
+.swiss-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+
+.swiss-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--swiss-cobalt); padding-top: 18px;
+  font-size: 17px; font-weight: 700; color: var(--swiss-cobalt);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="swiss-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 40px;">
+    <div class="swiss-slogan">HỌC ĐỂ THAY ĐỔI — DNU SYSTEM</div>
+  </div>
+  <div style="font-weight: 700; font-size: 19px; color: var(--swiss-cobalt);">C6 • B1 • T1</div>
+</header>
+
+<main class="swiss-main">
+  <div>
+    <div class="swiss-num">16</div>
+    <div style="font-size: 17px; font-weight: 800; letter-spacing: 3px; color: var(--swiss-orange); margin-bottom: 8px;">
+      SWISS INTERNATIONAL GRID (CAM & COBALT)
+    </div>
+    <h1 class="swiss-title">CẢI CÁCH QUÂN SỰ <span>ĐỊA PHƯƠNG (TT 83/2025)</span></h1>
+    <p class="swiss-desc">
+      Triển khai mô hình chính quyền địa phương 2 cấp, giải thể Ban CHQS cấp huyện; thành lập mới Ban Chỉ huy Phòng thủ khu vực để tinh gọn bộ máy và nâng cao năng lực chỉ huy tác chiến hiện đại.
+    </p>
+  </div>
+
+  <div class="swiss-photo">
+    <img src="assets/vn-khu-vuc-phong-thu.jpg" alt="Ban chỉ huy quân sự phòng thủ khu vực">
+  </div>
+</main>
+
+<footer class="swiss-footer">
+  <div>GRID SYSTEM 12-COLUMNS • JOSEF MÜLLER-BROCKMANN METHOD</div>
+  <div style="color: var(--swiss-orange);">SLIDE 16 / 20 • SWISS CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

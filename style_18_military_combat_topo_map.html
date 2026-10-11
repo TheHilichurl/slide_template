@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 18: Topographic Combat (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Plus+Jakarta+Sans:wght@600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --topo-cobalt-dark: #001B3A;
+  --topo-cobalt: #003366;
+  --topo-orange: #EA580C;
+  --topo-orange-bright: #FF7A00;
+  --topo-cyan: #38BDF8;
+  --font-body-size: 25px;
+}
+body { background: #000F21; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: var(--topo-cobalt-dark);
+  background-image: 
+    radial-gradient(rgba(56, 189, 248, 0.1) 1.5px, transparent 1.5px),
+    linear-gradient(rgba(0, 51, 102, 0.4) 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 51, 102, 0.8);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 4px solid var(--topo-orange);
+}
+
+.topo-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid rgba(234, 88, 12, 0.5); padding-bottom: 18px;
+}
+.topo-slogan {
+  font-family: 'Black Ops One', cursive; font-size: 22px; color: var(--topo-orange-bright);
+  letter-spacing: 2px;
+}
+
+.topo-main {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0;
+}
+
+.topo-title {
+  font-family: 'Black Ops One', cursive; font-size: 54px; line-height: 1.15;
+  color: #FFFFFF; letter-spacing: 1px; margin-bottom: 18px;
+}
+.topo-title span { color: var(--topo-orange-bright); }
+
+.topo-card {
+  background: rgba(0, 51, 102, 0.5); border: 2px solid var(--topo-orange);
+  padding: 24px; border-radius: 8px; margin-top: 24px;
+}
+
+.topo-photo {
+  border: 3px solid var(--topo-orange); border-radius: 12px; overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6); position: relative;
+}
+.topo-photo img { width: 100%; height: 460px; object-fit: cover; display: block; }
+
+.topo-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid rgba(234, 88, 12, 0.5); padding-top: 14px;
+  font-family: 'Share Tech Mono', monospace; font-size: 18px; color: var(--topo-orange-bright);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="topo-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px; filter: drop-shadow(0 0 8px var(--topo-orange));">
+    <div class="topo-slogan">HỌC ĐỂ THAY ĐỔI // TOPO-GRID</div>
+  </div>
+  <div style="font-family: 'Black Ops One', cursive; font-size: 20px; color: #FFFFFF;">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="topo-main">
+  <div>
+    <div style="font-family: 'Share Tech Mono', monospace; font-size: 17px; color: var(--topo-orange-bright); letter-spacing: 3px; margin-bottom: 8px;">
+      MAP SYSTEM 18 // TOPOGRAPHIC FIELD COMBAT (CAM & COBALT)
+    </div>
+    <h1 class="topo-title">7 QUÂN KHU & <span>CÁC QUÂN ĐOÀN CHIẾN LƯỢC</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #E2E8F0;">
+      Thế trận chiến tranh nhân dân bố trí hiểm hóc khắp 7 Quân khu và Bộ Tư lệnh Thủ đô Hà Nội; phối hợp cùng các Quân đoàn cơ động chiến lược tạo thành thế liên hoàn vững chắc.
+    </p>
+
+    <div class="topo-card">
+      <div style="font-family: 'Black Ops One', cursive; font-size: 22px; color: var(--topo-orange-bright); margin-bottom: 8px;">
+        ★ THẾ TRẬN KHU VỰC PHÒNG THỦ:
+      </div>
+      <div style="font-size: var(--font-body-size); line-height: 1.5; color: #F1F5F9;">
+        "Làng giữ làng, xã giữ xã, huyện giữ huyện, tỉnh giữ tỉnh" — Tác chiến hiệp đồng khu vực phòng thủ kết hợp đòn tiến công cơ động tiêu diệt địch.
+      </div>
+    </div>
+  </div>
+
+  <div class="topo-photo">
+    <img src="assets/vn-military-forces.jpg" alt="Lực lượng quân sự Việt Nam">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0, 27, 58, 0.95); padding: 12px 18px; font-family: 'Black Ops One', cursive; font-size: 19px; color: var(--topo-orange-bright); border-top: 1px solid var(--topo-orange);">
+      LỰC LƯỢNG VŨ TRANG NHÂN DÂN VIỆT NAM — QUẢ ĐẤM THÉP CƠ ĐỘNG
+    </div>
+  </div>
+</main>
+
+<footer class="topo-footer">
+  <div>UTM GRID COORDINATES: 21°01'N 105°51'E • ĐH ĐẠI NAM</div>
+  <div>SLIDE 18 / 20 • TOPOGRAPHIC CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

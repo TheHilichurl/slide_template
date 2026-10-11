@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 02: Art Deco (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Marcellus&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --deco-cobalt-deep: #02122B;
+  --deco-cobalt: #003882;
+  --deco-orange: #FF7A00;
+  --deco-orange-bright: #FF9E40;
+  --deco-card: #061B3D;
+  --font-body-size: 25px;
+}
+body { background: #010A17; color: #FFFFFF; font-family: 'Marcellus', serif; }
+#slide-stage {
+  background: radial-gradient(circle at 50% 30%, #0A2B5E 0%, var(--deco-cobalt-deep) 100%);
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.7);
+  border: 4px solid var(--deco-orange);
+  outline: 2px solid rgba(255, 122, 0, 0.5);
+  outline-offset: -16px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.deco-corner-tl { position: absolute; top: 24px; left: 24px; width: 60px; height: 60px; border-top: 3px solid var(--deco-orange); border-left: 3px solid var(--deco-orange); }
+.deco-corner-tr { position: absolute; top: 24px; right: 24px; width: 60px; height: 60px; border-top: 3px solid var(--deco-orange); border-right: 3px solid var(--deco-orange); }
+.deco-corner-bl { position: absolute; bottom: 24px; left: 24px; width: 60px; height: 60px; border-bottom: 3px solid var(--deco-orange); border-left: 3px solid var(--deco-orange); }
+.deco-corner-br { position: absolute; bottom: 24px; right: 24px; width: 60px; height: 60px; border-bottom: 3px solid var(--deco-orange); border-right: 3px solid var(--deco-orange); }
+
+.deco-header {
+  text-align: center; border-bottom: 1px solid rgba(255, 122, 0, 0.35);
+  padding-bottom: 20px; position: relative;
+}
+.deco-brand-row {
+  display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+}
+.deco-brand-row img { height: 44px; filter: drop-shadow(0 2px 8px rgba(255, 122, 0, 0.5)); }
+.deco-slogan-orange {
+  font-family: 'Cinzel Decorative', serif; font-size: 20px;
+  color: var(--deco-orange-bright); letter-spacing: 5px; text-shadow: 0 0 10px rgba(255, 122, 0, 0.6);
+}
+
+.deco-main-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+  flex: 1; padding: 28px 0;
+}
+
+.deco-hero-title {
+  font-family: 'Cinzel Decorative', serif; font-size: 50px; line-height: 1.2;
+  color: #FFFFFF; margin-bottom: 16px;
+  text-shadow: 0 2px 15px rgba(255, 122, 0, 0.4);
+}
+.deco-hero-title span { color: var(--deco-orange); }
+
+.deco-pillars-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px;
+}
+.deco-card-item {
+  background: var(--deco-card);
+  border: 1px solid rgba(255, 122, 0, 0.4);
+  padding: 24px 20px; position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.deco-card-item::before {
+  content: ""; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+  border: 1px solid rgba(255, 122, 0, 0.2); pointer-events: none;
+}
+.deco-card-title {
+  font-family: 'Cinzel Decorative', serif; color: var(--deco-orange);
+  font-size: 21px; margin-bottom: 8px; font-weight: 700;
+}
+.deco-card-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size);
+  color: #E2E8F0; line-height: 1.5;
+}
+
+.deco-photo-frame {
+  border: 3px solid var(--deco-orange); padding: 8px;
+  background: var(--deco-cobalt-deep); box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+  position: relative;
+}
+.deco-photo-frame img {
+  width: 100%; height: 480px; object-fit: cover; display: block;
+}
+
+.deco-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255, 122, 0, 0.35); padding-top: 18px;
+  font-size: 18px; color: var(--deco-orange); letter-spacing: 2px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="deco-corner-tl"></div><div class="deco-corner-tr"></div>
+<div class="deco-corner-bl"></div><div class="deco-corner-br"></div>
+
+<header class="deco-header">
+  <div class="deco-brand-row">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam">
+    <div class="deco-slogan-orange">✦ HỌC ĐỂ THAY ĐỔI ✦</div>
+    <div style="font-size: 18px; color: var(--deco-orange); letter-spacing: 2px;">TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6</div>
+  </div>
+</header>
+
+<main class="deco-main-grid">
+  <div>
+    <div style="color: var(--deco-orange); font-size: 18px; letter-spacing: 4px; margin-bottom: 8px;">PHONG CÁCH 02 • ART DECO HOÀNG GIA (CAM & COBALT)</div>
+    <h1 class="deco-hero-title">SỨC MẠNH QUÂN CHỦNG <span>HẢI QUÂN NHÂN DÂN</span></h1>
+    <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: var(--font-body-size); line-height: 1.55; color: #E5E7EB;">
+      Quân chủng Hải quân là lực lượng nòng cốt bảo vệ vững chắc chủ quyền biển, đảo, thềm lục địa thiêng liêng của Tổ quốc với 5 binh chủng hợp thành hiện đại bậc nhất.
+    </p>
+
+    <div class="deco-pillars-row">
+      <div class="deco-card-item">
+        <div class="deco-card-title">I. TÀU HỘ VỆ GEPARD 3.9</div>
+        <div class="deco-card-desc">Trang bị tên lửa hành trình chống hạm Uran-E, hệ thống săn ngầm và pháo cao tốc.</div>
+      </div>
+      <div class="deco-card-item">
+        <div class="deco-card-title">II. TÀU NGẦM KILO 636</div>
+        <div class="deco-card-desc">Lữ đoàn 189 tinh nhuệ, "hố đen đại dương" bảo vệ biển Đông từ lòng sâu.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deco-photo-frame">
+    <img src="assets/vn-gepard-ship.jpg" alt="Tàu hộ vệ tên lửa Gepard 3.9 Việt Nam">
+    <div style="position: absolute; bottom: 18px; left: 18px; right: 18px; background: rgba(2, 18, 43, 0.9); border: 1px solid var(--deco-orange); padding: 12px 18px; font-size: 19px; color: #FFFFFF;">
+      ✦ Chiến hạm Gepard 3.9 HQ-012 Lý Thái Tổ Hải quân Nhân dân Việt Nam
+    </div>
+  </div>
+</main>
+
+<footer class="deco-footer">
+  <div>BỘ MÔN GIÁO DỤC QUỐC PHÒNG & AN NINH — TRƯỜNG ĐẠI HỌC ĐẠI NAM</div>
+  <div>SLIDE 02 / 20 • ART DECO CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

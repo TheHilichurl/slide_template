@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 13: Y2K Cyber (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --y2k-bg: #020C1F;
+  --y2k-cobalt: #003882;
+  --y2k-orange: #FF7A00;
+  --y2k-orange-bright: #FFA44D;
+  --y2k-cyan: #38BDF8;
+  --y2k-card: #06193E;
+  --font-body-size: 25px;
+}
+body { background: #010612; color: #FFFFFF; font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: radial-gradient(circle at 70% 30%, #0A2F72 0%, var(--y2k-bg) 100%);
+  padding: 48px 64px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.7);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 3px solid var(--y2k-orange);
+  overflow: hidden;
+}
+
+.y2k-aura-1 {
+  position: absolute; width: 450px; height: 450px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.35) 0%, transparent 70%);
+  top: -100px; left: -100px; pointer-events: none;
+}
+
+.y2k-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid rgba(255, 122, 0, 0.4); padding-bottom: 20px;
+}
+.y2k-badge {
+  background: var(--y2k-orange); color: #FFF; font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 18px; padding: 6px 18px; border-radius: 100px;
+  box-shadow: 0 0 15px var(--y2k-orange);
+}
+
+.y2k-grid {
+  display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: center;
+  flex: 1; padding: 32px 0;
+}
+
+.y2k-title {
+  font-family: 'Syne', sans-serif; font-size: 58px; font-weight: 800;
+  line-height: 1.1; color: #FFFFFF;
+  text-shadow: 0 0 25px rgba(255,255,255,0.4); margin-bottom: 20px;
+}
+.y2k-title span { color: var(--y2k-orange-bright); }
+
+.y2k-spec-card {
+  background: var(--y2k-card); backdrop-filter: blur(16px);
+  border: 1px solid var(--y2k-orange); border-radius: 20px;
+  padding: 24px 28px; margin-top: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.y2k-photo {
+  border: 3px solid var(--y2k-orange); border-radius: 24px; overflow: hidden;
+  box-shadow: 0 0 35px rgba(0, 56, 130, 0.6); position: relative;
+}
+.y2k-photo img { width: 100%; height: 480px; object-fit: cover; display: block; }
+
+.y2k-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255, 122, 0, 0.4); padding-top: 16px;
+  font-size: 18px; color: var(--y2k-orange-bright);
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="y2k-aura-1"></div>
+
+<header class="y2k-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px; filter: drop-shadow(0 0 8px var(--y2k-orange));">
+    <div style="font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--y2k-orange-bright);">
+      ✦ HỌC ĐỂ THAY ĐỔI ✦
+    </div>
+  </div>
+  <div class="y2k-badge">C6 • B1 • T1 // CYBER COBALT</div>
+</header>
+
+<main class="y2k-grid">
+  <div>
+    <div style="font-family: 'Syne', sans-serif; font-size: 18px; color: var(--y2k-orange-bright); letter-spacing: 3px; margin-bottom: 8px;">
+      PHONG CÁCH 13 // Y2K CYBER (CAM & COBALT)
+    </div>
+    <h1 class="y2k-title">AN NINH NHÂN DÂN: <span>BẢO VỆ BÌNH YÊN</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.55; color: #CBD5E1;">
+      Lực lượng Công an nhân dân và An ninh nhân dân là thanh bảo kiếm sắc bén bảo vệ Đảng, Nhà nước và cuộc sống bình yên, hạnh phúc của toàn thể nhân dân.
+    </p>
+
+    <div class="y2k-spec-card">
+      <div style="font-family: 'Syne', sans-serif; font-size: 22px; color: var(--y2k-orange-bright); font-weight: 700; margin-bottom: 8px;">
+        ✦ PHỐI HỢP QUÂN DÂN AN NINH VỮNG CHẮC:
+      </div>
+      <div style="font-size: var(--font-body-size); line-height: 1.5; color: #E2E8F0;">
+        "Vì nước quên thân, vì dân phục vụ" — Phối hợp hiệp đồng chặt chẽ giữa QĐND và CAND trong giữ gìn trật tự an toàn xã hội và an ninh quốc gia.
+      </div>
+    </div>
+  </div>
+
+  <div class="y2k-photo">
+    <img src="assets/vn-an-ninh-nhan-dan.jpg" alt="An ninh nhân dân Việt Nam">
+    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(2, 12, 31, 0.9); padding: 14px 20px; font-size: 19px; color: #FFFFFF; border-top: 1px solid var(--y2k-orange);">
+      ✦ LỰC LƯỢNG AN NINH NHÂN DÂN — BẢO VỆ CHỦ QUYỀN AN NINH QUỐC GIA
+    </div>
+  </div>
+</main>
+
+<footer class="y2k-footer">
+  <div>GIÁO DỤC QUỐC PHÒNG AN NINH • ĐẠI HỌC ĐẠI NAM</div>
+  <div style="font-family: 'Syne', sans-serif;">SLIDE 13 / 20 • Y2K CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

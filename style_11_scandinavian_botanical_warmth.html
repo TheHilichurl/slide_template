@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 11: Scandinavian (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --nordic-bg: #F5F8FC;
+  --nordic-cobalt: #003882;
+  --nordic-orange: #EA580C;
+  --nordic-sand: #DCE7F5;
+  --nordic-dark: #0F172A;
+  --font-body-size: 25px;
+}
+body { background: #0A1322; color: var(--nordic-dark); font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: var(--nordic-bg);
+  padding: 56px 80px; box-shadow: 0 40px 140px rgba(0, 56, 130, 0.4);
+  display: flex; flex-direction: column; justify-content: space-between;
+  border: 2px solid var(--nordic-sand);
+}
+
+.nordic-top {
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 2px solid var(--nordic-sand); padding-bottom: 24px;
+}
+.nordic-slogan {
+  font-family: 'Fraunces', serif; font-size: 20px; font-weight: 700; color: var(--nordic-orange);
+}
+
+.nordic-grid {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center;
+  flex: 1; padding: 40px 0;
+}
+
+.nordic-title {
+  font-family: 'Fraunces', serif; font-size: 54px; font-weight: 700;
+  line-height: 1.2; color: var(--nordic-cobalt); margin-bottom: 20px;
+}
+.nordic-title span { color: var(--nordic-orange); }
+
+.nordic-card {
+  background: #FFFFFF; border-radius: 20px; padding: 28px 32px;
+  box-shadow: 0 20px 40px rgba(0, 56, 130, 0.08); margin-top: 24px;
+  border: 2px solid var(--nordic-sand); border-left: 6px solid var(--nordic-orange);
+}
+
+.nordic-photo {
+  border-radius: 24px; overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 56, 130, 0.18); border: 2px solid var(--nordic-cobalt);
+}
+.nordic-photo img { width: 100%; height: 480px; object-fit: cover; display: block; }
+
+.nordic-footer {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 2px solid var(--nordic-sand); padding-top: 20px;
+  font-size: 18px; color: var(--nordic-cobalt); font-weight: 600;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<header class="nordic-top">
+  <div style="display: flex; align-items: center; gap: 24px;">
+    <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 42px;">
+    <div class="nordic-slogan">"HỌC ĐỂ THAY ĐỔI" — ĐẠI HỌC ĐẠI NAM</div>
+  </div>
+  <div style="font-size: 18px; font-weight: 700; color: var(--nordic-cobalt);">
+    TIỂU ĐỘI 1 • TRUNG ĐỘI 1 • C6
+  </div>
+</header>
+
+<main class="nordic-grid">
+  <div>
+    <div style="font-size: 17px; font-weight: 700; color: var(--nordic-orange); letter-spacing: 2px; margin-bottom: 8px;">
+      PHONG CÁCH 11 // BẮC ÂU HỮU CƠ (CAM & COBALT)
+    </div>
+    <h1 class="nordic-title">QUỐC PHÒNG TOÀN DÂN: <span>SỨC MẠNH LÒNG DÂN</span></h1>
+    <p style="font-size: var(--font-body-size); line-height: 1.6; color: #334155;">
+      Nền quốc phòng toàn dân là nền quốc phòng vì dân, do dân và của nhân dân; kết hợp chặt chẽ giữa phát triển kinh tế - xã hội với củng cố tiềm lực quốc phòng an ninh vững chắc.
+    </p>
+
+    <div class="nordic-card">
+      <div style="font-family: 'Fraunces', serif; font-size: 24px; color: var(--nordic-orange); margin-bottom: 8px; font-weight: 700;">
+        Truyền thống đại đoàn kết toàn dân tộc:
+      </div>
+      <div style="font-size: var(--font-body-size); line-height: 1.5; color: #0F172A;">
+        Xây dựng "thế trận lòng dân" vững chắc từ cơ sở; phát huy sức mạnh tổng hợp của cả hệ thống chính trị trong công cuộc bảo vệ Tổ quốc.
+      </div>
+    </div>
+  </div>
+
+  <div class="nordic-photo">
+    <img src="assets/vn-quoc-phong-toan-dan.jpg" alt="Thế trận quốc phòng toàn dân">
+  </div>
+</main>
+
+<footer class="nordic-footer">
+  <div>KHOA GDQP-AN • TRƯỜNG ĐẠI HỌC ĐẠI NAM</div>
+  <div style="font-family: 'Fraunces', serif; color: var(--nordic-orange);">SLIDE 11 / 20 • SCANDINAVIAN CAM & COBALT</div>
+</footer>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>

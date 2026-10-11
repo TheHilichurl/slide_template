@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Style 12: Mondrian De Stijl (Cam/Cobalt) | ĐH Đại Nam GDQP-AN</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+      width: 100vw; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      user-select: none;
+    }
+    #viewport {
+      position: relative; width: 100vw; height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #slide-stage {
+      position: absolute; width: 1920px; height: 1080px;
+      left: 50%; top: 50%; transform-origin: center center;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    
+:root {
+  --mon-white: #FFFFFF;
+  --mon-cobalt-dark: #001A3D;
+  --mon-cobalt: #003882;
+  --mon-orange: #EA580C;
+  --mon-orange-bright: #FF7A00;
+  --font-body-size: 25px;
+}
+body { background: #000E24; color: var(--mon-cobalt-dark); font-family: 'Plus Jakarta Sans', sans-serif; }
+#slide-stage {
+  background: var(--mon-white);
+  box-shadow: 0 40px 140px rgba(0, 56, 130, 0.7);
+  border: 12px solid var(--mon-cobalt-dark);
+  display: grid;
+  grid-template-columns: 1fr 10px 1.1fr 10px 0.5fr;
+  grid-template-rows: 100px 10px 1fr 10px 80px;
+}
+
+.mon-bar-v1 { grid-column: 2; grid-row: 1 / -1; background: var(--mon-cobalt-dark); }
+.mon-bar-v2 { grid-column: 4; grid-row: 1 / -1; background: var(--mon-cobalt-dark); }
+.mon-bar-h1 { grid-column: 1 / -1; grid-row: 2; background: var(--mon-cobalt-dark); }
+.mon-bar-h2 { grid-column: 1 / -1; grid-row: 4; background: var(--mon-cobalt-dark); }
+
+.mon-cell-top-left {
+  grid-column: 1; grid-row: 1; padding: 20px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.mon-cell-top-mid {
+  grid-column: 3; grid-row: 1; padding: 20px 32px; background: var(--mon-orange-bright);
+  display: flex; align-items: center; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 24px; color: #FFF;
+}
+.mon-cell-top-right {
+  grid-column: 5; grid-row: 1; background: var(--mon-cobalt);
+  display: flex; align-items: center; justify-content: center; color: #FFF; font-weight: 700; font-size: 20px;
+}
+
+.mon-cell-main-text {
+  grid-column: 1; grid-row: 3; padding: 40px 36px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.mon-cell-photo {
+  grid-column: 3; grid-row: 3; overflow: hidden; position: relative;
+}
+.mon-cell-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.mon-cell-right-accent {
+  grid-column: 5; grid-row: 3; background: var(--mon-orange);
+  display: flex; flex-direction: column; justify-content: space-around;
+  padding: 32px 20px; color: #FFF; font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+}
+
+.mon-cell-bot-left {
+  grid-column: 1; grid-row: 5; background: #EFF6FF;
+  display: flex; align-items: center; padding: 0 32px; font-weight: 700; font-size: 20px; color: var(--mon-cobalt);
+}
+.mon-cell-bot-mid {
+  grid-column: 3; grid-row: 5; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between; font-weight: 700; font-size: 20px; color: var(--mon-cobalt-dark);
+}
+.mon-cell-bot-right {
+  grid-column: 5; grid-row: 5; background: var(--mon-cobalt-dark); color: var(--mon-orange-bright);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 19px;
+}
+
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <div id="slide-stage">
+      
+<div class="mon-bar-v1"></div><div class="mon-bar-v2"></div>
+<div class="mon-bar-h1"></div><div class="mon-bar-h2"></div>
+
+<div class="mon-cell-top-left">
+  <img src="assets/dai-nam-logo-ngang.svg" alt="Đại học Đại Nam" style="height: 44px;">
+</div>
+<div class="mon-cell-top-mid">
+  HỌC ĐỂ THAY ĐỔI — KHẨU HIỆU ĐẠI HỌC ĐẠI NAM
+</div>
+<div class="mon-cell-top-right">
+  T1 • B1 • C6
+</div>
+
+<div class="mon-cell-main-text">
+  <div style="font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; color: var(--mon-orange); margin-bottom: 12px;">
+    PHONG CÁCH 12 // MONDRIAN DE STIJL (CAM & COBALT)
+  </div>
+  <h1 style="font-size: 46px; font-weight: 900; line-height: 1.15; margin-bottom: 20px; color: var(--mon-cobalt-dark);">
+    DÂN QUÂN TỰ VỆ: LỰC LƯỢNG VŨ TRANG QUẦN CHÚNG
+  </h1>
+  <p style="font-size: var(--font-body-size); line-height: 1.55; color: #1E293B;">
+    Lực lượng vũ trang quần chúng không thoát ly sản xuất; là nòng cốt cùng toàn dân đánh giặc tại địa bàn cư trú khi có chiến tranh nổ ra.
+  </p>
+</div>
+
+<div class="mon-cell-photo">
+  <img src="assets/vn-dan-quan-tu-ve.jpg" alt="Dân quân tự vệ Việt Nam">
+</div>
+
+<div class="mon-cell-right-accent">
+  <div style="font-size: 38px;">01</div>
+  <div style="font-size: 22px; line-height: 1.4;">BẢO VỆ CƠ SỞ</div>
+  <div style="font-size: 38px;">02</div>
+  <div style="font-size: 22px; line-height: 1.4;">SẴN SÀNG CHIẾN ĐẤU</div>
+</div>
+
+<div class="mon-cell-bot-left">
+  KHOA GDQP-AN • ĐẠI HỌC ĐẠI NAM
+</div>
+<div class="mon-cell-bot-mid">
+  <span>TẬP THỂ TIỂU ĐỘI 1 THỰC HIỆN</span>
+  <span style="color: var(--mon-orange);">THEME CAM & XANH COBALT</span>
+</div>
+<div class="mon-cell-bot-right">
+  SLIDE 12 / 20
+</div>
+
+    </div>
+  </div>
+
+  <script>
+    function updateStageScale() {
+      const stage = document.getElementById('slide-stage');
+      if (!stage) return;
+      const targetWidth = 1920;
+      const targetHeight = 1080;
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+      const scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+      stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+    }
+    window.addEventListener('resize', updateStageScale);
+    window.addEventListener('DOMContentLoaded', () => {
+      updateStageScale();
+      if (window.lucide) lucide.createIcons();
+    });
+    window.addEventListener('load', updateStageScale);
+    updateStageScale();
+  </script>
+</body>
+</html>
